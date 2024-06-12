@@ -1,0 +1,75 @@
+/* src/components/Navbar.module.scss */
+@import '../../../styles/colors.scss';
+
+.navbar {
+    padding: 1rem 2rem;
+    background-color: $color-primary;
+    color: $color-background;
+    height: 120px;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+
+.navItems {
+    display: flex;
+    gap: 2rem;
+}
+
+.navItem {
+    position: relative;
+
+    &:hover .dropdown {
+        display: block;
+    }
+}
+
+.navLink {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    font-weight: 700;
+
+    .arrow {
+        transition: transform 0.3s ease;
+    }
+
+    &:hover .arrow {
+        transform: rotate(180deg);
+    }
+}
+
+.dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    z-index: 999;
+    right: 0;
+    background-color: $color-background;
+    color: $color-text-primary;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.dropdownLink {
+    display: block;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    color: $color-text-primary;
+
+    p:nth-of-type(1) {
+        font-weight: bold;
+        font-size: 1rem;
+    }
+
+    p:nth-of-type(2) {
+        font-weight: 500;
+        font-size: 0.75rem;
+    }
+}
+
+.dropdownLink:hover {
+    background-color: $color-secondary;
+    color: $color-background;
+}

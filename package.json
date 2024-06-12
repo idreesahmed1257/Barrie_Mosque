@@ -6,11 +6,19 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "export": "next export"
   },
   "dependencies": {
+    "@emotion/react": "^11.11.4",
+    "@emotion/styled": "^11.11.5",
+    "@fontsource/quicksand": "^5.0.18",
+    "@mui/icons-material": "^5.15.19",
+    "@mui/material": "^5.15.19",
+    "keen-slider": "^6.8.6",
+    "next": "14.2.3",
     "react": "^18",
     "react-dom": "^18",
-    "next": "14.2.3"
+    "sass": "^1.77.4"
   }
 }
