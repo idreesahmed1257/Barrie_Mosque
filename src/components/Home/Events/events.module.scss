@@ -1,50 +1,23 @@
 @import '../../../styles/colors.scss';
 
-.cardContainer {
-    padding: 1rem;
+.eventCard {
+    height: 400px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
     border-radius: 10px;
     border: 1px solid $color-primary;
     background-color: $color-background !important;
-    color: $color-text-secondary;
-}
+    color: $color-primary;
 
-.textContainer {
-    white-space: normal;
-    overflow-wrap: break-word;
-    /* Modern property */
-    word-wrap: break-word;
-    height: 300px;
-    overflow-y: auto;
-
-    &::-webkit-scrollbar {
-        width: 0px;
-        /* Width of the scrollbar */
+    p {
+        color: $color-primary;
+        font-weight: bold;
     }
 
-    &::-webkit-scrollbar-track {
-        background: #f1f1f1;
-        /* Track color */
-        border-radius: 10px;
-        /* Rounded borders for the track */
+    .locationAnchor {
+        color: $color-primary;
     }
-
-    &::-webkit-scrollbar-thumb {
-        background: #888;
-        /* Scrollbar color */
-        border-radius: 10px;
-        /* Rounded borders for the thumb */
-    }
-
-    &::-webkit-scrollbar-thumb:hover {
-        background: #555;
-        /* Scrollbar color on hover */
-    }
-}
-
-.preWrap {
-    white-space: pre-wrap;
-    word-wrap: break-word;
-    font-family: "Quicksand";
 }
 
 .imageContainer {
@@ -52,30 +25,29 @@
     overflow: hidden;
     display: flex;
     justify-content: flex-end;
-    border-radius: 20px;
-}
 
-.imagebg {
-    width: 100%;
-    position: absolute;
-    height: 300px;
-    object-fit: cover;
-    border-radius: 20px;
-    filter: blur(10px);
-}
+    .imagebg {
+        width: 100%;
+        position: absolute;
+        height: 250px;
+        object-fit: cover;
+        filter: blur(10px);
+        z-index: 1;
+    }
 
-.image {
-    width: 100%;
-    z-index: 1;
-    height: 300px;
-    object-fit: contain;
-    border-radius: 10px;
+    .image {
+        width: 100%;
+        z-index: 4;
+        height: 250px;
+        object-fit: contain;
+    }
 }
 
 .sliderContainer {
     position: relative;
     width: 100%;
     overflow: hidden;
+    margin: 0 15px;
 }
 
 .keen-slider {

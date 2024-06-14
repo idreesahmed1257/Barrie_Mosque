@@ -12,7 +12,8 @@ body {
   h3,
   h4,
   h5,
-  h6 {
+  h6,
+  pre {
     margin: 0;
     padding: 0;
   }
@@ -33,7 +34,7 @@ body {
   justify-content: space-around;
 }
 
-.row-around {
+.row-evenly {
   display: flex;
   justify-content: space-evenly;
 }
@@ -51,4 +52,11 @@ body {
 .col-center {
   display: flex;
   align-items: center;
+}
+
+.row-gap-1 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 5px;
 }

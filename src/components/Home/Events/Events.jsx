@@ -1,16 +1,17 @@
 "use client";
-import ArrowBackIcon from '@mui/icons-material/ArrowBack';
-import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import 'keen-slider/keen-slider.min.css';
 import { useKeenSlider } from 'keen-slider/react';
-import CommunityCard from './CommunityCard';
-import styles from './community.module.scss';
+import styles from './events.module.scss';
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+import EventCard from './EventCard';
 
-const CommunityNews = ({ communities }) => {
+const Events = ({ events }) => {
     const [sliderRef, instanceRef] = useKeenSlider({
         initial: 0,
         slides: {
-            perView: 1.6,
+            perView: 3.3,
+            spacing: 25
         },
     });
 
@@ -28,13 +29,13 @@ const CommunityNews = ({ communities }) => {
                 <ArrowBackIcon />
             </button>
             <div ref={sliderRef} className="keen-slider">
-                {communities.map((com, idx) => (
+                {events.map((com, idx) => (
                     <div className="keen-slider__slide" key={idx}>
-                        <CommunityCard
+                        <EventCard
                             title={com?.title}
-                            name={com?.name}
-                            description={com?.description}
+                            date={com?.date}
                             image={com?.image}
+                            location={com?.location}
                             key={idx}
                         />
                     </div>
@@ -47,4 +48,4 @@ const CommunityNews = ({ communities }) => {
     );
 }
 
-export default CommunityNews;
+export default Events;

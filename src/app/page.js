@@ -1,9 +1,11 @@
 import CommunityNews from "@/components/Home/Community/CommunityNews";
+import EventCard from "@/components/Home/Events/EventCard";
+import Events from "@/components/Home/Events/Events";
 import HomeSlider from "@/components/Home/HomeSlider";
 import HomeTitle from "@/components/Home/HomeTitle";
 import NamazTimings from "@/components/Home/NamazTimings";
 import Welcome from "@/components/Home/Welcome";
-import { comunities, slides, timings } from "@/components/Home/helper";
+import { comunities, events, slides, timings } from "@/components/Home/helper";
 import "@fontsource/quicksand";
 
 export default function Home() {
@@ -17,7 +19,8 @@ export default function Home() {
       <NamazTimings timings={timings} currentDate={dt} />
       <HomeTitle text={'Community News'} />
       <CommunityNews communities={comunities} />
-
+      <HomeTitle text={'Events'} />
+      <Events events={events} />
       <br />
       <br />
       <br />

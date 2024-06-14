@@ -11,9 +11,10 @@ const CommunityCard = ({ name, title, description, image }) => {
                     <p>{title}</p>
                 </Grid>
                 <p>{name}</p>
-                <p>{description}</p>
+                <pre className={styles.preWrap}>{description}</pre>
             </Grid>
-            <Grid display={'flex'} justifyContent={'flex-end'} overflow={'hidden'} item sm={12} md={5}>
+            <Grid className={styles.imageContainer} item sm={12} md={5}>
+                <Image src={image} alt="com1" className={styles.imagebg} />
                 <Image src={image} alt="com1" className={styles.image} />
             </Grid>
         </Grid>
