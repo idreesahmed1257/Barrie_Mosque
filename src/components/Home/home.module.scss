@@ -97,3 +97,128 @@
         }
     }
 }
+
+.namazTimingsContainer {
+    position: relative;
+    background-color: $color-background;
+    padding: 16px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-image: url('../../assets/images/shared/namaz1.jpg'); // Dummy image URL
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: $color-white; // Ensure text is readable against the background
+
+    &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(180deg, rgba(4, 42, 41, 0.9), rgba(0, 0, 0, 0.7)); // Darker gradient using the specified colors
+    }
+}
+
+.date,
+.heading,
+.table {
+    position: relative;
+    z-index: 11;
+}
+
+.date {
+    text-align: center;
+    color: $color-white;
+    font-size: 16px;
+    margin-bottom: 16px;
+}
+
+.heading {
+    text-align: center;
+    color: $gradient1;
+    font-size: 24px;
+    margin-bottom: 16px;
+    font-weight: bold;
+}
+
+.table {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+
+    &:nth-child(even) {
+        background-color: transparent; // Remove alternating background color
+    }
+}
+
+.cell {
+    flex: 1;
+    padding: 12px;
+    text-align: center;
+    color: $color-white; // Adjusted for better contrast
+    font-weight: bold;
+    font-size: 16px;
+
+    &:first-child {
+        color: $color-secondary;
+    }
+}
+
+.cell:nth-child(2) {
+    text-align: center;
+}
+
+.welcomeSection {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
+}
+
+.heading {
+    color: $color-secondary;
+    font-size: 36px;
+    margin-bottom: 16px;
+}
+
+.subheading {
+    color: $color-text-secondary;
+    font-size: 24px;
+    font-family: 'Great Vibes', cursive;
+}
+
+.text {
+    color: $color-text-primary;
+    font-size: 18px;
+    margin-bottom: 24px;
+    width: 70%;
+}
+
+.titleContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.title {
+    font-size: 2.5rem;
+    color: $color-primary;
+    margin: 0 20px;
+}
+
+.design {
+    width: 10vw;
+    height: 4px;
+    background: $color-text-primary;
+    border-radius: 2px;
+}

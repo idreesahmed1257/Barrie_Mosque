@@ -50,7 +50,7 @@ const Navbar = () => {
 
             <div className={styles.navItem}>
               <div className={styles.navLink}>
-                Services
+                Contact
                 <ArrowDropDown className={styles.arrow} />
               </div>
               <NavDropDown width={'600px'} image={nav1} items={contactUsItems} />
