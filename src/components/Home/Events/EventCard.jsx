@@ -7,7 +7,7 @@ const EventCard = ({ image, title, date, location }) => {
     const googleMapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(location.address)}`;
 
     return (
-        <Grid className={styles.eventCard} xs={12} >
+        <Grid className={styles.eventCard} mx={2} md={12} lg={11} >
             <Grid className={styles.imageContainer} item>
                 <Image src={image} alt="com1" className={styles.imagebg} />
                 <Image src={image} alt="com1" className={styles.image} />

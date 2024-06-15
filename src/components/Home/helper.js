@@ -26,7 +26,7 @@ export const slides = [
     }
 ];
 
-export const comunities = [
+export const communities = [
     {
         image: com1,
         title: 'Tuesday at 11:43 AM',

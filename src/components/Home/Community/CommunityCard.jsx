@@ -4,7 +4,7 @@ import Image from 'next/image';
 import styles from './community.module.scss';
 const CommunityCard = ({ name, title, description, image }) => {
     return (
-        <Grid container mx={2} sm={12} md={11} className={styles.cardContainer}  >
+        <Grid container mx={2} xs={11} md={11} className={styles.cardContainer}  >
             <Grid display={'flex'} flexDirection={'column'} className={styles.textContainer} gap={1} item sm={12} md={7}>
                 <Grid display={'flex'} gap={1} >
                     <NotificationsOutlined />
