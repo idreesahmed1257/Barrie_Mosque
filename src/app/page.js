@@ -1,12 +1,10 @@
-import CommunityCard from "@/components/Home/Community/CommunityCard";
-import EventCard from "@/components/Home/Events/EventCard";
-import Events from "@/components/Home/Events/Events";
+import CommunityNews from "@/components/Home/Community/CommunityNews";
+import HomePosts from "@/components/Home/HomePosts";
 import HomeSlider from "@/components/Home/HomeSlider";
 import HomeTitle from "@/components/Home/HomeTitle";
 import NamazTimings from "@/components/Home/NamazTimings";
 import Welcome from "@/components/Home/Welcome";
-import { communities, events, slides, timings } from "@/components/Home/helper";
-import ArrowSlider from "@/components/Shared/Sliders/ArrowSlider/ArrowSlider";
+import { slides, timings } from "@/components/Home/helper";
 import "@fontsource/quicksand";
 
 export default function Home() {
@@ -19,8 +17,10 @@ export default function Home() {
       <Welcome />
       <NamazTimings timings={timings} currentDate={dt} />
       <HomeTitle text={'Community News'} />
-      {/* <CommunityNews communities={comunities} /> */}
-      <ArrowSlider spacing={0} perView={1.3}>
+      <CommunityNews />
+      <HomeTitle text={'Events'} />
+      <HomePosts />
+      {/* <ArrowSlider spacing={0} perView={1.3}>
         {communities.map((com, idx) => (
           <CommunityCard
             key={idx}
@@ -30,8 +30,8 @@ export default function Home() {
             image={com.image}
           />
         ))}
-      </ArrowSlider>
-      <HomeTitle text={'Events'} />
+      </ArrowSlider> */}
+      {/* <HomeTitle text={'Events'} />
       <ArrowSlider spacing={0} perView={3.3}>
         {events.map((com, idx) => (
           <EventCard
@@ -42,8 +42,7 @@ export default function Home() {
             key={idx}
           />
         ))}
-      </ArrowSlider>
-      {/* <Events events={events} /> */}
+      </ArrowSlider> */}
       <br />
     </main>
   );

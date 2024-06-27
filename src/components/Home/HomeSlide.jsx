@@ -1,9 +1,6 @@
-import { Button } from '@mui/material';
-import styles from './home.module.scss';
 import Image from 'next/image';
-import Button2 from '../Shared/Buttons/Button2';
-import Button1 from '../Shared/Buttons/Button1';
 import Button3 from '../Shared/Buttons/Button3';
+import styles from './home.module.scss';
 
 const Slide = ({ src, heading, subheading, btnText }) => (
     <div className={styles.slideContainer}>
@@ -19,7 +16,9 @@ const Slide = ({ src, heading, subheading, btnText }) => (
         <div className={styles.slideOverlay}>
             <h1 className={styles.slideHeading}>{heading}</h1>
             <p className={styles.slideSubheading}>{subheading}</p>
-            <Button3>{btnText}</Button3>
+            {btnText &&
+                <Button3>{btnText}</Button3>
+            }
         </div>
     </div>
 );

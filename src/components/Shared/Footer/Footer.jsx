@@ -1,12 +1,13 @@
 "use client";
-import { Facebook, Instagram, PinDropOutlined, Twitter, WhatsApp } from '@mui/icons-material';
-import { Box, Grid, IconButton } from '@mui/material';
+import { Email, Facebook, Instagram, LocationCity, Phone, PinDropOutlined, Twitter, WhatsApp } from '@mui/icons-material';
+import { Grid, IconButton } from '@mui/material';
 import Image from 'next/image';
 import Link from 'next/link';
 import logo from '../../../assets/images/logos/logo1.png';
 import Button1 from '../Buttons/Button1';
 import styles from './footer.module.scss';
 import { ourServicesItems, quickLinkItems } from './helper';
+import { IoLogoGooglePlaystore } from "react-icons/io5";
 
 const Footer = () => {
     return (
@@ -16,15 +17,21 @@ const Footer = () => {
                     <Image src={logo} alt="Logo" width={250} height={63} />
                 </Link>
                 <Grid item display={'flex'} flexDirection={'column'} alignItems={'flex-start'}>
-                    <p className={styles.infoText} >155 Ferris Lane, <br /> Barrie, Ontario. Canada</p>
-                    <br />
-                    <Link className='row-gap-2' href={'/'}>
-
-                        <IconButton className={styles.icon} size="large">
-                            <PinDropOutlined fontSize="small" />
-                        </IconButton>
-                        <p className={styles.refLink}>Google Map</p>
-
+                    <div className={`row-gap-2 ${styles.refLink}`} >
+                        <LocationCity fontSize="small" />
+                        <p  >155 Ferris Lane, <br /> Barrie, Ontario. Canada</p>
+                    </div>
+                    <div className={`row-gap-2 ${styles.refLink}`} >
+                        <Phone fontSize="small" />
+                        <p>705-999-7176</p>
+                    </div>
+                    <div className={`row-gap-2 ${styles.refLink}`} >
+                        <Email fontSize="small" />
+                        <p><a className={styles.infoText} href="mailto:barriemosque@gmail.com">barriemosque@gmail.com</a></p>
+                    </div>
+                    <Link className={`row-gap-2 ${styles.refLink}`} href={'/'}>
+                        <PinDropOutlined fontSize="small" />
+                        <p >Google Map</p>
                     </Link>
 
                 </Grid>
@@ -52,18 +59,21 @@ const Footer = () => {
                 <br />
                 <Grid xs={12} display={'flex'} flexDirection={'column'} justifyContent={'space-evenly'} >
                     <Grid className='row-gap-2' justifyContent={'center'}>
-                        <IconButton className={styles.icon} size="large">
-                            <Facebook fontSize="small" />
-                        </IconButton>
-                        <IconButton className={styles.icon} size="large">
-                            <Twitter fontSize="small" />
-                        </IconButton>
-                        <IconButton className={styles.icon} size="large">
-                            <Instagram fontSize="small" />
-                        </IconButton>
-                        <IconButton className={styles.icon} size="large">
-                            <WhatsApp fontSize="small" />
-                        </IconButton>
+                        <Link target='_blank' href={'https://www.facebook.com/BarrieMosque'}>
+                            <IconButton className={styles.icon} size="large">
+                                <Facebook fontSize="small" />
+                            </IconButton>
+                        </Link>
+                        <Link target='_blank' href={'https://www.instagram.com/barriemosque/?hl=en'}>
+                            <IconButton className={styles.icon} size="large">
+                                <Instagram fontSize="small" />
+                            </IconButton>
+                        </Link>
+                        <Link target='_blank' href={'https://themasjidapp.org/barrie/download'}>
+                            <IconButton className={styles.icon} size="large">
+                                <IoLogoGooglePlaystore fontSize={'large'} />
+                            </IconButton>
+                        </Link>
                     </Grid>
                     <Button1>Donate Now</Button1>
                 </Grid>

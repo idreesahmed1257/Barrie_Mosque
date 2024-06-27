@@ -1,11 +1,11 @@
 import React from 'react'
 
-const AboutUs = () => {
+const History = () => {
     return (
         <div>
-            pag
+
         </div>
     )
 }
 
-export default AboutUs
+export default History

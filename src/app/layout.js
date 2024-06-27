@@ -2,6 +2,7 @@
 import '../styles/globals.scss';
 import MyThemeProvider from '../components/ThemeProvider';
 import Layout from '@/components/Layout';
+import "@fontsource/quicksand";
 
 
 export default function RootLayout({ children }) {

@@ -99,25 +99,28 @@
 }
 
 .namazTimingsContainer {
-    position: relative;
+    // position: relative;
     background-color: $color-background;
     padding: 16px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    background-image: url('../../assets/images/shared/namaz1.jpg'); // Dummy image URL
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    color: $color-white; // Ensure text is readable against the background
+    background: linear-gradient(180deg, rgba(4, 42, 41, 0.9), rgba(0, 0, 0, 0.7)); // Darker gradient using the specified colors    background-size: cover;
+    // background-position: center;
+    // background-repeat: no-repeat;
+    color: $color-white;
 
-    &:before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: linear-gradient(180deg, rgba(4, 42, 41, 0.9), rgba(0, 0, 0, 0.7)); // Darker gradient using the specified colors
-    }
+
+    // &:before {
+    //     content: '';
+    //     position: absolute;
+    //     top: 0;
+    //     left: 0;
+    //     right: 0;
+    //     bottom: 0;
+    //     // background: linear-gradient(180deg, rgba(4, 42, 41, 0.9), rgba(0, 0, 0, 0.7)); // Darker gradient using the specified colors
+    // }
+
+
+
 }
 
 .date,
@@ -213,6 +216,7 @@
 .title {
     font-size: 2.5rem;
     color: $color-primary;
+    text-align: center;
     margin: 0 20px;
 }
 

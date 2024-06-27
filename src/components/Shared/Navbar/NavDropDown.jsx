@@ -9,7 +9,7 @@ const NavDropDown = ({ width, image, items, buttons }) => {
         <div style={{ width: width }} className={`${styles.dropdown}`}>
             <Grid container>
                 <Grid item md={6} className='col-center'>
-                    <Image src={image} width={290} height={300} />
+                    <Image src={image} width={290} className={styles.image} />
                 </Grid>
                 <Grid py={2} container display={'flex'} flexDirection={'column'} gap={1} justifyContent={'space-evenly'} item md={6}>
                     <div>

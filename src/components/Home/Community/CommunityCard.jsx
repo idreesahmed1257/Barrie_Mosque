@@ -8,9 +8,9 @@ const CommunityCard = ({ name, title, description, image }) => {
             <Grid display={'flex'} flexDirection={'column'} className={styles.textContainer} gap={1} item sm={12} md={7}>
                 <Grid display={'flex'} gap={1} >
                     <NotificationsOutlined />
-                    <p>{title}</p>
+                    <strong>{title}</strong>
                 </Grid>
-                <p>{name}</p>
+                <strong>{name}</strong>
                 <pre className={styles.preWrap}>{description}</pre>
             </Grid>
             <Grid className={styles.imageContainer} item sm={12} md={5}>

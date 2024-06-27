@@ -11,8 +11,13 @@
     z-index: 999;
 }
 
+.image {
+    height: -webkit-fill-available;
+}
+
 .navItems {
     display: flex;
+    align-items: center;
     gap: 2rem;
 }
 

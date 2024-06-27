@@ -1,8 +1,8 @@
 export const aboutUsItems = [
-    { title: 'About Barrie Masjid', subTitle: "See Insights About Barrie Masjid", ref: "/option1" },
-    { title: 'About Islam', subTitle: "Learn the principles of Islam", ref: "/option2" },
-    { title: 'Board of Directors', subTitle: "Meet the leadership team", ref: "/option3" },
-    { title: 'Our Imam', subTitle: "Know more about our Imam", ref: "/option4" },
+    { title: 'About Barrie Masjid', subTitle: "See Insights About Barrie Masjid", ref: "/about" },
+    { title: 'About Islam', subTitle: "Learn the principles of Islam", ref: "/about-islam" },
+    { title: 'Board of Directors', subTitle: "Meet the leadership team", ref: "/our-imam" },
+    { title: 'Our Imam', subTitle: "Know more about our Imam", ref: "/our-imam" },
 ];
 
 export const aboutUsbuttons = [
