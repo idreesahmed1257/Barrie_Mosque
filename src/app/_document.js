@@ -11,6 +11,11 @@ class MyDocument extends Document {
                         href="https://fonts.googleapis.com/css2?family=Sofia+Pro+Soft:wght@400;700&display=swap"
                         rel="stylesheet"
                     />
+
+                    <link rel="preconnect" href="https://fonts.googleapis.com" />
+                    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+                    <link href="https://fonts.googleapis.com/css2?family=Amiri+Quran&display=swap" rel="stylesheet" />
+
                 </Head>
                 <body>
                     {/* <Main /> */}

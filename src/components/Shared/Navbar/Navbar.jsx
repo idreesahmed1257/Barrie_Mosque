@@ -34,8 +34,13 @@ const Navbar = () => {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
+
+  const handleClick = () => {
+    window.open('https://donorchoice.ca/barriemosque', '_blank');
+  };
+
   if (isMobile) {
-    return <NavbarMobile />;
+    return <NavbarMobile handleClick={handleClick} />;
   }
   return (
     <Grid className={styles.navbar} container>
@@ -77,7 +82,7 @@ const Navbar = () => {
               </div>
               <NavDropDown width={'600px'} image={contact1} items={contactUsItems} />
             </div>
-            <Button1 onClick={() => alert('Donate Now clicked!')}>Donate Now</Button1>
+            <Button1 onClick={handleClick}>Donate Now</Button1>
           </div>
         </Grid>
       </Grid>

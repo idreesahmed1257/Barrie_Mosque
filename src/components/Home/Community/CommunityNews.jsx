@@ -54,7 +54,7 @@ const CommunityNews = () => {
     return (
         <iframe
             id="events-frame"
-            src="https://themasjidapp.org/129192/events"
+            src="https://themasjidapp.org/129192/events?&css=.bg-primary%7Bbackground:%23042A29;color:%23F2F2F2;"
             style={{ width: '100%' }}
             frameBorder="0"
             scrolling="no"

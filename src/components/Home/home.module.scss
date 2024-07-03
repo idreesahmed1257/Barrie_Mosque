@@ -34,12 +34,17 @@
         text-align: center;
         padding: 1rem;
         gap: 1rem;
+        max-height: 500px;
+        overflow-y: auto;
 
         .slideHeading {
             text-transform: capitalize;
-            font-size: 3rem;
-            font-weight: 900;
+            // font-size: 3rem;
+            // font-weight: 900;
+            min-height: 60px;
+            margin-bottom: 1rem;
             background: $gradient1;
+            font-family: "Amiri Quran";
             -webkit-background-clip: text;
             color: transparent;
         }

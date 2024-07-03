@@ -5,17 +5,23 @@ import Link from 'next/link';
 import logo from '../../../../assets/images/logos/logo1.png';
 import Image from 'next/image';
 import styles from './navbarMobile.module.scss'; // Create this file for custom styles
+import { aboutUsItems, communityItems, contactUsItems, servicesItems } from '../helper';
 
-const NavbarMobile = () => {
+const NavbarMobile = ({ handleClick }) => {
     const [drawerOpen, setDrawerOpen] = useState(false);
     const [openDropdowns, setOpenDropdowns] = useState({ aboutUs: false, community: false, services: false, contact: false });
 
     const toggleDrawer = (open) => () => {
+        console.log("dd", open)
         setDrawerOpen(open);
     };
 
     const handleToggleDropdown = (key) => () => {
         setOpenDropdowns(prevState => ({ ...prevState, [key]: !prevState[key] }));
+    };
+
+    const handleCloseDrawer = () => {
+        setDrawerOpen(false);
     };
 
     return (
@@ -50,12 +56,11 @@ const NavbarMobile = () => {
                     </ListItem>
                     <Collapse in={openDropdowns.aboutUs} timeout="auto" unmountOnExit>
                         <List component="div" disablePadding>
-                            <ListItem component={Link} className={styles.listItem} href="/about-us/team">
-                                <ListItemText primary="Our Team" />
-                            </ListItem>
-                            <ListItem component={Link} className={styles.listItem} href="/about-us/mission">
-                                <ListItemText primary="Our Mission" />
-                            </ListItem>
+                            {aboutUsItems?.map((item, idx) => (
+                                <ListItem key={idx} component={Link} className={styles.listItem} href={item?.ref} onClick={handleCloseDrawer}>
+                                    <ListItemText primary={item?.title} />
+                                </ListItem>
+                            ))}
                         </List>
                     </Collapse>
 
@@ -65,12 +70,11 @@ const NavbarMobile = () => {
                     </ListItem>
                     <Collapse in={openDropdowns.community} timeout="auto" unmountOnExit>
                         <List component="div" disablePadding>
-                            <ListItem component={Link} className={styles.listItem} href="/community/events">
-                                <ListItemText primary="Events" />
-                            </ListItem>
-                            <ListItem component={Link} className={styles.listItem} href="/community/stories">
-                                <ListItemText primary="Stories" />
-                            </ListItem>
+                            {communityItems?.map((item, idx) => (
+                                <ListItem key={idx} component={Link} className={styles.listItem} href={item?.ref} onClick={handleCloseDrawer}>
+                                    <ListItemText primary={item?.title} />
+                                </ListItem>
+                            ))}
                         </List>
                     </Collapse>
 
@@ -80,12 +84,11 @@ const NavbarMobile = () => {
                     </ListItem>
                     <Collapse in={openDropdowns.services} timeout="auto" unmountOnExit>
                         <List component="div" disablePadding>
-                            <ListItem component={Link} className={styles.listItem} href="/services/consulting">
-                                <ListItemText primary="Consulting" />
-                            </ListItem>
-                            <ListItem component={Link} className={styles.listItem} href="/services/support">
-                                <ListItemText primary="Support" />
-                            </ListItem>
+                            {servicesItems?.map((item, idx) => (
+                                <ListItem key={idx} component={Link} className={styles.listItem} href={item?.ref} onClick={handleCloseDrawer}>
+                                    <ListItemText primary={item?.title} />
+                                </ListItem>
+                            ))}
                         </List>
                     </Collapse>
 
@@ -95,16 +98,15 @@ const NavbarMobile = () => {
                     </ListItem>
                     <Collapse in={openDropdowns.contact} timeout="auto" unmountOnExit>
                         <List component="div" disablePadding>
-                            <ListItem component={Link} className={styles.listItem} href="/contact/locations">
-                                <ListItemText primary="Locations" />
-                            </ListItem>
-                            <ListItem component={Link} className={styles.listItem} href="/contact/form">
-                                <ListItemText primary="Contact Form" />
-                            </ListItem>
+                            {contactUsItems?.map((item, idx) => (
+                                <ListItem key={idx} component={Link} className={styles.listItem} href={item?.ref} onClick={handleCloseDrawer}>
+                                    <ListItemText primary={item?.title} />
+                                </ListItem>
+                            ))}
                         </List>
                     </Collapse>
 
-                    <ListItem component="" onClick={() => alert('Donate Now clicked!')}>
+                    <ListItem component="" onClick={handleClick}>
                         <ListItemText primary="Donate Now" />
                     </ListItem>
                 </List>

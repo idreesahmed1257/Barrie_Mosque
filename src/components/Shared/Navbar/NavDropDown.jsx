@@ -22,7 +22,9 @@ const NavDropDown = ({ width, image, items, buttons }) => {
                     </div>
                     <div className='row-around'>
                         {buttons?.length && buttons?.map((btn, idx) => (
-                            <Button2 key={idx} onClick={btn?.onClick}>{btn?.label}</Button2>
+                            <Link key={idx} href={btn?.link}>
+                                <Button2 >{btn?.label}</Button2>
+                            </Link>
                         ))}
                     </div>
                 </Grid>

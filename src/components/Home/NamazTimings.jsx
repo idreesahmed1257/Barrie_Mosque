@@ -43,7 +43,7 @@ const NamazTimings = ({ timings, currentDate }) => {
         <div style={{ height: '600px' }}>
             <iframe
                 id="prayers-frame"
-                src="https://themasjidapp.org/129192/prayers"
+                src="https://themasjidapp.org/129192/prayers?&css=.bg-primary%7Bbackground:%23042A29;color:%23F2F2F2"
                 style={{
                     width: '98%',
                     border: '2px solid #ccc',

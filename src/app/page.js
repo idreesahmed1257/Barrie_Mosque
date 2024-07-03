@@ -5,6 +5,7 @@ import HomeTitle from "@/components/Home/HomeTitle";
 import NamazTimings from "@/components/Home/NamazTimings";
 import Welcome from "@/components/Home/Welcome";
 import { slides, timings } from "@/components/Home/helper";
+import DonationsFrame from "@/components/Shared/DonationsFrame";
 import "@fontsource/quicksand";
 
 export default function Home() {
@@ -43,6 +44,9 @@ export default function Home() {
           />
         ))}
       </ArrowSlider> */}
+      <br />
+      <HomeTitle text={'Donations'} />
+      <DonationsFrame />
       <br />
     </main>
   );
