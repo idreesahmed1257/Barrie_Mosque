@@ -1,0 +1,69 @@
+@import './colors.scss';
+
+body {
+  font-family: "Quicksand";
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  p,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  pre {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.row-start {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.row-center {
+  display: flex;
+  justify-content: center;
+}
+
+.row-around {
+  display: flex;
+  justify-content: space-around;
+}
+
+.row-evenly {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.row-between {
+  display: flex;
+  justify-content: space-between;
+}
+
+.row-end {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.col-center {
+  display: flex;
+  align-items: center;
+}
+
+.row-gap-1 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 5px;
+}
+
+.row-gap-2 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}

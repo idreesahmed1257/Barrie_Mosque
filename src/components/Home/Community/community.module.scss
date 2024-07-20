@@ -1,0 +1,75 @@
+@import '../../../styles/colors.scss';
+
+.cardContainer {
+    padding: 1rem;
+    border-radius: 10px;
+    border: 1px solid $color-primary;
+    background-color: $color-background !important;
+    color: $color-text-secondary;
+}
+
+.textContainer {
+    white-space: normal;
+    overflow-wrap: break-word;
+    /* Modern property */
+    word-wrap: break-word;
+    height: 300px;
+    overflow-y: auto;
+
+    &::-webkit-scrollbar {
+        width: 0px;
+        /* Width of the scrollbar */
+    }
+
+    &::-webkit-scrollbar-track {
+        background: #f1f1f1;
+        /* Track color */
+        border-radius: 10px;
+        /* Rounded borders for the track */
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: #888;
+        /* Scrollbar color */
+        border-radius: 10px;
+        /* Rounded borders for the thumb */
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+        background: #555;
+        /* Scrollbar color on hover */
+    }
+}
+
+.preWrap {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    font-family: "Quicksand";
+}
+
+.imageContainer {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: flex-end;
+    border-radius: 20px;
+    width: 100%;
+}
+
+.imagebg {
+    width: 100%;
+    position: absolute;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 20px;
+    filter: blur(10px);
+    object-position: center;
+}
+
+.image {
+    width: 100%;
+    z-index: 1;
+    height: 300px;
+    object-fit: contain;
+    border-radius: 10px;
+}

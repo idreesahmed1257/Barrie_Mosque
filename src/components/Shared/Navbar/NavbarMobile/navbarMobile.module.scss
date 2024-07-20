@@ -1,0 +1,51 @@
+@import '../../../../styles/colors.scss';
+
+.appBar {
+    background-color: $color-primary; // Customize the app bar color
+    color: $color-white; // Customize the text color
+    width: 100%;
+}
+
+.logoContainer {
+    margin-left: auto;
+    text-align: center;
+}
+
+.drawerHeader {
+    display: flex;
+    align-items: center;
+    padding: 16px;
+    justify-content: flex-end;
+    background-color: $color-primary;
+    color: $color-white !important;
+}
+
+.drawer {
+    background-color: $color-text-primary !important;
+}
+
+.close {
+    color: $color-white !important;
+}
+
+.drawerList {
+    width: 100vw;
+    height: 100vh;
+    overflow-y: auto;
+    background-color: $color-primary;
+    color: $color-white;
+    padding: 20px;
+}
+
+.drawerList a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.collapseItem {
+    padding-left: 30px;
+}
+
+.listItem {
+    margin-left: 10px;
+}
