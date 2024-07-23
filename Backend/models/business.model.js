@@ -5,19 +5,19 @@ import mongoose from 'mongoose';
 const BusinessSchema = new mongoose.Schema({
     name: {
         type: String,
-        required: true,
+        required: false,
     },
-    address: {
+    details: {
         type: String,
-        required: true,
+        required: false,
     },
     phone: {
         type: String,
-        required: true,
+        required: false,
     },
     email: {
         type: String,
-        required: true,
+        required: false,
         unique: true,
     },
     website: {

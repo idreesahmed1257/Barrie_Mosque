@@ -6,36 +6,48 @@ import InputField from '../Shared/Forms/InputField';
 import styles from '../Shared/InfoBox/info.module.scss';
 import { YupBusinessSchema, formBusinessSchema } from './helper';
 import Button4 from '../Shared/Buttons/Button4';
+import axios from 'axios';
+import toast from 'react-hot-toast';
 
-const AddBusiness = ({ text, }) => {
+const AddBusiness = ({ text, setBusinesses }) => {
     let businessSchema = object(YupBusinessSchema);
-    const { control, handleSubmit, formState: { errors, isValid } } = useForm(formBusinessSchema(businessSchema))
+    const { control, handleSubmit, reset, formState: { errors, isValid } } = useForm(formBusinessSchema(businessSchema))
 
-    const handleLoginSubmit = (payload) => {
-        console.log("payload", payload)
+    const handleBusinessSubmit = async (payload) => {
+        try {
+            const resp = await axios.post('/api/business/add-business', payload);
+            console.log("resp", resp)
+            setBusinesses(prevState => [
+                ...prevState,
+                resp?.data?.data
+            ]);
+            toast.success("Business Added Sucessfully")
+            reset()
+
+        } catch (err) {
+            console.log("err", err)
+        }
     };
     return (
         <Grid px={2} container className={styles.infoBox} justifyContent={'center'} spacing={2}>
-
             <Grid className={styles.formContainer} display={'flex'} flexDirection={'column'} alignItems={'flex-start'} justifyContent={'flex-start'} container spacing={2} px={4} xs={6}>
                 <br />
                 <Card elevation={3} className={styles.contactCard}>
-
                     <Grid textAlign={'center'}>
                         {text}
                     </Grid>
                     <br />
-                    <form onSubmit={handleSubmit(handleLoginSubmit)}>
+                    <form onSubmit={handleSubmit(handleBusinessSubmit)}>
                         <Grid container spacing={2}>
                             <Grid item xs={12} md={6}>
                                 <InputField
                                     control={control}
                                     errors={errors}
-                                    name={"businessName"}
+                                    name={"name"}
                                     placeHolder={"Enter Business Name"}
                                     label={"Business Name"}
                                     type={"text"}
-                                    errorName={errors?.businessName}
+                                    errorName={errors?.name}
                                 />
                             </Grid>
                             <Grid item xs={12} md={6}>
@@ -60,15 +72,26 @@ const AddBusiness = ({ text, }) => {
                                     errorName={errors?.phone}
                                 />
                             </Grid>
+                            <Grid item xs={12} md={6}>
+                                <InputField
+                                    control={control}
+                                    errors={errors}
+                                    name={"website"}
+                                    placeHolder={"Enter Website"}
+                                    label={"Website"}
+                                    type={"text"}
+                                    errorName={errors?.website}
+                                />
+                            </Grid>
                             <Grid item xs={12}>
                                 <InputField
                                     control={control}
                                     errors={errors}
-                                    name={"description"}
-                                    placeHolder={"Enter Description"}
-                                    label={"Description"}
+                                    name={"details"}
+                                    placeHolder={"Enter Details"}
+                                    label={"Details"}
                                     type={"text"}
-                                    errorName={errors?.description}
+                                    errorName={errors?.details}
                                     multiline={true}
                                     rows={5}
                                 />

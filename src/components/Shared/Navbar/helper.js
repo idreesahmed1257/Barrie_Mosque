@@ -29,8 +29,8 @@ export const servicesItems = [
 
 export const contactUsItems = [
     { title: 'General Inquiries', subTitle: "Contact us for any general information", ref: "/contact" },
-    { title: 'Social Media', subTitle: "Connect with us on social platforms", ref: "/option2" },
-    { title: 'The Masjid App', subTitle: "Download our official Masjid app", ref: "/option3" },
-    { title: 'Suggest An Event', subTitle: "Propose events to be held at the Masjid", ref: "/option4" },
+    { title: 'Social Media', subTitle: "Connect with us on social platforms", ref: "/social-media" },
+    { title: 'The Masjid App', subTitle: "Download our official Masjid app", ref: "/masjid-app" },
+    { title: 'Suggest An Event', subTitle: "Propose events to be held at the Masjid", ref: "/suggest-event" },
     { title: 'Business Directory', subTitle: "Discover and Connect with Local Muslim Businesses", ref: "/business-directory" },
 ];

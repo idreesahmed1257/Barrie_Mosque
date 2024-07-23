@@ -8,6 +8,7 @@ export const createBusinessService = async (data) => {
         const business = await businessModel.create(data)
         return business;
     } catch (error) {
+        console.log("err", error.message)
         return false
     }
 };

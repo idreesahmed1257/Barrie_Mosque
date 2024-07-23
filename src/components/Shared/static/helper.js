@@ -314,16 +314,13 @@ export const content = {
     },
     "contact": {
         "address": [
-            `Mailing Address: PO Box 1459. Barrie, ON L4M 5R4
-Address
-155 Ferris Lane
-Barrie, Ontario
-L4M 1Z3`,
-            `Phone: 705-999-7176
-`,
-            `Email: barriemosque@gmail.com
-`
+            `Mailing Address: PO Box 1459. Barrie, ON L4M 5R4 Address 155 Ferris Lane Barrie, Ontario L4M 1Z3`,
+            `Phone: 705-999-7176`,
+            `Email: barriemosque@gmail.com`
         ]
+    },
+    "suggest": {
+        "info": "Seeking to host a meaningful event at our mosque? Have a great idea you want to share? Look no further! Our event form is your gateway to creating impactful gatherings that resonate with our community's values and beliefs. Whether it's a Ramadan iftar, a Quran recitation night, or a special lecture series, let's collaborate to make it memorable. Complete the form below and embark on a journey to enriching experiences within our mosque."
     }
 
 } 

@@ -5,6 +5,7 @@ import { createBusinessService, getBusinessesService } from "../services/busines
 export const createBusiness = async (req) => {
     try {
         const body = await req.json();
+        console.log("body", body)
         const business = await createBusinessService(body);
         if (business) {
             return business
@@ -13,6 +14,7 @@ export const createBusiness = async (req) => {
             throw new Error("Error In Creating Business");
         }
     } catch (error) {
+        console.log("err", error.message)
         throw new Error(error.message)
     }
 };
