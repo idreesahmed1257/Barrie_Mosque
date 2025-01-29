@@ -201,6 +201,17 @@ export const content = {
             "Are you passionate about making a positive impact in the lives of children and the community? Consider becoming a teacher at Barrie Mosque Sunday School! As a volunteer teacher, you'll have the opportunity to share your knowledge and love for Islam with young learners, helping them develop a strong understanding of their faith and build a solid moral foundation.",
             "Whether you have teaching experience or are eager to learn, we welcome individuals who are dedicated, compassionate, and enthusiastic about Islamic education. Our supportive community offers resources and training to help you succeed in your teaching role."
         ],
+        teacherResponsibilities: [
+            "Deliver engaging lessons on Quranic studies, Hadith, and Fiqh while fostering a respectful and spiritual learning environment.",
+            "Plan and execute lessons, assess student progress, and provide guidance to enhance their understanding of Islamic teachings.",
+            "Serve as a role model by demonstrating strong character, commitment, and dedication to students' faith and educational growth."
+        ],
+        assistantTeacherResponsibilities: [
+            "Assist the lead teacher with lesson delivery, classroom management, and student engagement.",
+            "Provide individual support to students to ensure they receive the attention they need.",
+            "Help create a nurturing and positive atmosphere for students and the teaching team."
+        ],
+
         difference: [
             "Join our team of educators and contribute to shaping the future generation of leaders in our community. Together, we can inspire and empower our students to grow spiritually, academically, and socially, fostering a lifelong love for learning and a deep connection to their faith.",
             "By volunteering your time and skills, you will make a lasting difference, not only in the lives of the children you teach but also in the broader community. Become a part of our mission to nurture and develop well-rounded individuals who are prepared to lead and serve."
@@ -214,29 +225,65 @@ export const content = {
         "benefits": [
             {
                 "title": "Building Character",
-                "content": "Sports help instill values such as perseverance, teamwork, and fair play in students."
+                "content": ""
             },
             {
                 "title": "Physical Fitness",
-                "content": "Engaging in regular physical activity boosts overall health and fitness levels."
+                "content": ""
             },
             {
                 "title": "Social Skills",
-                "content": "Participating in team sports fosters camaraderie and enhances social interactions among students."
+                "content": ""
             },
             {
                 "title": "Stress Relief",
-                "content": "Physical activity helps reduce stress and improve mental well-being."
+                "content": ""
             },
             {
                 "title": "Fun and Enjoyment",
-                "content": "Our sports programs provide a fun and engaging way for students to stay active and enjoy themselves."
+                "content": ""
             }
         ],
         "balancedLifestyle": [
             "Balancing academics with physical activity is crucial for the overall well-being of our students. Engaging in sports helps reduce stress, improve concentration, and boost overall mood. By promoting a balanced lifestyle, we aim to support our students in achieving their best both inside and outside the classroom.",
             "We invite all students to join our sports programs and take advantage of the numerous benefits they offer. Whether you are looking to improve your physical fitness, make new friends, or simply have fun, our sports activities provide the perfect opportunity. Get involved and experience the joy and excitement of sports at Barrie Mosque Sunday School!"
         ]
+    },
+    "activities": {
+        communityCelebrations: [
+            {
+                "title": "Annual BBQ",
+                "content": ""
+            },
+            {
+                "title": "Annual Family Fun Day",
+                "content": ""
+            },
+            {
+                "title": "Ramadan",
+                "content": ""
+            }
+        ],
+        barBQ: "Our Annual Community BBQ, a fun-filled event with bouncy castles, games, vendors, and an opportunity to connect with the community. It’s a perfect day for families and friends to come together and enjoy delicious food, entertainment, and great company!",
+        funDay: "Our Annual Family Fun Fest takes place at an indoor playcenter, offering a day of fun for the whole family. With food, activities, and plenty of entertainment, it’s an excellent opportunity to bond with your loved ones in a safe and exciting environment.",
+        ramadan: "During Ramadan, we host Iftars at the masjid, where community members gather to break their fast and enjoy a meal together (Note: not every day). We also offer Taraweeh prayers, where the entire Quran is completed throughout the month. Additionally, brothers can participate in Itikaf during the last 10 nights of Ramadan, with a dedicated program to enhance their spiritual experience.",
+        "youthEngagement": [
+            {
+                "title": "Friday Night Basketball",
+                "content": ""
+            },
+            {
+                "title": "Community & Growth",
+                "content": ""
+            },
+            {
+                "title": "Winter Youth Retreat",
+                "content": ""
+            }
+        ],
+        fridayNight: "Our Friday Night Basketball program is a year-round activity for the Muslim youth, providing a fun and healthy way to stay active and connect with others. In the summer, we also host soccer on Friday nights, offering more options for the youth to engage in physical activity and community building.",
+        intro: "Our mosque hosts a wide variety of activities and events to foster community, learning, and spiritual growth. From family-friendly gatherings to youth programs, we aim to create meaningful experiences for all members of our community.",
+        winterYouth: "Our Winter Youth Retreat, held during the winter break, is an exciting and educational experience for both sisters and brothers. With indoor activities, games, challenges, and educational lessons, it’s a great opportunity to bond with peers while learning and growing spiritually.der activities and events "
     },
     "marriage": {
         licensed: [
@@ -321,6 +368,47 @@ export const content = {
     },
     "suggest": {
         "info": "Seeking to host a meaningful event at our mosque? Have a great idea you want to share? Look no further! Our event form is your gateway to creating impactful gatherings that resonate with our community's values and beliefs. Whether it's a Ramadan iftar, a Quran recitation night, or a special lecture series, let's collaborate to make it memorable. Complete the form below and embark on a journey to enriching experiences within our mosque."
+    },
+    "arabicSchool": {
+        about: [
+            "Our Arabic language program is tailored for both Arabic and non-Arabic speaking children who wish to learn or improve their Arabic language skills, whether starting from scratch or enhancing existing knowledge.",
+            "The program operates from September to June on Thursdays, from 6:30 PM to 8:30 PM.",
+            "This volunteer-driven initiative is designed for children aged 6 and above."
+        ],
+        topics: [
+            {
+                title: "Curriculum Overview",
+                content: "Our curriculum is based on the highly respected AlefBee system, which is recognized for its comprehensive approach to teaching Arabic. The program covers all the essential language skills, including reading, writing, speaking, and listening. "
+            },
+            {
+                title: "Teaching Style",
+                content: "The program is delivered in-person, providing a rich and interactive learning environment. In addition to classroom instruction, students will have access to an online platform that allows them to practice and reinforce their language skills outside of class. This blended approach ensures that students can progress at their own pace while receiving the support they need from the teachers, plus giving the opportunity to the teachers to see the day to day activities and progress."
+            },
+
+        ],
+        goals: "Our goals encompass various aspects of Islamic education, including understanding fundamental beliefs, living Islam in daily life, and fostering an Islamic personality. Through a combination of theoretical knowledge and practical application, we aim to nurture confident individuals with a clear sense of purpose and identity"
+    },
+    "islamicCounseling": {
+        about: "At Noor Ul Islam Mosque, we understand that life’s journey can sometimes bring challenges that require a helping hand. Our Islamic Counseling Services are designed to provide support rooted in Islamic principles, compassion, and confidentiality.",
+        offers: [
+            {
+                title: "Personal Counseling",
+                content: "Struggling with stress, anxiety, or personal challenges? Our counselors are here to offer faith-based support to help you find clarity and strength."
+            },
+            {
+                title: "Family & Marital Counseling",
+                content: "Marriage and family are the foundation of our community. We provide guidance to couples and families to resolve conflicts, strengthen relationships, and promote understanding."
+            },
+            {
+                title: "Youth Counseling",
+                content: "The pressures faced by youth today are immense. Our counselors help young people navigate academic, social, and spiritual challenges while staying true to their Islamic identity."
+            },
+            {
+                title: "Convert Support",
+                content: "New to Islam? We offer tailored counseling to help converts transition into their new faith journey and build a sense of belonging within the community."
+            },
+        ]
     }
+
 
 } 

@@ -68,9 +68,6 @@ const HomeSlider = ({ slides }) => {
 
     return (
         <div className={styles.sliderContainer}>
-
-            {console.log("slides?.[0]?.src", slides?.[0]?.src)}
-            {console.log("todayTarjumah", verse)}
             <div ref={sliderRef} className="keen-slider">
                 <Slide src={slides?.[0]?.src} heading={verse?.aayah} subheading={verse?.translation} surahName={`[${verse?.surahNum}:${verse?.aayahNum}] ${verse?.surah}`} btnText={""} />
                 {slides.map((slide, index) => (

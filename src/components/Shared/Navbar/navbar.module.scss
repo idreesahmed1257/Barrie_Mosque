@@ -1,10 +1,9 @@
-/* src/components/Navbar.module.scss */
 @import '../../../styles/colors.scss';
 
 .navbar {
     padding: 1rem 2rem;
-    background-color: $color-primary;
-    color: $color-background;
+    background-color: $color-primary; // Navbar background
+    color: $color-background; // Text color
     height: 120px;
     position: sticky;
     top: 0;
@@ -24,6 +23,7 @@
 .navItem {
     position: relative;
 
+    // Show dropdown on hover
     &:hover .dropdown {
         display: block;
     }
@@ -34,6 +34,7 @@
     display: flex;
     align-items: center;
     font-weight: 700;
+    color: $color-background; // Link text color
 
     .arrow {
         transition: transform 0.3s ease;
@@ -50,31 +51,74 @@
     top: 100%;
     z-index: 999;
     right: 0;
-    background-color: $color-background;
-    color: $color-text-primary;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: $color-background; // Dropdown background
+    color: $color-text-primary; // Dropdown text
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 48px;
     border-radius: 4px;
-    overflow: hidden;
-}
 
-.dropdownLink {
-    display: block;
-    padding: 0.5rem 1rem;
-    text-decoration: none;
-    color: $color-text-primary;
+    .dropdownItem {
+        position: relative;
 
-    p:nth-of-type(1) {
-        font-weight: bold;
-        font-size: 1rem;
+        &:hover .subMenu {
+            display: block;
+        }
     }
 
-    p:nth-of-type(2) {
-        font-weight: 500;
-        font-size: 0.75rem;
-    }
-}
+    .dropdownLink {
+        display: block;
+        padding: 0.5rem 1rem;
+        text-decoration: none;
+        color: $color-text-primary; // Link text color
 
-.dropdownLink:hover {
-    background-color: $color-secondary;
-    color: $color-background;
+        p:nth-of-type(1) {
+            font-weight: bold;
+            font-size: 1rem;
+        }
+
+        p:nth-of-type(2) {
+            font-weight: 500;
+            font-size: 0.75rem;
+        }
+
+        &:hover {
+            background-color: $color-secondary; // Hover background
+            color: $color-white; // Hover text
+        }
+    }
+
+    .subMenu {
+        display: none;
+        position: absolute;
+        top: 0;
+        left: 100%;
+        background-color: $color-background; // Submenu background
+        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+        border-radius: 4px;
+        min-width: 300px;
+
+
+
+        .subMenuLink {
+            display: block;
+            padding: 0.5rem 1rem;
+            text-decoration: none;
+            color: $color-text-primary;
+
+            p:nth-of-type(1) {
+                font-weight: bold;
+                font-size: 1rem;
+            }
+
+            p:nth-of-type(2) {
+                font-weight: 500;
+                font-size: 0.75rem;
+            }
+
+
+            &:hover {
+                background-color: $color-secondary; // Hover background
+                color: $color-white; // Hover text
+            }
+        }
+    }
 }

@@ -73,10 +73,11 @@ export default function Home() {
     <main>
       <Slide src={hero3} heading={verse?.aayah} subheading={verse?.translation} surahName={`${verse?.aayahNum} : ${verse?.surah}`} />
       <Welcome />
+      <HomeTitle text={'Prayer Timings'} />
       <NamazTimings />
-      <HomeTitle text={'Community News'} />
-      <CommunityNews />
       <HomeTitle text={'Events'} />
+      <CommunityNews />
+      <HomeTitle text={'Community News'} />
       <HomePosts />
       {/* <ArrowSlider spacing={0} perView={1.3}>
         {communities.map((com, idx) => (

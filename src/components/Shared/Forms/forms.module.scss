@@ -1,12 +1,8 @@
-@import '../../shared/css/colors.scss';
+@import '../../../styles/colors.scss';
 
-.searchBox {
-    border-radius: 10px !important;
-    background-color: $white-main !important;
-    min-width: 200px !important;
-    width: 100%;
-    padding: 10px !important;
-    margin: 0 !important;
+.estaric {
+    color: red;
+    font-weight: bolder;
 }
 
 .customTextField {
@@ -17,9 +13,4 @@
     .textField {
         border-radius: 50px;
     }
-}
-
-.estaric {
-    color: $error-main;
-    font-weight: bolder;
 }

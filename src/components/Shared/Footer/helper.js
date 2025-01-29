@@ -8,6 +8,5 @@ export const ourServicesItems = [
     { link: '/marriage', label: 'Marriage' },
     { link: '/funeral', label: 'Funeral' },
     { link: '/sunday-school', label: 'Sunday School' },
-    { link: '/soni', label: 'SONI' },
 ]
 

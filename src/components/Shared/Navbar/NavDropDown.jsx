@@ -1,36 +1,39 @@
-import { Grid } from '@mui/material';
-import styles from './navbar.module.scss';
-import Link from 'next/link';
-import Image from 'next/image';
-import Button2 from '../Buttons/Button2';
+import { Grid } from "@mui/material";
+import styles from "./navbar.module.scss";
+import Link from "next/link";
+import Image from "next/image";
+import Button2 from "../Buttons/Button2";
 
-const NavDropDown = ({ width, image, items, buttons }) => {
+const NavDropDown = ({ width, image, items }) => {
     return (
         <div style={{ width: width }} className={`${styles.dropdown}`}>
             <Grid container>
-                <Grid item md={6} className='col-center'>
+                <Grid item md={6} className="col-center">
                     <Image src={image} width={290} className={styles.image} />
                 </Grid>
-                <Grid py={2} container display={'flex'} flexDirection={'column'} gap={1} justifyContent={'space-evenly'} item md={6}>
-                    <div>
-                        {items?.map((item, idx) => (
-                            <Link key={idx} href={item?.ref} className={styles.dropdownLink}>
+                <Grid py={2} container display="flex" flexDirection="column" gap={1} justifyContent="space-evenly" item md={6}>
+                    {items?.map((item, idx) => (
+                        <div key={idx} className={styles.dropdownItem}>
+                            <Link href={item?.ref} className={styles.dropdownLink}>
                                 <p>{item?.title}</p>
                                 <p>{item?.subTitle}</p>
                             </Link>
-                        ))}
-                    </div>
-                    <div className='row-around'>
-                        {buttons?.length && buttons?.map((btn, idx) => (
-                            <Link key={idx} href={btn?.link}>
-                                <Button2 >{btn?.label}</Button2>
-                            </Link>
-                        ))}
-                    </div>
+                            {item?.subMenu && item.subMenu.length > 0 && (
+                                <div className={styles.subMenu}>
+                                    {item.subMenu.map((subItem, subIdx) => (
+                                        <Link key={subIdx} href={subItem?.ref} className={styles.subMenuLink}>
+                                            <p>{subItem?.title}</p>
+                                            <p>{subItem?.subTitle}</p>
+                                        </Link>
+                                    ))}
+                                </div>
+                            )}
+                        </div>
+                    ))}
                 </Grid>
             </Grid>
         </div>
-    )
-}
+    );
+};
 
-export default NavDropDown
+export default NavDropDown;

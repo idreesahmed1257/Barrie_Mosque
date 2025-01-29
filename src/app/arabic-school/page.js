@@ -9,38 +9,30 @@ import { content } from '@/components/Shared/static/helper';
 import "@fontsource/quicksand";
 import styles from '../../styles/shared.module.scss';
 import Link from 'next/link';
-import SundaySchoolForm from './SundaySchoolForm';
-const SundaySchool = () => {
+import ContactUsForm from '@/components/Shared/ContactUs/ContactUsForm';
+const ArabicSchool = () => {
     return (
         <main>
-            <Slide src={sun2} heading={"Sunday School"} subheading={"Learning your faith is a long journey that is best taken on a consistent basis."} />
+            <Slide src={sun2} heading={"Arabic School"} subheading={"Mastering the Arabic language unlocks a deeper connection to your faith and heritage."} />
             <br />
-            <HomeTitle text={'About Sunday School'} />
+            <HomeTitle text={'About Arabic School'} />
             <InfoBox
                 src={sun1}
                 title={""}
                 text={""}
-                points={content.sundaySchool.about}
-                flexDirection={"row-reverse"}
-            />
-            <HomeTitle text={'Topics'} />
-            <Mission content={content.sundaySchool.topics} />
-            <br />
-            <br />
-            <HomeTitle text={`Our Goals`} />
-            <InfoBox
-                src={sun3}
-                title={""}
-                text={content.sundaySchool.goals}
+                points={content.arabicSchool.about}
                 flexDirection={"row"}
             />
+            <HomeTitle text={'Program Structure and Learning Approach'} />
+            <Mission content={content.arabicSchool.topics} />
             <br />
+            <HomeTitle text={'Register Here'} />
             <br />
-            <SundaySchoolForm text={"Register Now"} />
+            <ContactUsForm showMap={false} text={"Feel free to ask any questions you have. Your message will remain confidential and be shared only with the Imam."} />
             <br />
-            <br />
+
         </main>
     )
 }
 
-export default SundaySchool
+export default ArabicSchool

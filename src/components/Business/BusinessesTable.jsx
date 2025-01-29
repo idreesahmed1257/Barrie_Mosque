@@ -13,7 +13,7 @@ export default function BusinessesTable({ businesses }) {
             headerName: 'Website',
             flex: 1,
             renderCell: (params) => (
-                <Link style={{ color: '#042A29' }} href={params.value} target="_blank" rel="noopener" color="inherit">
+                <Link style={{ color: '#042A29' }} href={params.value || "#"} target="_blank" rel="noopener" color="inherit">
                     {params.value}
                 </Link>
             ),

@@ -1,19 +1,16 @@
-import { FormControl, FormHelperText } from '@mui/material';
+import { FormControl, FormHelperText, Typography } from '@mui/material';
 import InputAdornment from '@mui/material/InputAdornment';
 import TextField from '@mui/material/TextField';
 import { Controller } from 'react-hook-form';
-import text from '../css/text.module.scss';
 import forms from './forms.module.scss';
-import { inputTextFieldStyles } from './helper';
 
-const CustomTextField = ({ control, errors, name, type, label, icon: IconComponent, required, placeHolder }) => {
-
+const CustomTextField = ({ control, errors, name, label, required, placeHolder }) => {
     return (
         <div className={forms.customTextField}>
             {label && (
-                <label className={`${text.formLabel} ${forms.label}`}>
+                <Typography fontWeight={300}>
                     {label}{required && <span className={forms.estaric}>*</span>}
-                </label>
+                </Typography>
             )}
             <Controller
                 name={name}
@@ -26,16 +23,9 @@ const CustomTextField = ({ control, errors, name, type, label, icon: IconCompone
                         <TextField
                             type={'text'}
                             variant="outlined"
+                            size='small'
                             {...field}
                             placeholder={placeHolder}
-                            InputProps={{
-                                startAdornment: IconComponent && (
-                                    <InputAdornment position="start">
-                                        <IconComponent />
-                                    </InputAdornment>
-                                ),
-                                style: inputTextFieldStyles
-                            }}
                             fullWidth
                         />
                         <FormHelperText>

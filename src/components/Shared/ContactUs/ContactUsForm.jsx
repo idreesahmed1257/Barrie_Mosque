@@ -27,7 +27,7 @@ const ContactUsForm = ({ text, }) => {
                     <br />
                     <form onSubmit={handleSubmit(handleLoginSubmit)}>
                         <Grid container spacing={2}>
-                            <Grid item xs={12} md={6}>
+                            <Grid item xs={12} md={12}>
                                 <InputField
                                     control={control}
                                     errors={errors}
@@ -47,6 +47,17 @@ const ContactUsForm = ({ text, }) => {
                                     label={"Email"}
                                     type={"email"}
                                     errorName={errors?.email}
+                                />
+                            </Grid>
+                            <Grid item xs={12} md={6}>
+                                <InputField
+                                    control={control}
+                                    errors={errors}
+                                    name={"phone"}
+                                    placeHolder={"Phone Number"}
+                                    label={"Phone Number"}
+                                    type={"text"}
+                                    errorName={errors?.name}
                                 />
                             </Grid>
                             <Grid item xs={12}>

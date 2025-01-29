@@ -1,6 +1,6 @@
 // backend/services/businessService.js
 
-import businessModel from "../models/business.model";
+import businessModel from "../models/business.model.js";
 
 
 export const createBusinessService = async (data) => {

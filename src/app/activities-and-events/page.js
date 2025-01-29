@@ -10,28 +10,62 @@ import "@fontsource/quicksand";
 const ActivitiesEvents = () => {
     return (
         <main>
-            <Slide src={islam2} heading={"Sports"} subheading={"A world of active fun"} />
+            <Slide src={islam2} heading={"Activities & Events"} subheading={"Discover a World of Fun and Memorable Experiences"} />
             <br />
-            <HomeTitle text={'Physical Health and Teamwork'} />
+            <HomeTitle text={'Community Celebrations'} />
+            <Mission content={content.activities.communityCelebrations} />
+            <br />
             <InfoBox
                 src={islam1}
-                title={""}
-                text={""}
-                points={content.sports.intro}
+                title={"Annual BBQ"}
+                text={content.activities.barBQ}
                 flexDirection={"row-reverse"}
             />
-            <HomeTitle text={'Sports Program Benefits'} />
-            <Mission content={content.sports.benefits} />
             <br />
-            <br />
-            <HomeTitle text={`Encouraging a Balanced Lifestyle`} />
             <InfoBox
-                src={islam3}
-                title={""}
-                points={content.sports.balancedLifestyle}
+                src={islam1}
+                title={"Annual Family Fun Day"}
+                text={content.activities.funDay}
                 flexDirection={"row"}
             />
             <br />
+            <InfoBox
+                src={islam1}
+                title={"Ramadan"}
+                text={content.activities.barBQ}
+                flexDirection={"row-reverse"}
+            />
+            <HomeTitle text={'Community Celebrations'} />
+            <InfoBox
+                src={islam1}
+                title={""}
+                text={content.activities.ramadan}
+                flexDirection={"row-reverse"}
+            />
+            <br />
+            <HomeTitle text={'Youth Engagement & Activities'} />
+            <Mission content={content.activities.youthEngagement} />
+            <br />
+            <InfoBox
+                src={islam1}
+                title={"Friday Night Basketball"}
+                text={content.activities.fridayNight}
+                flexDirection={"row-reverse"}
+            />
+            <br />
+            <InfoBox
+                src={islam1}
+                title={"Community & Growth"}
+                text={content.activities.intro}
+                flexDirection={"row"}
+            />
+            <br />
+            <InfoBox
+                src={islam1}
+                title={"Winter Youth Retreat"}
+                text={content.activities.winterYouth}
+                flexDirection={"row-reverse"}
+            />
             <br />
         </main>
     )

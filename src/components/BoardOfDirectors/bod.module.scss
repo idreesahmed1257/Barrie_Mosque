@@ -32,6 +32,7 @@
         border-radius: 50%;
         transition: transform 0.2s ease;
         border: 3px solid $color-primary; // Rotate image
+        object-fit: cover !important;
     }
 
     .post,

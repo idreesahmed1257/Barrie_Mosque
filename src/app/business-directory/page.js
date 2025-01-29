@@ -14,7 +14,7 @@ const BusinessDirectory = () => {
 
     const getBusinesses = async () => {
         try {
-            const resp = await axios.get("/api/business/get-businesses");
+            const resp = await axios.get("http://localhost:5000/get-businesses");
             console.log("resp", resp)
 
             setBusinesses(resp?.data?.data)

@@ -1,5 +1,5 @@
 "use client";
-import { Email, Facebook, Instagram, LocationCity, Phone, PinDropOutlined, Twitter, WhatsApp } from '@mui/icons-material';
+import { Email, Facebook, Instagram, LocationCity, Phone, PinDropOutlined, Twitter, VolunteerActivism, WhatsApp } from '@mui/icons-material';
 import { Divider, Grid, IconButton } from '@mui/material';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -80,9 +80,13 @@ const Footer = () => {
                     </Link>
                 </Grid>
             </Grid>
-            <Grid item xs={12} display={'flex'} justifyContent={'center'} alignItems={'flex-end'}>
+            <Grid item xs={12} display={'flex'} justifyContent={'center'} alignItems={'center'} flexDirection={'column'} >
+                <div className={`row-gap-2 ${styles.refLink}`} >
+                    <p><b>Charity No </b> : 119058576RR0001</p>
+                </div>
+
                 <Link className={styles.refLink} target='_blank' href={'http://www.dricodigital.ca'}>
-                    <p>All rights reserved by Drico Digital</p>
+                    <p style={{ fontSize: "12px" }}>All rights reserved by Drico Digital</p>
                 </Link>
             </Grid>
         </Grid>

@@ -15,7 +15,7 @@ const AddBusiness = ({ text, setBusinesses }) => {
 
     const handleBusinessSubmit = async (payload) => {
         try {
-            const resp = await axios.post('/api/business/add-business', payload);
+            const resp = await axios.post('http://localhost:5000/add-business', payload);
             console.log("resp", resp)
             setBusinesses(prevState => [
                 ...prevState,
