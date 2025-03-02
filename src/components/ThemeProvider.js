@@ -5,7 +5,7 @@ import { ThemeProvider, createTheme } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import { useMemo } from 'react';
 
-const theme = createTheme({
+export const theme = createTheme({
     palette: {
         primary: {
             main: '#042A29',
@@ -26,6 +26,8 @@ const theme = createTheme({
         fontFamily: 'Roboto, Arial, sans-serif',
     },
 });
+
+
 
 export default function MyThemeProvider({ children }) {
     const memoizedTheme = useMemo(() => theme, []);

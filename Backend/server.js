@@ -2,12 +2,15 @@ import cors from 'cors';
 import express from 'express';
 import mongoose from 'mongoose';
 import { createBusiness, getBusinesses } from './controllers/business.controller.js';
+import dotenv from 'dotenv';
+dotenv.config();
+
 
 const app = express();
-const port = 5000;
+const port = process.env.SERVER_PORT;
 
 // MongoDB connection string
-const MONGODB_URI = 'mongodb+srv://idreesahmef1257:barrie@barriemosque.unsbsgv.mongodb.net/';
+const MONGODB_URI = `mongodb+srv://${process.env.MONGO_USERNAME}:${process.env.MONGO_PASSWORD}@barriemosque.kowou.mongodb.net/barrieMosque`
 
 // Use the CORS middleware
 app.use(cors());
@@ -17,6 +20,9 @@ app.use(express.json());
 mongoose.connect(MONGODB_URI)
     .then(() => {
         console.log('Connected to MongoDB');
+        app.listen(port, () => {
+            console.log(`Server is running on ${port}`);
+        });
     })
     .catch((err) => {
         console.error('Error connecting to MongoDB:', err.message);
@@ -51,7 +57,3 @@ app.post('/add-business', async (req, res) => {
     }
 });
 
-// Start the server
-app.listen(port, () => {
-    console.log(`Server is running on http://localhost:${port}`);
-});

@@ -290,7 +290,7 @@ export const content = {
             "To solemnize a marriage in the Province of Ontario, a licensed Nikah/Marriage officiant is required to oversee the necessary paperwork for registration.",
             "Imam Mateen, serving as the Imam at Barrie Mosque, holds the distinction of being a registered Ontario Licensed Marriage Officer. For inquiries or to schedule a consultation, Imam Mateen can be contacted at imambarriemosque@gmail.com."
         ],
-        "guidlines": [
+        "guidelines": [
             {
                 title: "Marriage License",
                 content: "Obtain a marriage license from your nearest city hall by visiting the clerk's office with valid identification, a requirement for both partners."

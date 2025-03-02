@@ -9,7 +9,7 @@ export const teacherFormFields = [
 
     { type: "date", name: "dob", label: "Date of Birth", placeholder: "Select Date of Birth", validationType: "date", required: true },
 
-    { type: "number", name: "age", label: "Age", placeholder: "Enter Age", validationType: "number", required: true },
+    { type: "text", name: "age", label: "Age", placeholder: "Enter Age", validationType: "number", required: true },
 
     { type: "text", name: "phoneNumber", label: "Phone Number", placeholder: "Enter Phone Number", validationType: "phone", required: true },
 
@@ -37,10 +37,9 @@ export const teacherFormFields = [
     { type: "text", name: "experienceWithChildren", label: "Experience Working with Children/Young People", placeholder: "Describe Experience", validationType: "text", required: false },
 
     { type: "text", name: "refTeacher1_name", label: "Reference 1 Name", placeholder: "Enter Name", validationType: "text", required: true },
-    { type: "text", name: "refTeacher1_contact", label: "Reference 1 Contact Information", placeholder: "Enter Contact", validationType: "phone", required: true },
+    { type: "text", name: "refTeacher1_contact", label: "Reference 1 Contact Number", placeholder: "Enter Contact", validationType: "phone", required: true },
     { type: "text", name: "refTeacher1_relation", label: "Reference 1 Relation", placeholder: "Enter Relation", validationType: "text", required: true },
-
     { type: "text", name: "refTeacher2_name", label: "Reference 2 Name", placeholder: "Enter Name", validationType: "text", required: true },
-    { type: "text", name: "refTeacher2_contact", label: "Reference 2 Contact Information", placeholder: "Enter Contact", validationType: "phone", required: true },
+    { type: "text", name: "refTeacher2_contact", label: "Reference 2 Contact Number", placeholder: "Enter Contact", validationType: "phone", required: true },
     { type: "text", name: "refTeacher2_relation", label: "Reference 2 Relation", placeholder: "Enter Relation", validationType: "text", required: true }
 ];

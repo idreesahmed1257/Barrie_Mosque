@@ -1,3 +1,4 @@
+"use client"
 import { Button } from '@mui/material';
 import React from 'react'
 import styles from './buttons.module.scss';

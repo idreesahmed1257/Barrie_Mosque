@@ -1,3 +1,4 @@
+"use client";
 import wed3 from '@/assets/images/shared/wed3.jpg';
 import wed2 from '@/assets/images/shared/wed2.jpg';
 import Mission from '@/components/AboutUs/Mission';
@@ -6,7 +7,13 @@ import HomeTitle from '@/components/Home/HomeTitle';
 import InfoBox from '@/components/Shared/InfoBox/InfoBox';
 import { content } from '@/components/Shared/static/helper';
 import "@fontsource/quicksand";
+import { marriageFormFields } from './helper';
+import DynamicForm from '@/components/Shared/DynamicForm/DynamicForm';
 const Marriage = () => {
+
+    const handleSubmitMarriage = (formData) => {
+        console.log(formData);
+    }
     return (
         <main>
             <Slide src={wed2} heading={"Marriage"} subheading={"See all available slots for Barrie Mosque & process your booking online"} />
@@ -20,9 +27,11 @@ const Marriage = () => {
                 flexDirection={"row-reverse"}
             />
             <HomeTitle text={'General Guidelines '} />
-            <Mission content={content.marriage.guidlines} />
+            <Mission content={content.marriage.guidelines} />
             <br />
             <br />
+            <DynamicForm text={"Register Now"} formFields={marriageFormFields} handleSubmitForm={handleSubmitMarriage} />
+
         </main>
     )
 }

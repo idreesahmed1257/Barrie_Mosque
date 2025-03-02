@@ -6,12 +6,11 @@ import styles from "../InfoBox/info.module.scss";
 import DynamicFormField from "./DynamicFormField";
 import { formDynamicSchema } from "./helper";
 
-const DynamicForm = ({ text, formFields }) => {
+const DynamicForm = ({ text, formFields, handleSubmitForm }) => {
     const { control, handleSubmit, formState: { errors } } = useForm(formDynamicSchema(formFields));
 
-    const handleSubmitForm = (data) => {
-        console.log("Submitted Data:", data);
-    };
+    console.log("errors", errors)
+
 
     return (
         <Grid px={2} container justifyContent={"center"} spacing={2}>

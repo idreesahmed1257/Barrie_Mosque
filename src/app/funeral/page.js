@@ -6,17 +6,17 @@ import Slide from '@/components/Home/HomeSlide';
 import HomeTitle from '@/components/Home/HomeTitle';
 import InfoBox from '@/components/Shared/InfoBox/InfoBox';
 import { content } from '@/components/Shared/static/helper';
+import funeral from "@/assets/images/shared/Funeral.jpg";
+
 import "@fontsource/quicksand";
-import Link from 'next/link';
-import styles from '../../styles/shared.module.scss';
 const Marriage = () => {
     return (
         <main>
-            <Slide src={fun1} heading={"Funeral"} subheading={"Helping you during this difficult time"} />
+            <Slide src={funeral} heading={"Funeral"} subheading={"Helping you during this difficult time"} />
             <br />
             <br />
             <InfoBox
-                src={fun2}
+                src={fun1}
                 title={"Support and Comfort"}
                 text={content.funeral.support}
                 flexDirection={"row-reverse"}

@@ -32,19 +32,14 @@ const ActivitiesEvents = () => {
             <InfoBox
                 src={islam1}
                 title={"Ramadan"}
-                text={content.activities.barBQ}
-                flexDirection={"row-reverse"}
-            />
-            <HomeTitle text={'Community Celebrations'} />
-            <InfoBox
-                src={islam1}
-                title={""}
                 text={content.activities.ramadan}
                 flexDirection={"row-reverse"}
             />
+
             <br />
             <HomeTitle text={'Youth Engagement & Activities'} />
             <Mission content={content.activities.youthEngagement} />
+
             <br />
             <InfoBox
                 src={islam1}
@@ -66,6 +61,7 @@ const ActivitiesEvents = () => {
                 text={content.activities.winterYouth}
                 flexDirection={"row-reverse"}
             />
+            <br />
             <br />
         </main>
     )

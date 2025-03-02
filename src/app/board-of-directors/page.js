@@ -1,12 +1,7 @@
-import bod1 from '@/assets/images/shared/bod1.jpg';
-import director1 from '@/assets/images/shared/director1.jpg';
-import islam1 from '@/assets/images/shared/islam1.jpg';
-import ProfileCard from '@/components/BoardOfDirectors/ProfileCard';
+import director1 from '@/assets/images/shared/boardofdirectors.jpg';
 import ProfileContainer from '@/components/BoardOfDirectors/ProfileContainer';
 import Slide from '@/components/Home/HomeSlide';
 import HomeTitle from '@/components/Home/HomeTitle';
-import InfoBox from '@/components/Shared/InfoBox/InfoBox';
-import { content } from '@/components/Shared/static/helper';
 import "@fontsource/quicksand";
 
 const BoardOfDirectors = () => {
@@ -16,7 +11,7 @@ const BoardOfDirectors = () => {
             <br />
 
             <br />
-            {/* <HomeTitle text={'Meet Board Of Directors'} /> */}
+            <HomeTitle text={'Meet Our Board Of Directors'} />
             <ProfileContainer />
             <br />
         </main>

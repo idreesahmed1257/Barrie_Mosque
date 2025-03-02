@@ -7,10 +7,9 @@ import HomeTitle from '@/components/Home/HomeTitle';
 import InfoBox from '@/components/Shared/InfoBox/InfoBox';
 import { content } from '@/components/Shared/static/helper';
 import "@fontsource/quicksand";
-import styles from '../../styles/shared.module.scss';
-import Link from 'next/link';
 import SundaySchoolForm from './SundaySchoolForm';
 const SundaySchool = () => {
+
     return (
         <main>
             <Slide src={sun2} heading={"Sunday School"} subheading={"Learning your faith is a long journey that is best taken on a consistent basis."} />
@@ -22,7 +21,10 @@ const SundaySchool = () => {
                 text={""}
                 points={content.sundaySchool.about}
                 flexDirection={"row-reverse"}
+                buttonText={"Become a Teacher"}
+                buttonRef={"become-a-teacher"}
             />
+
             <HomeTitle text={'Topics'} />
             <Mission content={content.sundaySchool.topics} />
             <br />
