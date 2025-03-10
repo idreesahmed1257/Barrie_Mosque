@@ -9,12 +9,13 @@ import CustomTextField from '@/components/Shared/Forms/CustomTextField';
 import RHFSelect from '@/components/Shared/Forms/RHFSelect';
 import RHFCheckBox from '@/components/Shared/Forms/RHFCheckBox';
 
-const SundaySchoolForm = ({ text }) => {
+const SundaySchoolForm = ({ text, formSubmit }) => {
     let sundaySchoolSchema = object(YupSundaySchoolSchema);
     const { control, handleSubmit, formState: { errors } } = useForm(formSundaySchoolSchema(sundaySchoolSchema));
 
     const handleSundaySchoolSubmit = (payload) => {
         console.log("payload", payload);
+        formSubmit(payload)
     };
 
     return (

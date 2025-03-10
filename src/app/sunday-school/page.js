@@ -1,3 +1,4 @@
+'use client'
 import sun1 from '@/assets/images/shared/sun1.jpg';
 import sun2 from '@/assets/images/shared/sun2.jpg';
 import sun3 from '@/assets/images/shared/sun3.jpg';
@@ -8,7 +9,29 @@ import InfoBox from '@/components/Shared/InfoBox/InfoBox';
 import { content } from '@/components/Shared/static/helper';
 import "@fontsource/quicksand";
 import SundaySchoolForm from './SundaySchoolForm';
+import axios from 'axios';
+import toast from 'react-hot-toast';
 const SundaySchool = () => {
+
+    const handleFormSubmit = async (payload) => {
+        const sendEmailPromise = axios.post(`${process.env.NEXT_PUBLIC_BACKEND_URL}/send-email`, {
+            data: payload,
+            mailType: "sunday_school_registration",
+            mailTo: "idreesahmed697@gmail.com"
+        });
+
+        toast.promise(
+            sendEmailPromise,
+            {
+                loading: "Sending email...",
+                success: "Email Sent Successfully, Someone from School will contact you shortly",
+                error: "Failed to send email, please try again"
+            }
+        );
+
+        await sendEmailPromise;
+    };
+
 
     return (
         <main>
@@ -38,7 +61,7 @@ const SundaySchool = () => {
             />
             <br />
             <br />
-            <SundaySchoolForm text={"Register Now"} />
+            <SundaySchoolForm formSubmit={handleFormSubmit} text={"Register Now"} />
             <br />
             <br />
         </main>

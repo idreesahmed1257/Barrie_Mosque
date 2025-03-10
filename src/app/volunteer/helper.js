@@ -11,7 +11,7 @@ export const VolunteerFormFields = [
 
     { type: "text", name: "email", label: "Email", placeholder: "Enter Your Email ", validationType: "email", required: true },
 
-    { type: "text", name: "phone", label: "Phone Number", placeholder: "Enter Your Phone Number", validationType: "phone", required: true },
+    { type: "text", name: "phone", label: "Phone Number", placeholder: "Enter Your Phone Number", validationType: "text", required: true },
 
     { type: "text", name: "homeAddress", label: "Home Address", placeholder: "Enter Home Address", validationType: "text", required: true },
 

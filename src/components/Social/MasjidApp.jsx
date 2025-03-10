@@ -61,7 +61,7 @@ const MasjidApp = () => {
                 <iframe
                     id="posts-frame"
                     src="https://themasjidapp.org/barrie/download"
-                    style={{ width: '100%', display: 'flex', minHeight: '770px' }}
+                    style={{ width: '100%', display: 'flex', minHeight: '990px' }}
                     frameBorder="0"
                     scrolling="no"
                 />

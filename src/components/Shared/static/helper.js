@@ -408,6 +408,45 @@ export const content = {
                 content: "New to Islam? We offer tailored counseling to help converts transition into their new faith journey and build a sense of belonging within the community."
             },
         ]
+    },
+
+    "SONI": {
+        "about": [
+            "SONI is a sister’s group under the Noor ul-Islam Masjid banner that services the Barrie and Community area",
+            "It comprises of a group of compassionate sisters that are dedicated to serving Allah by helping women in the community",
+            "Our mission: is to strengthen the bonds of sisterhood in our Muslim community through service, love, and support"
+        ],
+        "goals": [
+            {
+                "title": "Fostering Community Relations",
+                "content": "Strengthening bonds within the Muslim community under the Noor-ul-Islam Masjid banner."
+            },
+            {
+                "title": "Providing a Voice for Muslim Women",
+                "content": "Ensuring Muslim women have a platform to express their concerns, needs, and aspirations in the community."
+            },
+            {
+                "title": "Charitable Activities",
+                "content": "Coordinating and assisting in charitable efforts to support those in need."
+            },
+            {
+                "title": "Supporting New Muslim Families",
+                "content": "Helping Muslim families who are new to Barrie by providing guidance, resources, and community support."
+            },
+            {
+                "title": "Welcoming and Educating New Muslims",
+                "content": "Offering educational resources and a supportive environment for those new to the Islamic faith."
+            },
+            {
+                "title": "Serving the Social and Financial Needs of Sisters",
+                "content": "Providing assistance to Muslim sisters in need through financial support, social programs, and community initiatives."
+            }
+        ],
+        "involvement": [
+            "Since its inception in year 2012 SONI has been actively organizing events to educate and help sisters.",
+            "SONI has organized women’s social events, education programs, provided assistance to those sisters that were in need, interfaith events, kids’ programs, and assisted masjid Noor-ul Islam in various activities such as annual BBQ, winter activities, and Iftars.",
+            "SONI is requesting sisters to actively participate whether it is volunteering, donating, baking, or attending our events."
+        ]
     }
 
 

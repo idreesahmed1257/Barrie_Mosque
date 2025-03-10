@@ -33,7 +33,6 @@ export const communityItems = [
         title: 'About Sunday School', subTitle: "Learning your faith is a long journey that is best taken on a consistent basis.", ref: "/sunday-school",
         subMenu: [
             { title: 'Principle & Teachers', subTitle: "Meet the dedicated staff guiding our students", ref: "/principle-and-teachers" },
-            { title: 'Curriculum', subTitle: "Barrie Mosque is helping to educate our young children based on the teachings of the Prophet (PBUH)", ref: "/option3" },
             { title: 'Become a Teacher', subTitle: `"The most superior among you are those who learn the Qur'an and teach it." (Bukhari, 1971, Vol. 6, p. 502)"`, ref: "/become-a-teacher" },
         ]
     },

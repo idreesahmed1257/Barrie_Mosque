@@ -11,6 +11,8 @@ const SocialMedia = () => {
 
             <HomeTitle text={'Masjid App'} />
             <MasjidApp />
+            <br />
+
         </main>
     )
 }

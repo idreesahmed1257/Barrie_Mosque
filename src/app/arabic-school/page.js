@@ -1,6 +1,6 @@
 "use client";
-import sun1 from '@/assets/images/shared/sun1.jpg';
-import sun2 from '@/assets/images/shared/sun2.jpg';
+import sun1 from '@/assets/images/shared/teacher3.jpg';
+import sun2 from '@/assets/images/shared/CommunityandGrowth.jpg';
 import Mission from '@/components/AboutUs/Mission';
 import ArabicSchoolForm from '@/components/ArabicSchool/ArabicSchoolForm';
 import Slide from '@/components/Home/HomeSlide';
@@ -10,9 +10,8 @@ import { content } from '@/components/Shared/static/helper';
 import "@fontsource/quicksand";
 const ArabicSchool = () => {
 
-    const handleSubmit = (formData) => {
-        console.log(formData);
-    }
+
+
     return (
         <>
             <main>

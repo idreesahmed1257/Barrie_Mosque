@@ -11,6 +11,8 @@ import { YupArabicSchoolSchema, formArabicSchoolSchema } from './helper';
 import { studentAgeOptions, noOfChildrenOptions, genderOptions } from './helper';
 import { useEffect } from 'react';
 import { theme } from '../ThemeProvider';
+import axios from 'axios';
+import toast from 'react-hot-toast';
 
 const ArabicSchoolForm = ({ text }) => {
   let arabicSchoolSchema = object(YupArabicSchoolSchema);
@@ -48,8 +50,25 @@ const ArabicSchoolForm = ({ text }) => {
     }
   }, [noOfChildren, append, remove, fields.length]);
 
-  const handleSundaySchoolSubmit = (payload) => {
+  const handleArabicSchoolSubmit = async (payload) => {
     console.log("payload", payload);
+
+    const sendEmailPromise = axios.post(`${process.env.NEXT_PUBLIC_BACKEND_URL}/send-email`, {
+      data: payload,
+      mailType: "arabic_school_registration",
+      mailTo: "idreesahmed697@gmail.com"
+    });
+
+    toast.promise(
+      sendEmailPromise,
+      {
+        loading: "Sending email...",
+        success: "Email Sent Successfully, Someone from School will contact you shortly",
+        error: "Failed to send email, please try again"
+      }
+    );
+
+    await sendEmailPromise;
   };
 
   console.log("error", errors)
@@ -63,7 +82,7 @@ const ArabicSchoolForm = ({ text }) => {
             {text}
           </Grid>
           <br />
-          <form onSubmit={handleSubmit(handleSundaySchoolSubmit)}>
+          <form onSubmit={handleSubmit(handleArabicSchoolSubmit)}>
             <Grid container spacing={2}>
 
               {/* Parent Name */}

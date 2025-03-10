@@ -7,7 +7,7 @@ import { useLayoutEffect, useState } from "react";
 import logo from "../../../assets/images/logos/logo1.png";
 import about5 from "../../../assets/images/shared/about5.jpg";
 import service1 from "../../../assets/images/shared/service1.jpg";
-import contact1 from "../../../assets/images/shared/contact1.jpg";
+import contact1 from "../../../assets/images/shared/GeneralInquiries.jpg";
 import commun5 from "../../../assets/images/shared/commun5.jpg";
 import Button1 from "../Buttons/Button1";
 import NavDropDown from "./NavDropDown";

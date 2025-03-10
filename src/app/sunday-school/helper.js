@@ -11,10 +11,6 @@ export const YupSundaySchoolSchema = {
         .required("Parent phone number is required"),
     parentEmail: string().email("Invalid email format").required("Parent email is required"),
     contactNo: string()
-        .matches(
-            /^(?:\+1\s?)?(?:\(\d{3}\)|\d{3})[-.\s]?\d{3}[-.\s]?\d{4}$/,
-            "Invalid Canadian phone number format"
-        )
         .required(),
     contactEmail: string().email("Invalid email format").required(),
     homeAddress: string().required("Home address is required"),

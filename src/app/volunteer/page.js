@@ -10,11 +10,31 @@ import InfoBox from '@/components/Shared/InfoBox/InfoBox';
 import { content } from '@/components/Shared/static/helper';
 import "@fontsource/quicksand";
 import { VolunteerFormFields } from './helper';
+import axios from 'axios';
+import toast from 'react-hot-toast';
 const Volunteer = () => {
 
-    const handleSubmitVolunteerForm = (data) => {
-        console.log(data);
-    }
+
+    const handleFormSubmit = async (payload) => {
+        const sendEmailPromise = axios.post(`${process.env.NEXT_PUBLIC_BACKEND_URL}/send-email`, {
+            data: payload,
+            mailType: "volunteer",
+            mailTo: "idreesahmed697@gmail.com"
+        });
+
+        toast.promise(
+            sendEmailPromise,
+            {
+                loading: "Sending email...",
+                success: "Email Sent Successfully, Someone from Mosque will contact you shortly",
+                error: "Failed to send email, please try again"
+            }
+        );
+
+        await sendEmailPromise;
+    };
+
+
     return (
         <main>
             <Slide src={vol1} heading={"Volunteer"} subheading={"A world of active funSignup to become a volunteer & help the community"} />
@@ -41,7 +61,7 @@ const Volunteer = () => {
             <br />
             <HomeTitle text={'Become a Volunteer'} />
             <br />
-            <DynamicForm text={"Register Now"} formFields={VolunteerFormFields} handleSubmitForm={handleSubmitVolunteerForm} />
+            <DynamicForm text={"Register Now"} formFields={VolunteerFormFields} handleSubmitForm={handleFormSubmit} />
             <br />
             <br />
         </main>

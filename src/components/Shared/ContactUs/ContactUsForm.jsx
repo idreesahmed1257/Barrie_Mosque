@@ -7,12 +7,13 @@ import InputField from '../Forms/InputField';
 import styles from '../InfoBox/info.module.scss';
 import { YupContactSchema, formContactSchema } from './helper';
 
-const ContactUsForm = ({ text, }) => {
+const ContactUsForm = ({ text, submitForm }) => {
     let contactUsSchema = object(YupContactSchema);
     const { control, handleSubmit, formState: { errors, isValid } } = useForm(formContactSchema(contactUsSchema))
 
     const handleLoginSubmit = (payload) => {
-        console.log("payload", payload)
+        console.log("payload", payload);
+        submitForm(payload);
     };
     return (
         <Grid px={2} container className={styles.infoBox} justifyContent={'center'} spacing={2}>

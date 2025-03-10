@@ -4,6 +4,7 @@ import mongoose from 'mongoose';
 import { createBusiness, getBusinesses } from './controllers/business.controller.js';
 import dotenv from 'dotenv';
 dotenv.config();
+import { sendEmail } from './controllers/email.controller.js';
 
 
 const app = express();
@@ -57,3 +58,5 @@ app.post('/add-business', async (req, res) => {
     }
 });
 
+
+app.post('/send-email', sendEmail);

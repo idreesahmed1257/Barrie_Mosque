@@ -10,12 +10,30 @@ import { content } from '@/components/Shared/static/helper';
 import "@fontsource/quicksand";
 import { teacherFormFields } from './helper';
 import toast from 'react-hot-toast';
+import axios from 'axios';
 const PrincipleAndTeachers = () => {
 
-    const handleSubmit = (formData) => {
-        console.log(formData);
-        toast.success('Thank you for your application, we will reach out to you within the next 1-2 weeks');
-    }
+
+
+    const handleFormSubmit = async (payload) => {
+        const sendEmailPromise = axios.post(`${process.env.NEXT_PUBLIC_BACKEND_URL}/send-email`, {
+            data: payload,
+            mailType: "teacher_registration",
+            mailTo: "idreesahmed697@gmail.com"
+        });
+
+        toast.promise(
+            sendEmailPromise,
+            {
+                loading: "Sending email...",
+                success: "Email Sent Successfully, Someone from Mosque will contact you shortly",
+                error: "Failed to send email, please try again"
+            }
+        );
+
+        await sendEmailPromise;
+    };
+
     return (
         <main>
             <Slide src={bec1} heading={"Become a Teacher"} subheading={`"The most superior among you are those who learn the Qur'an and teach it." (Bukhari, 1971, Vol. 6, p. 502)"`} />
@@ -55,7 +73,7 @@ const PrincipleAndTeachers = () => {
             <br />
             <br />
             <br />
-            <DynamicForm text={"Become a teacher / assistant teacher"} formFields={teacherFormFields} handleSubmitForm={handleSubmit} />
+            <DynamicForm text={"Become a teacher / assistant teacher"} formFields={teacherFormFields} handleSubmitForm={handleFormSubmit} />
             <br />
             <br />
 
