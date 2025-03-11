@@ -29,8 +29,8 @@ const AddBusiness = ({ text, setBusinesses }) => {
         }
     };
     return (
-        <Grid px={2} container className={styles.infoBox} justifyContent={'center'} spacing={2}>
-            <Grid className={styles.formContainer} display={'flex'} flexDirection={'column'} alignItems={'flex-start'} justifyContent={'flex-start'} container spacing={2} px={4} xs={6}>
+        <Grid px={2} container className={styles.infoBox} justifyContent={'center'} >
+            <Grid className={styles.formContainer} display={'flex'} flexDirection={'column'} alignItems={'flex-start'} justifyContent={'flex-start'} container spacing={2} px={2} md={6} xs={12}>
                 <br />
                 <Card elevation={3} className={styles.contactCard}>
                     <Grid textAlign={'center'}>

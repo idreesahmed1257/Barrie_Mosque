@@ -13,6 +13,7 @@ import { useEffect } from 'react';
 import { theme } from '../ThemeProvider';
 import axios from 'axios';
 import toast from 'react-hot-toast';
+import { MAILS } from '../Shared/enums';
 
 const ArabicSchoolForm = ({ text }) => {
   let arabicSchoolSchema = object(YupArabicSchoolSchema);
@@ -56,7 +57,7 @@ const ArabicSchoolForm = ({ text }) => {
     const sendEmailPromise = axios.post(`${process.env.NEXT_PUBLIC_BACKEND_URL}/send-email`, {
       data: payload,
       mailType: "arabic_school_registration",
-      mailTo: "idreesahmed697@gmail.com"
+      mailTo: MAILS.school
     });
 
     toast.promise(

@@ -1,6 +1,10 @@
-import islam1 from '@/assets/images/shared/islam1.jpg';
-import islam2 from '@/assets/images/shared/islam2.jpg';
-import islam3 from '@/assets/images/shared/islam3.jpg';
+import activity1 from '@/assets/images/shared/Annual_Family_Fun_Day.jpg';
+import activity2 from '@/assets/images/shared/Activities_Events.jpg';
+import activity3 from '@/assets/images/shared/AnnualBBQ.jpg';
+import activity4 from '@/assets/images/shared/Ramadan.jpg';
+import activity5 from '@/assets/images/shared/basketball.jpg';
+import activity6 from '@/assets/images/shared/CommunityandGrowth.jpg';
+import activity7 from '@/assets/images/shared/winteryouthretreat.jpg';
 import Mission from '@/components/AboutUs/Mission';
 import Slide from '@/components/Home/HomeSlide';
 import HomeTitle from '@/components/Home/HomeTitle';
@@ -10,27 +14,29 @@ import "@fontsource/quicksand";
 const ActivitiesEvents = () => {
     return (
         <main>
-            <Slide src={islam2} heading={"Activities & Events"} subheading={"Discover a World of Fun and Memorable Experiences"} />
+            <Slide src={activity2} heading={"Activities & Events"} subheading={"Discover a World of Fun and Memorable Experiences"} />
             <br />
             <HomeTitle text={'Community Celebrations'} />
             <Mission content={content.activities.communityCelebrations} />
             <br />
             <InfoBox
-                src={islam1}
+                src={activity3}
                 title={"Annual BBQ"}
                 text={content.activities.barBQ}
                 flexDirection={"row-reverse"}
             />
             <br />
+            <br />
             <InfoBox
-                src={islam1}
+                src={activity1}
                 title={"Annual Family Fun Day"}
                 text={content.activities.funDay}
                 flexDirection={"row"}
             />
             <br />
+            <br />
             <InfoBox
-                src={islam1}
+                src={activity4}
                 title={"Ramadan"}
                 text={content.activities.ramadan}
                 flexDirection={"row-reverse"}
@@ -42,21 +48,22 @@ const ActivitiesEvents = () => {
 
             <br />
             <InfoBox
-                src={islam1}
+                src={activity5}
                 title={"Friday Night Basketball"}
                 text={content.activities.fridayNight}
                 flexDirection={"row-reverse"}
             />
             <br />
+            <br />
             <InfoBox
-                src={islam1}
+                src={activity6}
                 title={"Community & Growth"}
                 text={content.activities.intro}
                 flexDirection={"row"}
             />
             <br />
             <InfoBox
-                src={islam1}
+                src={activity7}
                 title={"Winter Youth Retreat"}
                 text={content.activities.winterYouth}
                 flexDirection={"row-reverse"}

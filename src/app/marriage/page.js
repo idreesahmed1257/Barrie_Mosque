@@ -5,6 +5,7 @@ import Mission from '@/components/AboutUs/Mission';
 import Slide from '@/components/Home/HomeSlide';
 import HomeTitle from '@/components/Home/HomeTitle';
 import ContactUsForm from '@/components/Shared/ContactUs/ContactUsForm';
+import { MAILS } from '@/components/Shared/enums';
 import InfoBox from '@/components/Shared/InfoBox/InfoBox';
 import { content } from '@/components/Shared/static/helper';
 import "@fontsource/quicksand";
@@ -16,7 +17,7 @@ const Marriage = () => {
         const sendEmailPromise = axios.post(`${process.env.NEXT_PUBLIC_BACKEND_URL}/send-email`, {
             data: payload,
             mailType: "marriage",
-            mailTo: "idreesahmed697@gmail.com"
+            mailTo: MAILS.imam
         });
 
         toast.promise(

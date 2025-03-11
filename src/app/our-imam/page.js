@@ -12,6 +12,7 @@ import { content } from '@/components/Shared/static/helper';
 import ContactUsForm from '@/components/Shared/ContactUs/ContactUsForm';
 import axios from 'axios';
 import toast from 'react-hot-toast';
+import { MAILS } from '@/components/Shared/enums';
 
 const OurImam = () => {
 
@@ -19,7 +20,7 @@ const OurImam = () => {
         const sendEmailPromise = axios.post(`${process.env.NEXT_PUBLIC_BACKEND_URL}/send-email`, {
             data: payload,
             mailType: "contact_imam",
-            mailTo: "idreesahmed697@gmail.com"
+            mailTo: MAILS.imam
         });
 
         toast.promise(

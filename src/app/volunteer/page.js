@@ -12,6 +12,7 @@ import "@fontsource/quicksand";
 import { VolunteerFormFields } from './helper';
 import axios from 'axios';
 import toast from 'react-hot-toast';
+import { MAILS } from '@/components/Shared/enums';
 const Volunteer = () => {
 
 
@@ -19,7 +20,7 @@ const Volunteer = () => {
         const sendEmailPromise = axios.post(`${process.env.NEXT_PUBLIC_BACKEND_URL}/send-email`, {
             data: payload,
             mailType: "volunteer",
-            mailTo: "idreesahmed697@gmail.com"
+            mailTo: MAILS.secretary
         });
 
         toast.promise(

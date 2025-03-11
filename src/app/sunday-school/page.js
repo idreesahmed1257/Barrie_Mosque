@@ -1,7 +1,7 @@
 'use client'
-import sun1 from '@/assets/images/shared/sun1.jpg';
-import sun2 from '@/assets/images/shared/sun2.jpg';
-import sun3 from '@/assets/images/shared/sun3.jpg';
+import sun1 from '@/assets/images/shared/sunday_school2.jpg';
+import sun2 from '@/assets/images/shared/sunday_school1.jpg';
+import sun3 from '@/assets/images/shared/sunday_school3.jpg';
 import Mission from '@/components/AboutUs/Mission';
 import Slide from '@/components/Home/HomeSlide';
 import HomeTitle from '@/components/Home/HomeTitle';
@@ -11,13 +11,14 @@ import "@fontsource/quicksand";
 import SundaySchoolForm from './SundaySchoolForm';
 import axios from 'axios';
 import toast from 'react-hot-toast';
+import { MAILS } from '@/components/Shared/enums';
 const SundaySchool = () => {
 
     const handleFormSubmit = async (payload) => {
         const sendEmailPromise = axios.post(`${process.env.NEXT_PUBLIC_BACKEND_URL}/send-email`, {
             data: payload,
             mailType: "sunday_school_registration",
-            mailTo: "idreesahmed697@gmail.com"
+            mailTo: MAILS.school
         });
 
         toast.promise(

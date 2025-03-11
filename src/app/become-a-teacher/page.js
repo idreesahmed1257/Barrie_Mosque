@@ -1,7 +1,8 @@
 "use client";
 import bec1 from '@/assets/images/shared/bec1.jpg';
-import bec2 from '@/assets/images/shared/bec2.jpg';
+import bec2 from '@/assets/images/shared/vol2.jpg';
 import bec3 from '@/assets/images/shared/bec3.jpg';
+import bec4 from '@/assets/images/shared/teacher1.jpg';
 import Slide from '@/components/Home/HomeSlide';
 import HomeTitle from '@/components/Home/HomeTitle';
 import DynamicForm from '@/components/Shared/DynamicForm/DynamicForm';
@@ -11,6 +12,7 @@ import "@fontsource/quicksand";
 import { teacherFormFields } from './helper';
 import toast from 'react-hot-toast';
 import axios from 'axios';
+import { MAILS } from '@/components/Shared/enums';
 const PrincipleAndTeachers = () => {
 
 
@@ -19,7 +21,7 @@ const PrincipleAndTeachers = () => {
         const sendEmailPromise = axios.post(`${process.env.NEXT_PUBLIC_BACKEND_URL}/send-email`, {
             data: payload,
             mailType: "teacher_registration",
-            mailTo: "idreesahmed697@gmail.com"
+            mailTo: MAILS.school
         });
 
         toast.promise(
@@ -48,7 +50,7 @@ const PrincipleAndTeachers = () => {
             />
             <HomeTitle text={'Assistant  Teacher Responsibilities'} />
             <InfoBox
-                src={bec2}
+                src={bec3}
                 title={""}
                 text={""}
                 points={content.becomeTeacher.assistantTeacherResponsibilities}
@@ -65,7 +67,7 @@ const PrincipleAndTeachers = () => {
 
             <HomeTitle text={`Make a Lasting Difference`} />
             <InfoBox
-                src={bec3}
+                src={bec4}
                 title={""}
                 points={content.becomeTeacher.difference}
                 flexDirection={"row"}

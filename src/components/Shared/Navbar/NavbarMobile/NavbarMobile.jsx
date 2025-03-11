@@ -2,17 +2,16 @@ import React, { useState } from 'react';
 import { AppBar, Toolbar, Icon, Drawer, List, ListItem, ListItemText, Divider, Collapse } from '@mui/material';
 import { Menu as MenuIcon, Close as CloseIcon, ExpandLess, ExpandMore } from '@mui/icons-material';
 import Link from 'next/link';
-import logo from '../../../../assets/images/logos/logo1.png';
 import Image from 'next/image';
-import styles from './navbarMobile.module.scss'; // Create this file for custom styles
+import logo from '../../../../assets/images/logos/logo1.png';
+import styles from './navbarMobile.module.scss';
 import { aboutUsItems, communityItems, contactUsItems, servicesItems } from '../helper';
 
 const NavbarMobile = ({ handleClick }) => {
     const [drawerOpen, setDrawerOpen] = useState(false);
-    const [openDropdowns, setOpenDropdowns] = useState({ aboutUs: false, community: false, services: false, contact: false });
+    const [openDropdowns, setOpenDropdowns] = useState({});
 
     const toggleDrawer = (open) => () => {
-        console.log("dd", open)
         setDrawerOpen(open);
     };
 
@@ -20,9 +19,32 @@ const NavbarMobile = ({ handleClick }) => {
         setOpenDropdowns(prevState => ({ ...prevState, [key]: !prevState[key] }));
     };
 
-    const handleCloseDrawer = () => {
-        setDrawerOpen(false);
-    };
+    const renderMenuItems = (items, parentKey = '') => (
+        items.map((item, idx) => {
+            const itemKey = `${parentKey}-${item.title}`;
+            return (
+                <div key={itemKey}>
+                    <ListItem onClick={item.subMenu ? handleToggleDropdown(itemKey) : toggleDrawer(false)} component={Link} href={item.ref} className={styles.listItem}>
+                        <ListItemText primary={item.title} />
+                        {item.subMenu && (openDropdowns[itemKey] ? <ExpandLess /> : <ExpandMore />)}
+                    </ListItem>
+                    {item.subMenu && (
+                        <Collapse
+                            sx={{ ml: 2, bgcolor: 'rgba(255, 255, 255, 0.1)', borderLeft: '2px solid #54493C', borderRadius: '5px', marginY: 0.5 }}
+                            in={openDropdowns[itemKey]}
+                            timeout="auto"
+                            unmountOnExit
+                        >
+                            <List component="div" disablePadding>
+                                {renderMenuItems(item.subMenu, itemKey)}
+                            </List>
+                        </Collapse>
+
+                    )}
+                </div>
+            );
+        })
+    );
 
     return (
         <div>
@@ -49,64 +71,51 @@ const NavbarMobile = ({ handleClick }) => {
                     <ListItem component={Link} href="/">
                         <ListItemText primary="Home" />
                     </ListItem>
-
                     <ListItem onClick={handleToggleDropdown('aboutUs')}>
                         <ListItemText primary="About Us" />
                         {openDropdowns.aboutUs ? <ExpandLess /> : <ExpandMore />}
                     </ListItem>
-                    <Collapse in={openDropdowns.aboutUs} timeout="auto" unmountOnExit>
+                    <Collapse
+                        sx={{ ml: 2, bgcolor: 'rgba(255, 255, 255, 0.03)', borderLeft: '2px solid #C69B47', borderRadius: '5px', marginY: 0.5 }}
+                        in={openDropdowns.aboutUs} timeout="auto" unmountOnExit>
                         <List component="div" disablePadding>
-                            {aboutUsItems?.map((item, idx) => (
-                                <ListItem key={idx} component={Link} className={styles.listItem} href={item?.ref} onClick={handleCloseDrawer}>
-                                    <ListItemText primary={item?.title} />
-                                </ListItem>
-                            ))}
+                            {renderMenuItems(aboutUsItems, 'aboutUs')}
                         </List>
                     </Collapse>
-
                     <ListItem onClick={handleToggleDropdown('community')}>
                         <ListItemText primary="Community" />
                         {openDropdowns.community ? <ExpandLess /> : <ExpandMore />}
                     </ListItem>
-                    <Collapse in={openDropdowns.community} timeout="auto" unmountOnExit>
+                    <Collapse
+                        sx={{ ml: 2, bgcolor: 'rgba(255, 255, 255, 0.03)', borderLeft: '2px solid #C69B47', borderRadius: '5px', marginY: 0.5 }}
+                        in={openDropdowns.community} timeout="auto" unmountOnExit>
                         <List component="div" disablePadding>
-                            {communityItems?.map((item, idx) => (
-                                <ListItem key={idx} component={Link} className={styles.listItem} href={item?.ref} onClick={handleCloseDrawer}>
-                                    <ListItemText primary={item?.title} />
-                                </ListItem>
-                            ))}
+                            {renderMenuItems(communityItems, 'community')}
                         </List>
                     </Collapse>
-
                     <ListItem onClick={handleToggleDropdown('services')}>
                         <ListItemText primary="Services" />
                         {openDropdowns.services ? <ExpandLess /> : <ExpandMore />}
                     </ListItem>
-                    <Collapse in={openDropdowns.services} timeout="auto" unmountOnExit>
+                    <Collapse
+                        sx={{ ml: 2, bgcolor: 'rgba(255, 255, 255, 0.03)', borderLeft: '2px solid #C69B47', borderRadius: '5px', marginY: 0.5 }}
+                        in={openDropdowns.services} timeout="auto" unmountOnExit>
                         <List component="div" disablePadding>
-                            {servicesItems?.map((item, idx) => (
-                                <ListItem key={idx} component={Link} className={styles.listItem} href={item?.ref} onClick={handleCloseDrawer}>
-                                    <ListItemText primary={item?.title} />
-                                </ListItem>
-                            ))}
+                            {renderMenuItems(servicesItems, 'services')}
                         </List>
                     </Collapse>
-
                     <ListItem onClick={handleToggleDropdown('contact')}>
                         <ListItemText primary="Contact" />
                         {openDropdowns.contact ? <ExpandLess /> : <ExpandMore />}
                     </ListItem>
-                    <Collapse in={openDropdowns.contact} timeout="auto" unmountOnExit>
+                    <Collapse
+                        sx={{ ml: 2, bgcolor: 'rgba(255, 255, 255, 0.03)', borderLeft: '2px solid #C69B47', borderRadius: '5px', marginY: 0.5 }}
+                        in={openDropdowns.contact} timeout="auto" unmountOnExit>
                         <List component="div" disablePadding>
-                            {contactUsItems?.map((item, idx) => (
-                                <ListItem key={idx} component={Link} className={styles.listItem} href={item?.ref} onClick={handleCloseDrawer}>
-                                    <ListItemText primary={item?.title} />
-                                </ListItem>
-                            ))}
+                            {renderMenuItems(contactUsItems, 'contact')}
                         </List>
                     </Collapse>
-
-                    <ListItem component="" onClick={handleClick}>
+                    <ListItem component="button" onClick={handleClick}>
                         <ListItemText primary="Donate Now" />
                     </ListItem>
                 </List>

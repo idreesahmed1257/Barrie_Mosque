@@ -13,8 +13,8 @@ const DynamicForm = ({ text, formFields, handleSubmitForm }) => {
 
 
     return (
-        <Grid px={2} container justifyContent={"center"} spacing={2}>
-            <Grid className={styles.formContainer} display={"flex"} flexDirection={"column"} alignItems={"flex-start"} justifyContent={"flex-start"} container spacing={2} px={4} xs={12} md={8}>
+        <Grid container justifyContent={"center"}>
+            <Grid className={styles.formContainer} display={"flex"} flexDirection={"column"} alignItems={"center"} justifyContent={"center"} container spacing={2} px={2} xs={12} md={8}>
                 <br />
                 <Card elevation={3} className={styles.contactCard}>
                     <Grid textAlign={"center"}>{text}</Grid>

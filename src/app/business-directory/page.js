@@ -1,5 +1,5 @@
 'use client'
-import imam from '@/assets/images/shared/ourImam.jpg';
+import imam from '@/assets/images/shared/Business_DIrectory.jpeg';
 import AddBusiness from '@/components/Business/AddBusiness';
 import BusinessesTable from '@/components/Business/BusinessesTable';
 import Slide from '@/components/Home/HomeSlide';
@@ -14,8 +14,7 @@ const BusinessDirectory = () => {
 
     const getBusinesses = async () => {
         try {
-            const resp = await axios.get("http://localhost:5000/get-businesses");
-            console.log("resp", resp)
+            const resp = await axios.get(`${process.env.NEXT_PUBLIC_BACKEND_URL}/get-businesses`);
 
             setBusinesses(resp?.data?.data)
         } catch (err) {

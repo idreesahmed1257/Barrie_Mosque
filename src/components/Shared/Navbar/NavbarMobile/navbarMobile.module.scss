@@ -43,7 +43,12 @@
 }
 
 .collapseItem {
-    padding-left: 30px;
+    padding-left: 30px !important;
+    border-left: 2px solid $color-secondary !important; // Adds a border to separate nested items
+    background-color: lighten($color-primary, 10%) !important; // Slightly lighter background
+    margin: 5px 0;
+    padding: 10px;
+    border-radius: 5px;
 }
 
 .listItem {

@@ -31,7 +31,7 @@ mongoose.connect(MONGODB_URI)
 
 // Define a route handler for the default home page
 app.get('/', (req, res) => {
-    res.send('Hello World new!');
+    res.send('Hello World v1');
 });
 
 // Define a route to get tour places
