@@ -15,17 +15,6 @@ export const YupArabicSchoolSchema = {
         .typeError("Number of children must be a number")
         .min(1, "At least one child is required")
         .required("Number of children is required"),
-
-    // childrenName: string().required("Student name is required"),
-    // childrenAge: number()
-    //     .typeError("Student age must be a number")
-    //     .min(6, "Student must be at least 6 years old")
-    //     .max(18, "Student must be under 18 years old")
-    //     .required("Student age is required"),
-    // childrenGender: string().oneOf(["Male", "Female", "Other"], "Invalid gender selection").required("Student gender is required"),
-    // isFirstTime: boolean().required("Please specify if this is the first time attending"),
-    // allergies: string().required("Allergies and Medications are required"),
-    // isChildSixYearOld: boolean().required("Please specify if the child is six years old"),
 };
 
 export const formArabicSchoolSchema = (sundaySchoolSchema) => {

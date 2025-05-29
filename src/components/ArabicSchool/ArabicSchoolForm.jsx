@@ -17,7 +17,7 @@ import { MAILS } from '../Shared/enums';
 
 const ArabicSchoolForm = ({ text }) => {
   let arabicSchoolSchema = object(YupArabicSchoolSchema);
-  const { control, handleSubmit, formState: { errors }, register, setValue } = useForm(formArabicSchoolSchema(arabicSchoolSchema));
+  const { control, handleSubmit, formState: { errors } } = useForm(formArabicSchoolSchema(arabicSchoolSchema));
 
   // Watch noOfChildren value
   const noOfChildren = useWatch({ control, name: "noOfChildren" }) || 0;
@@ -57,7 +57,7 @@ const ArabicSchoolForm = ({ text }) => {
     const sendEmailPromise = axios.post(`${process.env.NEXT_PUBLIC_BACKEND_URL}/send-email`, {
       data: payload,
       mailType: "arabic_school_registration",
-      mailTo: MAILS.school
+      mailTo: MAILS.arabicSchool
     });
 
     toast.promise(

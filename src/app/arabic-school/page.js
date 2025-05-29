@@ -1,6 +1,6 @@
 "use client";
-import sun1 from '@/assets/images/shared/teacher3.jpg';
-import sun2 from '@/assets/images/shared/CommunityandGrowth.jpg';
+import sun1 from '@/assets/images/shared/arabic_school_1.jpg';
+import sun2 from '@/assets/images/shared/arabic_school_2.jpg';
 import Mission from '@/components/AboutUs/Mission';
 import ArabicSchoolForm from '@/components/ArabicSchool/ArabicSchoolForm';
 import Slide from '@/components/Home/HomeSlide';
@@ -17,7 +17,7 @@ const ArabicSchool = () => {
             <main>
                 <Slide src={sun2} heading={"Arabic School"} subheading={"Mastering the Arabic language unlocks a deeper connection to your faith and heritage."} />
                 <br />
-                <HomeTitle text={'About Arabic School'} />
+                <HomeTitle text={'Arabic School'} />
                 <InfoBox
                     src={sun1}
                     title={""}

@@ -10,6 +10,10 @@ export const getHtmlTemplate = (mailType, data) => {
             return contactUsTemplate({ ...data });
         case "funeral":
             return contactUsTemplate({ ...data });
+        case "islamic_counseling":
+            return contactUsTemplate({ ...data });
+        case "reverts_to_islam":
+            return contactUsTemplate({ ...data });
         case "volunteer":
             return volunteerTemplate({ ...data });
         case "sunday_school_registration":
@@ -24,7 +28,6 @@ export const getHtmlTemplate = (mailType, data) => {
 };
 
 const contactImamTemplate = ({ name, email, phone, message }) => {
-    console.log("received Data", name, email, phone, message)
     return `
 <body style="margin: 0; padding: 0; font-family: Arial, sans-serif; background-color: #f5f5f5; color: #333;">
     <table cellpadding="0" cellspacing="0" border="0" width="100%" style="max-width: 600px; margin: 0 auto; background-color: #ffffff;">
@@ -40,19 +43,19 @@ const contactImamTemplate = ({ name, email, phone, message }) => {
                 <table cellpadding="0" cellspacing="0" border="0" width="100%" style="margin-top: 20px; border: 1px solid #e0e0e0; border-collapse: collapse;">
                     <tr>
                         <td style="padding: 10px; background-color: #e8f0e9; font-weight: bold; width: 120px; border-bottom: 1px solid #e0e0e0;">Name:</td>
-                        <td style="padding: 10px; border-bottom: 1px solid #e0e0e0;">${name}</td>
+                        <td style="padding: 10px; border-bottom: 1px solid #e0e0e0;">${name || "-"}</td>
                     </tr>
                     <tr>
                         <td style="padding: 10px; background-color: #e8f0e9; font-weight: bold; width: 120px; border-bottom: 1px solid #e0e0e0;">Email:</td>
-                        <td style="padding: 10px; border-bottom: 1px solid #e0e0e0;">${email}</td>
+                        <td style="padding: 10px; border-bottom: 1px solid #e0e0e0;">${email || "-"}</td>
                     </tr>
                     <tr>
                         <td style="padding: 10px; background-color: #e8f0e9; font-weight: bold; width: 120px; border-bottom: 1px solid #e0e0e0;">Phone:</td>
-                        <td style="padding: 10px; border-bottom: 1px solid #e0e0e0;">${phone}</td>
+                        <td style="padding: 10px; border-bottom: 1px solid #e0e0e0;">${phone || "-"}</td>
                     </tr>
                     <tr>
                         <td style="padding: 10px; background-color: #e8f0e9; font-weight: bold; width: 120px; vertical-align: top;">Message:</td>
-                        <td style="padding: 10px;">${message}</td>
+                        <td style="padding: 10px;">${message || "-"}</td>
                     </tr>
                 </table>
 
@@ -83,7 +86,7 @@ const contactUsTemplate = ({ name, email, phone, message }) => {
         </tr>
         <tr>
             <td style="padding: 20px;">
-                <p style="font-size: 16px; color: #042A29; font-weight: bold;">Dear Organizing Secretary, Someone has submitted a question that requires your response:</p>
+                <p style="font-size: 16px; color: #042A29; font-weight: bold;">Dear Imam Sb, Someone has submitted a question that requires your response:</p>
 
                 <table cellpadding="0" cellspacing="0" border="0" width="100%" style="margin-top: 20px; border: 1px solid #e0e0e0; border-collapse: collapse;">
                     <tr>
@@ -189,96 +192,104 @@ const sundaySchoolTemplate = ({
     contactEmail,
     homeAddress,
     noOfChildren,
-    studentName,
-    studentAge,
-    studentGender,
-    isChildSixYearOld,
-    isFirstTime
+    childrenInfo
 }) => {
+    // Generate the HTML for each student's information
+    const childrenHtml = childrenInfo.map((child, index) => {
+        return `
+      <tr>
+        <td colspan="2" style="padding: 10px; background-color: #3b3f58; color: white; font-weight: bold; text-align: center; border-bottom: 1px solid #ccc;">Student ${index + 1} Information</td>
+      </tr>
+      <tr>
+        <td style="padding: 10px; background-color: #f0f0f5; font-weight: bold; width: 150px; border-bottom: 1px solid #ccc;">Name:</td>
+        <td style="padding: 10px; border-bottom: 1px solid #ccc;">${child.studentName}</td>
+      </tr>
+      <tr>
+        <td style="padding: 10px; background-color: #f0f0f5; font-weight: bold; width: 150px; border-bottom: 1px solid #ccc;">Age:</td>
+        <td style="padding: 10px; border-bottom: 1px solid #ccc;">${child.studentAge}</td>
+      </tr>
+      <tr>
+        <td style="padding: 10px; background-color: #f0f0f5; font-weight: bold; width: 150px; border-bottom: 1px solid #ccc;">Gender:</td>
+        <td style="padding: 10px; border-bottom: 1px solid #ccc;">${child.studentGender}</td>
+      </tr>
+      <tr>
+        <td style="padding: 10px; background-color: #f0f0f5; font-weight: bold; width: 150px; border-bottom: 1px solid #ccc;">Allergies:</td>
+        <td style="padding: 10px; border-bottom: 1px solid #ccc;">${child.allergies}</td>
+      </tr>
+      <tr>
+        <td style="padding: 10px; background-color: #f0f0f5; font-weight: bold; width: 150px; border-bottom: 1px solid #ccc;">Previous Class:</td>
+        <td style="padding: 10px; border-bottom: 1px solid #ccc;">${child.previousClass}</td>
+      </tr>
+      <tr>
+        <td style="padding: 10px; background-color: #f0f0f5; font-weight: bold; width: 150px; border-bottom: 1px solid #ccc;">First Time Registration:</td>
+        <td style="padding: 10px; border-bottom: 1px solid #ccc;">${child.isFirstTime ? 'Yes' : 'No'}</td>
+      </tr>
+    `;
+    }).join('');
+
     return `
 <body style="margin: 0; padding: 0; font-family: Arial, sans-serif; background-color: #f5f5f5; color: #333;">
-    <table cellpadding="0" cellspacing="0" border="0" width="100%" style="max-width: 600px; margin: 0 auto; background-color: #ffffff;">
-        <tr>
-            <td style="padding: 20px; background-color: #042A29; color: white; text-align: center;">
-                <h1 style="margin: 0; font-size: 24px;">New Sunday School Registration</h1>
-            </td>
-        </tr>
-        <tr>
-            <td style="padding: 20px;">
-                <p style="font-size: 16px; color: #042A29; font-weight: bold;">A new Sunday School registration has been submitted:</p>
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" style="max-width: 600px; margin: 0 auto; background-color: #ffffff;">
+    <tr>
+      <td style="padding: 20px; background-color: #1c1f3b; color: white; text-align: center;">
+        <h1 style="margin: 0; font-size: 24px;">New Sunday School Registration</h1>
+      </td>
+    </tr>
+    <tr>
+      <td style="padding: 20px;">
+        <p style="font-size: 16px; color: #1c1f3b; font-weight: bold;">A new Sunday School registration has been submitted:</p>
 
-                <table cellpadding="0" cellspacing="0" border="0" width="100%" style="margin-top: 20px; border: 1px solid #e0e0e0; border-collapse: collapse;">
-                    <tr>
-                        <td colspan="2" style="padding: 10px; background-color: #042A29; color: white; font-weight: bold; text-align: center; border-bottom: 1px solid #e0e0e0;">Parent Information</td>
-                    </tr>
-                    <tr>
-                        <td style="padding: 10px; background-color: #e8f0e9; font-weight: bold; width: 150px; border-bottom: 1px solid #e0e0e0;">Parent Name:</td>
-                        <td style="padding: 10px; border-bottom: 1px solid #e0e0e0;">${parentName}</td>
-                    </tr>
-                    <tr>
-                        <td style="padding: 10px; background-color: #e8f0e9; font-weight: bold; width: 150px; border-bottom: 1px solid #e0e0e0;">Parent Phone:</td>
-                        <td style="padding: 10px; border-bottom: 1px solid #e0e0e0;">${parentPhone}</td>
-                    </tr>
-                    <tr>
-                        <td style="padding: 10px; background-color: #e8f0e9; font-weight: bold; width: 150px; border-bottom: 1px solid #e0e0e0;">Parent Email:</td>
-                        <td style="padding: 10px; border-bottom: 1px solid #e0e0e0;">${parentEmail}</td>
-                    </tr>
-                    <tr>
-                        <td style="padding: 10px; background-color: #e8f0e9; font-weight: bold; width: 150px; border-bottom: 1px solid #e0e0e0;">Emergency Contact:</td>
-                        <td style="padding: 10px; border-bottom: 1px solid #e0e0e0;">${contactNo}</td>
-                    </tr>
-                    <tr>
-                        <td style="padding: 10px; background-color: #e8f0e9; font-weight: bold; width: 150px; border-bottom: 1px solid #e0e0e0;">Emergency Email:</td>
-                        <td style="padding: 10px; border-bottom: 1px solid #e0e0e0;">${contactEmail}</td>
-                    </tr>
-                    <tr>
-                        <td style="padding: 10px; background-color: #e8f0e9; font-weight: bold; width: 150px; border-bottom: 1px solid #e0e0e0;">Home Address:</td>
-                        <td style="padding: 10px; border-bottom: 1px solid #e0e0e0;">${homeAddress}</td>
-                    </tr>
-                    <tr>
-                        <td style="padding: 10px; background-color: #e8f0e9; font-weight: bold; width: 150px; border-bottom: 1px solid #e0e0e0;">Number of Children:</td>
-                        <td style="padding: 10px; border-bottom: 1px solid #e0e0e0;">${noOfChildren}</td>
-                    </tr>
-                    
-                    <tr>
-                        <td colspan="2" style="padding: 10px; background-color: #042A29; color: white; font-weight: bold; text-align: center; border-bottom: 1px solid #e0e0e0;">Student Information</td>
-                    </tr>
-                    <tr>
-                        <td style="padding: 10px; background-color: #e8f0e9; font-weight: bold; width: 150px; border-bottom: 1px solid #e0e0e0;">Student Name:</td>
-                        <td style="padding: 10px; border-bottom: 1px solid #e0e0e0;">${studentName}</td>
-                    </tr>
-                    <tr>
-                        <td style="padding: 10px; background-color: #e8f0e9; font-weight: bold; width: 150px; border-bottom: 1px solid #e0e0e0;">Student Age:</td>
-                        <td style="padding: 10px; border-bottom: 1px solid #e0e0e0;">${studentAge}</td>
-                    </tr>
-                    <tr>
-                        <td style="padding: 10px; background-color: #e8f0e9; font-weight: bold; width: 150px; border-bottom: 1px solid #e0e0e0;">Student Gender:</td>
-                        <td style="padding: 10px; border-bottom: 1px solid #e0e0e0;">${studentGender}</td>
-                    </tr>
-                    <tr>
-                        <td style="padding: 10px; background-color: #e8f0e9; font-weight: bold; width: 150px; border-bottom: 1px solid #e0e0e0;">Is Child 6+ Years Old:</td>
-                        <td style="padding: 10px; border-bottom: 1px solid #e0e0e0;">${isChildSixYearOld ? 'Yes' : 'No'}</td>
-                    </tr>
-                    <tr>
-                        <td style="padding: 10px; background-color: #e8f0e9; font-weight: bold; width: 150px; border-bottom: 1px solid #e0e0e0;">First Time Registration:</td>
-                        <td style="padding: 10px; border-bottom: 1px solid #e0e0e0;">${isFirstTime ? 'Yes' : 'No'}</td>
-                    </tr>
-                </table>
+        <table cellpadding="0" cellspacing="0" border="0" width="100%" style="margin-top: 20px; border: 1px solid #ccc; border-collapse: collapse;">
+          <tr>
+            <td colspan="2" style="padding: 10px; background-color: #1c1f3b; color: white; font-weight: bold; text-align: center; border-bottom: 1px solid #ccc;">Parent & Contact Information</td>
+          </tr>
+          <tr>
+            <td style="padding: 10px; background-color: #f0f0f5; font-weight: bold; width: 150px; border-bottom: 1px solid #ccc;">Parent Name:</td>
+            <td style="padding: 10px; border-bottom: 1px solid #ccc;">${parentName}</td>
+          </tr>
+          <tr>
+            <td style="padding: 10px; background-color: #f0f0f5; font-weight: bold; width: 150px; border-bottom: 1px solid #ccc;">Parent Email:</td>
+            <td style="padding: 10px; border-bottom: 1px solid #ccc;">${parentEmail}</td>
+          </tr>
+          <tr>
+            <td style="padding: 10px; background-color: #f0f0f5; font-weight: bold; width: 150px; border-bottom: 1px solid #ccc;">Parent Phone:</td>
+            <td style="padding: 10px; border-bottom: 1px solid #ccc;">${parentPhone}</td>
+          </tr>
+          <tr>
+            <td style="padding: 10px; background-color: #f0f0f5; font-weight: bold; width: 150px; border-bottom: 1px solid #ccc;">Contact Email:</td>
+            <td style="padding: 10px; border-bottom: 1px solid #ccc;">${contactEmail}</td>
+          </tr>
+          <tr>
+            <td style="padding: 10px; background-color: #f0f0f5; font-weight: bold; width: 150px; border-bottom: 1px solid #ccc;">Contact Number:</td>
+            <td style="padding: 10px; border-bottom: 1px solid #ccc;">${contactNo}</td>
+          </tr>
+          <tr>
+            <td style="padding: 10px; background-color: #f0f0f5; font-weight: bold; width: 150px; border-bottom: 1px solid #ccc;">Home Address:</td>
+            <td style="padding: 10px; border-bottom: 1px solid #ccc;">${homeAddress}</td>
+          </tr>
+          <tr>
+            <td style="padding: 10px; background-color: #f0f0f5; font-weight: bold; width: 150px; border-bottom: 1px solid #ccc;">Number of Children:</td>
+            <td style="padding: 10px; border-bottom: 1px solid #ccc;">${noOfChildren}</td>
+          </tr>
 
-                <div style="margin-top: 30px; padding: 15px; background-color: #e8f0e9; border-left: 4px solid #042A29;">
-                    <p style="margin: 0; font-size: 14px;">Please process this Sunday School registration and contact the parent at ${parentEmail} or ${parentPhone} with further information.</p>
-                </div>
-            </td>
-        </tr>
-        <tr>
-            <td style="padding: 20px; background-color: #042A29; color: white; text-align: center; font-size: 14px;">
-                <p style="margin: 0;">Barrie Mosque</p>
-            </td>
-        </tr>
-    </table>
+          ${childrenHtml}
+        </table>
+
+        <div style="margin-top: 30px; padding: 15px; background-color: #f0f0f5; border-left: 4px solid #1c1f3b;">
+          <p style="margin: 0; font-size: 14px;">Please process this Sunday School registration and contact the parent or contact person using the provided email or phone number for further details.</p>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td style="padding: 20px; background-color: #1c1f3b; color: white; text-align: center; font-size: 14px;">
+        <p style="margin: 0;">Barrie Mosque</p>
+      </td>
+    </tr>
+  </table>
 </body>
-    `
-}
+  `;
+};
+
 
 
 const becomeATeacherTemplate = ({

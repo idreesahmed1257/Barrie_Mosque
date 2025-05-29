@@ -1,5 +1,5 @@
-import { string } from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
+import { string } from "yup";
 
 export const YupBusinessSchema = {
     name: string().required(),
@@ -12,6 +12,7 @@ export const YupBusinessSchema = {
         ),
     details: string().optional(),
     website: string().url("Website must be a valid URL").optional(),
+    category: string().required("Category is required")
 }
 
 export const formBusinessSchema = (businessSchema) => {
@@ -24,6 +25,7 @@ export const formBusinessSchema = (businessSchema) => {
             details: '',
             phone: '',
             website: '',
+            category: ''
         }
     }
 }

@@ -24,6 +24,10 @@ const BusinessSchema = new mongoose.Schema({
         type: String,
         required: false,
     },
+    category: {
+        type: String,
+        required: false,
+    },
 });
 
 export default mongoose.models.Business || mongoose.model('Business', BusinessSchema);

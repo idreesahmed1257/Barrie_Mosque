@@ -3,7 +3,6 @@ import { createBusinessService, getBusinessesService } from "../services/busines
 
 export const createBusiness = async (body) => {
     try {
-        console.log("body", body)
         const business = await createBusinessService(body);
         if (business) {
             return business

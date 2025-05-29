@@ -5,6 +5,8 @@ import activity4 from '@/assets/images/shared/Ramadan.jpg';
 import activity5 from '@/assets/images/shared/basketball.jpg';
 import activity6 from '@/assets/images/shared/CommunityandGrowth.jpg';
 import activity7 from '@/assets/images/shared/winteryouthretreat.jpg';
+import activity8 from '@/assets/images/shared/Snow_tubing.jpg';
+import activity9 from '@/assets/images/shared/Summer_youth.jpg';
 import Mission from '@/components/AboutUs/Mission';
 import Slide from '@/components/Home/HomeSlide';
 import HomeTitle from '@/components/Home/HomeTitle';
@@ -29,7 +31,7 @@ const ActivitiesEvents = () => {
             <br />
             <InfoBox
                 src={activity1}
-                title={"Annual Family Fun Day"}
+                title={"Family Fun Fest"}
                 text={content.activities.funDay}
                 flexDirection={"row"}
             />
@@ -62,10 +64,27 @@ const ActivitiesEvents = () => {
                 flexDirection={"row"}
             />
             <br />
+            <br />
             <InfoBox
                 src={activity7}
                 title={"Winter Youth Retreat"}
                 text={content.activities.winterYouth}
+                flexDirection={"row-reverse"}
+            />
+            <br />
+            <br />
+            <InfoBox
+                src={activity8}
+                title={"Snow Tubing"}
+                text={content.activities.snowTubing}
+                flexDirection={"row"}
+            />
+            <br />
+            <br />
+            <InfoBox
+                src={activity9}
+                title={"Summer Youth Program"}
+                text={content.activities.summerYouth}
                 flexDirection={"row-reverse"}
             />
             <br />

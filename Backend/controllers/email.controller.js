@@ -5,10 +5,11 @@ dotenv.config();
 
 const transporter = nodemailer.createTransport({
     host: "smtp-relay.brevo.com",
-    port: 587,
+    port: 465,
+    secure: true,
     auth: {
-        user: process.env.BREVO_EMAIL, // Your Brevo email
-        pass: process.env.BREVO_API_KEY // Your Brevo SMTP API Key
+        user: process.env.BREVO_EMAIL,
+        pass: process.env.BREVO_API_KEY
     }
 });
 
@@ -20,6 +21,7 @@ export const sendEmail = async (req, res) => {
             return res.status(400).json({ error: 'Missing mailType or data' });
         }
 
+
         const html = getHtmlTemplate(mailType, data);
 
         const mailOptions = {
@@ -30,7 +32,6 @@ export const sendEmail = async (req, res) => {
             html
         };
 
-        console.log("mailOptions", mailOptions);
         let info = await transporter.sendMail(mailOptions);
         res.json({ status: 200, message: "Email sent successfully", info });
     } catch (err) {

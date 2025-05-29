@@ -18,15 +18,6 @@ export const YupSundaySchoolSchema = {
         .typeError("Number of children must be a number")
         .min(1, "At least one child is required")
         .required("Number of children is required"),
-    studentName: string().required("Student name is required"),
-    studentAge: number()
-        .typeError("Student age must be a number")
-        .min(6, "Student must be at least 6 years old")
-        .max(18, "Student must be under 18 years old")
-        .required("Student age is required"),
-    studentGender: string().oneOf(["Male", "Female", "Other"], "Invalid gender selection").required("Student gender is required"),
-    isChildSixYearOld: boolean().required("Please specify if the child is six years old"),
-    isFirstTime: boolean().required("Please specify if this is the first time attending"),
 };
 
 export const formSundaySchoolSchema = (sundaySchoolSchema) => {
@@ -41,11 +32,17 @@ export const formSundaySchoolSchema = (sundaySchoolSchema) => {
             contactEmail: "",
             homeAddress: "",
             noOfChildren: "",
-            studentName: "",
-            studentAge: "",
-            studentGender: "",
-            isChildSixYearOld: false,
-            isFirstTime: false,
+            childrenInfo: [
+                {
+                    studentName: "",
+                    studentAge: "",
+                    studentGender: "",
+                    isChildSixYearOld: false,
+                    isFirstTime: false,
+                    allergies: "",
+                    previousClass: ""
+                }
+            ],
         },
     };
 };

@@ -19,14 +19,8 @@ export const teacherFormFields = [
 
     { type: "checkbox", name: "commitment", label: "Commitment to volunteering every Sunday", validationType: "boolean", required: true },
 
-    {
-        type: "select", name: "islamicEducationLevel", label: "Level of Islamic Education/Knowledge",
-        options: [
-            { value: "Quranic studies", label: "Quranic studies" },
-            { value: "Fiqh", label: "Fiqh" },
-            { value: "Hadith", label: "Hadith" }
-        ], validationType: "text", required: true
-    },
+    { type: "text", name: "islamicEducationLevel", label: "Describe Level of Islamic Education/Knowledge", placeholder: "Describe Level of Islamic Education/Knowledge", validationType: "text", required: false },
+
 
     { type: "text", name: "attendanceAtPrograms", label: "Attendance at Islamic Programs/Institutions (Specify)", placeholder: "Enter Details", validationType: "text", required: false },
 

@@ -1,13 +1,13 @@
 "use client";
-import { Email, Facebook, Instagram, LocationCity, Phone, PinDropOutlined, Twitter, VolunteerActivism, WhatsApp } from '@mui/icons-material';
-import { Divider, Grid, IconButton } from '@mui/material';
+import { Email, Facebook, Instagram, LocationCity, Phone, WhatsApp } from '@mui/icons-material';
+import { Grid, IconButton } from '@mui/material';
 import Image from 'next/image';
 import Link from 'next/link';
+import { IoLogoGooglePlaystore } from "react-icons/io5";
 import logo from '../../../assets/images/logos/logo1.png';
 import Button1 from '../Buttons/Button1';
 import styles from './footer.module.scss';
 import { ourServicesItems, quickLinkItems } from './helper';
-import { IoLogoGooglePlaystore } from "react-icons/io5";
 
 const Footer = () => {
     return (
@@ -83,6 +83,11 @@ const Footer = () => {
                     <Link target='_blank' href={'https://themasjidapp.org/barrie/download'}>
                         <IconButton className={styles.icon} size="large">
                             <IoLogoGooglePlaystore fontSize="large" />
+                        </IconButton>
+                    </Link>
+                    <Link target='_blank' href={'https://chat.whatsapp.com/BlaPcwWOlStGrWbc2Ug0il'}>
+                        <IconButton className={styles.icon} size="large">
+                            <WhatsApp fontSize="small" />
                         </IconButton>
                     </Link>
                 </Grid>

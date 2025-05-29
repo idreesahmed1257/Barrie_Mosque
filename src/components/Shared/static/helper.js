@@ -256,7 +256,7 @@ export const content = {
                 "content": ""
             },
             {
-                "title": "Annual Family Fun Day",
+                "title": "Family Fun Fest",
                 "content": ""
             },
             {
@@ -265,7 +265,7 @@ export const content = {
             }
         ],
         barBQ: "Our Annual Community BBQ, a fun-filled event with bouncy castles, games, vendors, and an opportunity to connect with the community. It’s a perfect day for families and friends to come together and enjoy delicious food, entertainment, and great company!",
-        funDay: "Our Annual Family Fun Fest takes place at an indoor playcenter, offering a day of fun for the whole family. With food, activities, and plenty of entertainment, it’s an excellent opportunity to bond with your loved ones in a safe and exciting environment.",
+        funDay: "Our Annual Family Fest takes place at an indoor playcenter, offering a day of fun for the whole family. With food, activities, and plenty of entertainment, it’s an excellent opportunity to bond with your loved ones in a safe and exciting environment.",
         ramadan: "During Ramadan, we host Iftars at the masjid, where community members gather to break their fast and enjoy a meal together (Note: not every day). We also offer Taraweeh prayers, where the entire Quran is completed throughout the month. Additionally, brothers can participate in Itikaf during the last 10 nights of Ramadan, with a dedicated program to enhance their spiritual experience.",
         "youthEngagement": [
             {
@@ -279,11 +279,21 @@ export const content = {
             {
                 "title": "Winter Youth Retreat",
                 "content": ""
+            },
+            {
+                "title": "Summer Youth Program",
+                "content": ""
+            },
+            {
+                "title": "Snow Tubing",
+                "content": ""
             }
         ],
         fridayNight: "Our Friday Night Basketball program is a year-round activity for the Muslim youth, providing a fun and healthy way to stay active and connect with others. In the summer, we also host soccer on Friday nights, offering more options for the youth to engage in physical activity and community building.",
         intro: "Our mosque hosts a wide variety of activities and events to foster community, learning, and spiritual growth. From family-friendly gatherings to youth programs, we aim to create meaningful experiences for all members of our community.",
-        winterYouth: "Our Winter Youth Retreat, held during the winter break, is an exciting and educational experience for both sisters and brothers. With indoor activities, games, challenges, and educational lessons, it’s a great opportunity to bond with peers while learning and growing spiritually.der activities and events "
+        winterYouth: "Our Winter Youth Retreat, held during the winter break, is an exciting and educational experience for both sisters and brothers. With indoor activities, games, challenges, and educational lessons, it’s a great opportunity to bond with peers while learning and growing spiritually.der activities and events ",
+        summerYouth: "Yearly Summer Program designed to offer a perfect blend of fun, learning, social engagement, and physical activity, the program promises an unforgettable summer for our youth. Running July to August each year. ",
+        snowTubing: "Snow Tubing Community Event is a much-loved tradition that brings families and community members together for an evening of winter fun. After tubing, everyone heads back to the masjid for a night of exciting raffle prizes and a delicious unlimited dinner buffet",
     },
     "marriage": {
         licensed: [
@@ -447,7 +457,27 @@ export const content = {
             "SONI has organized women’s social events, education programs, provided assistance to those sisters that were in need, interfaith events, kids’ programs, and assisted masjid Noor-ul Islam in various activities such as annual BBQ, winter activities, and Iftars.",
             "SONI is requesting sisters to actively participate whether it is volunteering, donating, baking, or attending our events."
         ]
-    }
+    },
+
+    "revertsToIslam": {
+        about: [
+            {
+                "title": "Begin Your Journey",
+                "content": ""
+            },
+            {
+                "title": "Learn and Connect",
+                "content": ""
+            },
+            {
+                "title": "Gather and Grow",
+                "content": ""
+            }
+        ],
+        begin: "Embracing Islam is a beautiful and transformative journey, and you don't have to walk it alone. Our community is here to support you every step of the way. Whether you’ve recently accepted Islam or are still exploring, we offer mentorship, educational resources, and a welcoming space to ask questions and grow in your faith.",
+        learn: "From learning how to pray to understanding the foundations of belief, we are committed to helping you feel confident, connected, and spiritually nourished. Join our events, meet fellow reverts, and become part of a family that cares.",
+        grow: "Join us at Barrie Mosque on the first Saturday of every month for the Reverts to Islam Social Circle & Study! This monthly gathering provides a welcoming space for reverts to Islam to connect, learn, and build community. Follow us on social media for our events.",
+    },
 
 
 } 

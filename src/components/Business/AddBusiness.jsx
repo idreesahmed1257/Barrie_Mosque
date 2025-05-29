@@ -8,14 +8,48 @@ import { YupBusinessSchema, formBusinessSchema } from './helper';
 import Button4 from '../Shared/Buttons/Button4';
 import axios from 'axios';
 import toast from 'react-hot-toast';
+import { FormControl, InputLabel, MenuItem, Select, FormHelperText } from '@mui/material';
+import { Controller } from 'react-hook-form';
+
+const categoryOptions = [
+    { label: "Agriculture & Farming", value: "Agriculture & Farming" },
+    { label: "Arts & Entertainment", value: "Arts & Entertainment" },
+    { label: "Automotive", value: "Automotive" },
+    { label: "Beauty & Personal Care", value: "Beauty & Personal Care" },
+    { label: "Childcare & Daycare", value: "Childcare & Daycare" },
+    { label: "Cleaning Services", value: "Cleaning Services" },
+    { label: "Construction & Renovation", value: "Construction & Renovation" },
+    { label: "Education & Training", value: "Education & Training" },
+    { label: "Events & Wedding Services", value: "Events & Wedding Services" },
+    { label: "Healthcare & Wellness", value: "Healthcare & Wellness" },
+    { label: "Home & Garden", value: "Home & Garden" },
+    { label: "Hospitality & Tourism", value: "Hospitality & Tourism" },
+    { label: "Legal & Financial Services", value: "Legal & Financial Services" },
+    { label: "Manufacturing", value: "Manufacturing" },
+    { label: "Media & Communications", value: "Media & Communications" },
+    { label: "Non-Profit & Community Services", value: "Non-Profit & Community Services" },
+    { label: "Pet Services", value: "Pet Services" },
+    { label: "Printing & Publishing", value: "Printing & Publishing" },
+    { label: "Real Estate", value: "Real Estate" },
+    { label: "Restaurant & Food Services", value: "Restaurant & Food Services" },
+    { label: "Retail", value: "Retail" },
+    { label: "Service", value: "Service" },
+    { label: "Sports & Recreation", value: "Sports & Recreation" },
+    { label: "Technology & IT Services", value: "Technology & IT Services" },
+    { label: "Transportation & Logistics", value: "Transportation & Logistics" },
+    { label: "Other", value: "Other" },
+];
+
+
 
 const AddBusiness = ({ text, setBusinesses }) => {
     let businessSchema = object(YupBusinessSchema);
     const { control, handleSubmit, reset, formState: { errors, isValid } } = useForm(formBusinessSchema(businessSchema))
 
     const handleBusinessSubmit = async (payload) => {
+        console.log("payload", payload)
         try {
-            const resp = await axios.post('http://localhost:5000/add-business', payload);
+            const resp = await axios.post(`${process.env.NEXT_PUBLIC_BACKEND_URL}/add-business`, payload);
             console.log("resp", resp)
             setBusinesses(prevState => [
                 ...prevState,
@@ -83,6 +117,34 @@ const AddBusiness = ({ text, setBusinesses }) => {
                                     errorName={errors?.website}
                                 />
                             </Grid>
+                            <Grid item xs={12}>
+                                <Controller
+                                    name="category"
+                                    control={control}
+                                    render={({ field }) => (
+                                        <FormControl fullWidth error={!!errors.category}>
+                                            <InputLabel id="category-label">Business Type</InputLabel>
+                                            <Select
+                                                labelId="category-label"
+                                                label="Business Type"
+                                                size='small'
+                                                {...field}
+                                            >
+                                                {categoryOptions.map((option) => (
+                                                    <MenuItem key={option.value} value={option.value}>
+                                                        {option.label}
+                                                    </MenuItem>
+                                                ))}
+                                            </Select>
+                                            {errors.category && (
+                                                <FormHelperText>{errors.category.message}</FormHelperText>
+                                            )}
+                                        </FormControl>
+                                    )}
+                                />
+                            </Grid>
+
+
                             <Grid item xs={12}>
                                 <InputField
                                     control={control}

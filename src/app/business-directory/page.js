@@ -39,6 +39,8 @@ const BusinessDirectory = () => {
             </Grid>
             <HomeTitle text={`Add your business`} />
             <AddBusiness setBusinesses={setBusinesses} />
+            <br />
+            <br />
         </main>
     )
 }

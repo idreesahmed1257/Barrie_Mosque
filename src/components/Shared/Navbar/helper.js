@@ -30,14 +30,14 @@ export const aboutUsbuttons = [
 export const communityItems = [
     { title: 'Sisters of Noor-ul-Islam', subTitle: "“Allah is one and likes Unity”(Muslim)", ref: "/soni" },
     {
-        title: 'About Sunday School', subTitle: "Learning your faith is a long journey that is best taken on a consistent basis.", ref: "/sunday-school",
+        title: 'Sunday School', subTitle: "Learning your faith is a long journey that is best taken on a consistent basis.", ref: "/sunday-school",
         subMenu: [
             { title: 'Principle & Teachers', subTitle: "Meet the dedicated staff guiding our students", ref: "/principle-and-teachers" },
             { title: 'Become a Teacher', subTitle: `"The most superior among you are those who learn the Qur'an and teach it." (Bukhari, 1971, Vol. 6, p. 502)"`, ref: "/become-a-teacher" },
         ]
     },
     {
-        title: 'About Arabic School',
+        title: 'Arabic School',
         subTitle: "Mastering the Arabic language unlocks a deeper connection to your faith and heritage.",
         ref: "/arabic-school"
     },
@@ -50,6 +50,7 @@ export const servicesItems = [
     { title: 'Marriage', subTitle: "See all available slots for Barrie Mosque & process your booking online", ref: "/marriage" },
     { title: 'Funeral ', subTitle: "Helping you during this difficult time", ref: "/funeral" },
     { title: 'Islamic Counseling', subTitle: "Helping You Navigate Life's Challenges with Faith and Guidance", ref: "/islamic-counseling" },
+    { title: 'Reverts to Islam', subTitle: "Support and Guidance for New Muslims on Their Journey to Islam", ref: "/reverts-to-islam" },
 ];
 
 export const contactUsItems = [

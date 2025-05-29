@@ -31,7 +31,7 @@ mongoose.connect(MONGODB_URI)
 
 // Define a route handler for the default home page
 app.get('/', (req, res) => {
-    res.send('Hello World v1');
+    res.send('Hello World v2');
 });
 
 // Define a route to get tour places
@@ -48,7 +48,6 @@ app.get('/get-businesses', async (req, res) => {
 app.post('/add-business', async (req, res) => {
     try {
         const body = req.body;
-        console.log("boyd", body);
         const business = await createBusiness(body);
 
         res.json({ status: 200, message: "Business Created Successfully", data: business });

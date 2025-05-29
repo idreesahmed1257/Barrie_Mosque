@@ -17,7 +17,7 @@ const DynamicForm = ({ text, formFields, handleSubmitForm }) => {
             <Grid className={styles.formContainer} display={"flex"} flexDirection={"column"} alignItems={"center"} justifyContent={"center"} container spacing={2} px={2} xs={12} md={8}>
                 <br />
                 <Card elevation={3} className={styles.contactCard}>
-                    <Grid textAlign={"center"}>{text}</Grid>
+                    <p className={styles.contactTitle}>{text}</p>
                     <br />
                     <form onSubmit={handleSubmit(handleSubmitForm)}>
                         <Grid container spacing={2}>

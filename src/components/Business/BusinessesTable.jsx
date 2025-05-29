@@ -17,7 +17,10 @@ export default function BusinessesTable({ businesses }) {
                     {params.value}
                 </Link>
             ),
-        }, { field: 'details', headerName: 'Details', flex: 2 },
+        },
+
+        { field: 'category', headerName: 'Category', flex: 1 },
+        { field: 'details', headerName: 'Details', flex: 3 },
     ];
 
     return (
