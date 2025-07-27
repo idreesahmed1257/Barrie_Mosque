@@ -106,31 +106,6 @@ const SundaySchoolForm = ({ text, formSubmit }) => {
                                 />
                             </Grid>
 
-                            {/* Contact Number */}
-                            <Grid item xs={12} md={6}>
-                                <CustomTextField
-                                    control={control}
-                                    errors={errors}
-                                    name="contactNo"
-                                    placeHolder="Enter Contact Number"
-                                    label="Contact Number"
-                                    type="text"
-                                    errorName={errors?.contactNo}
-                                />
-                            </Grid>
-
-                            {/* Contact Email */}
-                            <Grid item xs={12} md={6}>
-                                <CustomTextField
-                                    control={control}
-                                    errors={errors}
-                                    name="contactEmail"
-                                    placeHolder="Enter Contact Email"
-                                    label="Contact Email"
-                                    type="email"
-                                    errorName={errors?.contactEmail}
-                                />
-                            </Grid>
 
                             {/* Home Address */}
                             <Grid item xs={12} md={6}>

@@ -6,7 +6,7 @@ import activity5 from '@/assets/images/shared/basketball.jpg';
 import activity6 from '@/assets/images/shared/CommunityandGrowth.jpg';
 import activity7 from '@/assets/images/shared/winteryouthretreat.jpg';
 import activity8 from '@/assets/images/shared/Snow_tubing.jpg';
-import activity9 from '@/assets/images/shared/Summer_youth.jpg';
+import activity9 from '@/assets/images/shared/SummerYouthProgram.jpg';
 import Mission from '@/components/AboutUs/Mission';
 import Slide from '@/components/Home/HomeSlide';
 import HomeTitle from '@/components/Home/HomeTitle';

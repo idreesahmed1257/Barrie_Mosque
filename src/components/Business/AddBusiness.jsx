@@ -49,17 +49,22 @@ const AddBusiness = ({ text, setBusinesses }) => {
     const handleBusinessSubmit = async (payload) => {
         console.log("payload", payload)
         try {
-            const resp = await axios.post(`${process.env.NEXT_PUBLIC_BACKEND_URL}/add-business`, payload);
-            console.log("resp", resp)
-            setBusinesses(prevState => [
-                ...prevState,
-                resp?.data?.data
-            ]);
-            toast.success("Business Added Sucessfully")
-            reset()
+            await toast.promise(
+                axios.post(`${process.env.NEXT_PUBLIC_BACKEND_URL}/add-business`, payload),
+                {
+                    loading: 'Submitting business request...',
+                    success: 'Your business request has been sent to super admin. Your business will be listed after approval.',
+                    error: (err) => {
+                        console.error("Full error object:", err);
+                        return err.response?.data?.error || 'Failed to submit business request. Please try again.';
+                    }
+                }
+            ).then(resp => {
 
+            });
+            reset();
         } catch (err) {
-            console.log("err", err)
+            console.error("Error submitting business request:", err);
         }
     };
     return (

@@ -1,5 +1,3 @@
-// backend/models/Business.js
-
 import mongoose from 'mongoose';
 
 const BusinessSchema = new mongoose.Schema({
@@ -17,8 +15,7 @@ const BusinessSchema = new mongoose.Schema({
     },
     email: {
         type: String,
-        required: false,
-        unique: true,
+        required: false
     },
     website: {
         type: String,
@@ -28,6 +25,10 @@ const BusinessSchema = new mongoose.Schema({
         type: String,
         required: false,
     },
-});
+    state: {
+        type: Boolean,
+        required: true,
+    }
+}, { timestamps: true });
 
 export default mongoose.models.Business || mongoose.model('Business', BusinessSchema);

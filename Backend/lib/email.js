@@ -188,8 +188,6 @@ const sundaySchoolTemplate = ({
     parentName,
     parentPhone,
     parentEmail,
-    contactNo,
-    contactEmail,
     homeAddress,
     noOfChildren,
     childrenInfo
@@ -254,14 +252,6 @@ const sundaySchoolTemplate = ({
           <tr>
             <td style="padding: 10px; background-color: #f0f0f5; font-weight: bold; width: 150px; border-bottom: 1px solid #ccc;">Parent Phone:</td>
             <td style="padding: 10px; border-bottom: 1px solid #ccc;">${parentPhone}</td>
-          </tr>
-          <tr>
-            <td style="padding: 10px; background-color: #f0f0f5; font-weight: bold; width: 150px; border-bottom: 1px solid #ccc;">Contact Email:</td>
-            <td style="padding: 10px; border-bottom: 1px solid #ccc;">${contactEmail}</td>
-          </tr>
-          <tr>
-            <td style="padding: 10px; background-color: #f0f0f5; font-weight: bold; width: 150px; border-bottom: 1px solid #ccc;">Contact Number:</td>
-            <td style="padding: 10px; border-bottom: 1px solid #ccc;">${contactNo}</td>
           </tr>
           <tr>
             <td style="padding: 10px; background-color: #f0f0f5; font-weight: bold; width: 150px; border-bottom: 1px solid #ccc;">Home Address:</td>

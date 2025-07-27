@@ -10,9 +10,6 @@ export const YupSundaySchoolSchema = {
         )
         .required("Parent phone number is required"),
     parentEmail: string().email("Invalid email format").required("Parent email is required"),
-    contactNo: string()
-        .required(),
-    contactEmail: string().email("Invalid email format").required(),
     homeAddress: string().required("Home address is required"),
     noOfChildren: number()
         .typeError("Number of children must be a number")
@@ -28,8 +25,6 @@ export const formSundaySchoolSchema = (sundaySchoolSchema) => {
             parentName: "",
             parentPhone: "",
             parentEmail: "",
-            contactNo: "",
-            contactEmail: "",
             homeAddress: "",
             noOfChildren: "",
             childrenInfo: [

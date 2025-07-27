@@ -1,0 +1,112 @@
+.mosque-loader {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.crescent {
+    width: 60px;
+    height: 60px;
+    border: 4px solid #042A29;
+    border-radius: 50%;
+    position: relative;
+    animation: rotate 2s linear infinite;
+}
+
+.crescent::before {
+    content: '';
+    position: absolute;
+    top: -4px;
+    left: 15px;
+    width: 50px;
+    height: 50px;
+    background: white;
+    border-radius: 50%;
+    border: 4px solid white;
+}
+
+.star {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-bottom: 16px solid #042A29;
+    animation: twinkle 1.5s ease-in-out infinite alternate;
+}
+
+.star::before {
+    content: '';
+    position: absolute;
+    top: 5px;
+    left: -8px;
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-bottom: 16px solid #042A29;
+    transform: rotate(70deg);
+}
+
+.star::after {
+    content: '';
+    position: absolute;
+    top: 5px;
+    left: -8px;
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-bottom: 16px solid #042A29;
+    transform: rotate(-70deg);
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes twinkle {
+    0% {
+        opacity: 0.3;
+        transform: scale(0.8);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1.2);
+    }
+}
+
+/* Add a subtle glow effect */
+.mosque-loader::after {
+    content: '';
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background: radial-gradient(circle, rgba(4, 42, 41, 0.1) 0%, transparent 70%);
+    border-radius: 50%;
+    animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+        opacity: 0.5;
+    }
+
+    50% {
+        transform: scale(1.1);
+        opacity: 0.8;
+    }
+}

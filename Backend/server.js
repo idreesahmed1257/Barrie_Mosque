@@ -1,10 +1,12 @@
 import cors from 'cors';
 import express from 'express';
 import mongoose from 'mongoose';
-import { createBusiness, getBusinesses } from './controllers/business.controller.js';
+import { createBusiness, getBusinesses, getBusinessesAdmin, updateBusinesses } from './controllers/business.controller.js';
 import dotenv from 'dotenv';
 dotenv.config();
 import { sendEmail } from './controllers/email.controller.js';
+import { signup, login } from './controllers/auth.controller.js';
+import authenticateJWT from './middleware/auth.js';
 
 
 const app = express();
@@ -34,28 +36,12 @@ app.get('/', (req, res) => {
     res.send('Hello World v2');
 });
 
-// Define a route to get tour places
-app.get('/get-businesses', async (req, res) => {
-    try {
-        const business = await getBusinesses(req, res);
-        res.json({ status: 200, message: "Business Fetched Successfully", data: business });
-    } catch (err) {
-        console.log('err', err.message);
-        res.status(500).json({ error: 'Something went wrong' });
-    }
-});
+app.get('/get-businesses', getBusinesses);
+app.get('/get-businesses-admin', authenticateJWT, getBusinessesAdmin);
+app.put('/update-business/:id', authenticateJWT, updateBusinesses);
+app.post('/add-business', createBusiness);
 
-app.post('/add-business', async (req, res) => {
-    try {
-        const body = req.body;
-        const business = await createBusiness(body);
-
-        res.json({ status: 200, message: "Business Created Successfully", data: business });
-    } catch (err) {
-        console.log('err', err.message);
-        res.status(500).json({ error: 'Something went wrong' });
-    }
-});
-
+app.post('/signup', signup);
+app.post('/login', login);
 
 app.post('/send-email', sendEmail);

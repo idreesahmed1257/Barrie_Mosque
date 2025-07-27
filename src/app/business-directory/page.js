@@ -28,7 +28,6 @@ const BusinessDirectory = () => {
 
     return (
         <main>
-            {console.log("business", business)}
             <Slide src={imam} heading={"Business Directory"} subheading={"Discover and Connect with Local Muslim Businesses"} />
             <br />
             <HomeTitle text={`Muslim Community Businesses`} />

@@ -75,9 +75,9 @@ export default function Home() {
       <Welcome />
       <HomeTitle text={'Prayer Timings'} />
       <NamazTimings />
-      <HomeTitle text={'Community News'} />
-      <CommunityNews />
       <HomeTitle text={'Events'} />
+      <CommunityNews />
+      <HomeTitle text={'Community News'} />
       <HomePosts />
       {/* <ArrowSlider spacing={0} perView={1.3}>
         {communities.map((com, idx) => (
