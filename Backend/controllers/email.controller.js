@@ -1,17 +1,6 @@
-import nodemailer from 'nodemailer';
-import { getHtmlTemplate } from '../lib/email.js';
-import dotenv from 'dotenv';
-dotenv.config();
+import { getHtmlTemplate } from '../lib/templates.js';
+import { sendMailServ } from '../services/email.service.js';
 
-const transporter = nodemailer.createTransport({
-    host: "smtp-relay.brevo.com",
-    port: 465,
-    secure: true,
-    auth: {
-        user: process.env.BREVO_EMAIL,
-        pass: process.env.BREVO_API_KEY
-    }
-});
 
 export const sendEmail = async (req, res) => {
     try {
@@ -32,7 +21,8 @@ export const sendEmail = async (req, res) => {
             html
         };
 
-        let info = await transporter.sendMail(mailOptions);
+        const info = await sendMailServ(mailOptions);
+
         res.json({ status: 200, message: "Email sent successfully", info });
     } catch (err) {
         console.error('Error:', err.message);

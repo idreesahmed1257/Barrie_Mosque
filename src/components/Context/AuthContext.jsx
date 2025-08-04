@@ -31,11 +31,10 @@ export const AuthProvider = ({ children }) => {
 
   const login = (newToken) => {
     setToken(newToken);
-    // Set cookie to expire in 10 seconds for testing
     Cookies.set('authToken', newToken, {
-      expires: 7, // Set to expire in 7 days
-      secure: process.env.NODE_ENV === 'production', // Only send over HTTPS in production
-      sameSite: 'strict' // Protect against CSRF attacks
+      expires: 7,
+      secure: process.env.NODE_ENV === 'production',
+      sameSite: 'strict'
     });
   };
 

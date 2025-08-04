@@ -10,7 +10,7 @@
 }
 
 .refLink {
-    text-decoration: none;
+    text-decoration: none !important;
     color: $color-secondary;
     transition: all cubic-bezier(0.075, 0.82, 0.165, 1) 0.3s;
 

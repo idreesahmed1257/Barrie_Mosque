@@ -1,7 +1,6 @@
 'use client';
-import sports1 from '@/assets/images/shared/sports1.jpg';
-import sports2 from '@/assets/images/shared/sports2.jpg';
-import Mission from '@/components/AboutUs/Mission';
+import sports1 from '@/assets/images/shared/General_Inquiries_Header.jpg';
+import sports2 from '@/assets/images/shared/General_Inquiries_Body.jpg';
 import Slide from '@/components/Home/HomeSlide';
 import HomeTitle from '@/components/Home/HomeTitle';
 import ContactUsForm from '@/components/Shared/ContactUs/ContactUsForm';

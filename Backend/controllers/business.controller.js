@@ -1,5 +1,7 @@
 // src/Backend/controllers/business.controller.js
+import { getBusinessApprovalTemplate } from "../lib/templates.js";
 import { createBusinessService, getBusinessesService, updateBusinessesService } from "../services/business.service.js";
+import { sendMailServ } from "../services/email.service.js";
 
 export const createBusiness = async (req, res) => {
     try {
@@ -7,6 +9,16 @@ export const createBusiness = async (req, res) => {
         body.state = false;
         const business = await createBusinessService(body);
         if (business) {
+            const html = getBusinessApprovalTemplate(business);
+            const mailOptions = {
+                from: "organizingsecretary@barriemosque.ca",
+                to: "organizingsecretary@barriemosque.ca",
+                subject: "New Business Approval Request",
+                text: "A new business has been submitted for approval.",
+                html
+            };
+
+            await sendMailServ(mailOptions);
             res.json({ status: 200, message: "Business Created Successfully", data: business });
         }
         else {

@@ -1,15 +1,11 @@
 import fun1 from '@/assets/images/shared/fun1.jpg';
-import facebook from '@/assets/images/shared/facebook.png';
-import instagram from '@/assets/images/shared/instagram.png';
-import masjidApp from '@/assets/images/shared/masjidApp.png';
 import Slide from '@/components/Home/HomeSlide';
 import HomeTitle from '@/components/Home/HomeTitle';
 import "@fontsource/quicksand";
+import FacebookIcon from '@mui/icons-material/Facebook';
+import InstagramIcon from '@mui/icons-material/Instagram';
+import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import styles from '../../components/Social/social.module.scss';
-import Image from 'next/image';
-import { Grid } from '@mui/material';
-import Link from 'next/link';
-import MasjidApp from '@/components/Social/MasjidApp';
 
 const SocialMedia = () => {
     return (
@@ -21,15 +17,20 @@ const SocialMedia = () => {
             <div className={styles.socialLinks}>
                 <div className={styles.socialLink}>
                     <a href="https://www.facebook.com/BarrieMosque" target="_blank" rel="noopener noreferrer" className={styles.card}>
-                        <Image src={facebook} alt="Facebook" />
-                        {/* <FacebookRounded /> */}
+                        <FacebookIcon style={{ fontSize: 40, color: '#1877F2' }} />
                         <span>Facebook</span>
                     </a>
                 </div>
                 <div className={styles.socialLink}>
                     <a href="https://www.instagram.com/barriemosque/?hl=en" target="_blank" rel="noopener noreferrer" className={styles.card}>
-                        <Image src={instagram} alt="Instagram" />
+                        <InstagramIcon style={{ fontSize: 40, color: '#E4405F' }} />
                         <span>Instagram</span>
+                    </a>
+                </div>
+                <div className={styles.socialLink}>
+                    <a href="https://wa.me/17059997176" target="_blank" rel="noopener noreferrer" className={styles.card}>
+                        <WhatsAppIcon style={{ fontSize: 40, color: '#25D366' }} />
+                        <span>WhatsApp</span>
                     </a>
                 </div>
             </div>

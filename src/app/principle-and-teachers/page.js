@@ -35,7 +35,7 @@ const PrincipleAndTeachers = () => {
             />
             <br />
             <div className='row-center'>
-                <Link href={"#"} className={styles.registerBtn}>
+                <Link href={"/become-a-teacher"} className={styles.registerBtn}>
                     Become a Teacher
                 </Link>
             </div>
