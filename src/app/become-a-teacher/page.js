@@ -11,14 +11,14 @@ import { content } from '@/components/Shared/static/helper';
 import "@fontsource/quicksand";
 import { teacherFormFields } from './helper';
 import toast from 'react-hot-toast';
-import axios from 'axios';
+import apiInterceptor from '@/lib/api';
 import { MAILS } from '@/components/Shared/enums';
 const PrincipleAndTeachers = () => {
 
 
 
     const handleFormSubmit = async (payload) => {
-        const sendEmailPromise = axios.post(`${process.env.NEXT_PUBLIC_BACKEND_URL}/send-email`, {
+        const sendEmailPromise = apiInterceptor.post(`/send-email`, {
             data: payload,
             mailType: "teacher_registration",
             mailTo: MAILS.school

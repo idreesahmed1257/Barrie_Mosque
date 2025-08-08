@@ -10,6 +10,7 @@ import axios from 'axios';
 import toast from 'react-hot-toast';
 import { FormControl, InputLabel, MenuItem, Select, FormHelperText } from '@mui/material';
 import { Controller } from 'react-hook-form';
+import apiInterceptor from '@/lib/api';
 
 const categoryOptions = [
     { label: "Agriculture & Farming", value: "Agriculture & Farming" },
@@ -50,7 +51,7 @@ const AddBusiness = ({ text, setBusinesses }) => {
         console.log("payload", payload)
         try {
             await toast.promise(
-                axios.post(`${process.env.NEXT_PUBLIC_BACKEND_URL}/add-business`, payload),
+                apiInterceptor.post(`/add-business`, payload),
                 {
                     loading: 'Submitting business request...',
                     success: 'Your business request has been sent to super admin. Your business will be listed after approval.',

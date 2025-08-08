@@ -13,11 +13,12 @@ import { VolunteerFormFields } from './helper';
 import axios from 'axios';
 import toast from 'react-hot-toast';
 import { MAILS } from '@/components/Shared/enums';
+import apiInterceptor from '@/lib/api';
 const Volunteer = () => {
 
 
     const handleFormSubmit = async (payload) => {
-        const sendEmailPromise = axios.post(`${process.env.NEXT_PUBLIC_BACKEND_URL}/send-email`, {
+        const sendEmailPromise = apiInterceptor.post(`/send-email`, {
             data: payload,
             mailType: "volunteer",
             mailTo: MAILS.secretary

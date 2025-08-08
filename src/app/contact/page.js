@@ -1,19 +1,19 @@
 'use client';
-import sports1 from '@/assets/images/shared/General_Inquiries_Header.jpg';
 import sports2 from '@/assets/images/shared/General_Inquiries_Body.jpg';
+import sports1 from '@/assets/images/shared/General_Inquiries_Header.jpg';
 import Slide from '@/components/Home/HomeSlide';
 import HomeTitle from '@/components/Home/HomeTitle';
 import ContactUsForm from '@/components/Shared/ContactUs/ContactUsForm';
 import { MAILS } from '@/components/Shared/enums';
 import InfoBox from '@/components/Shared/InfoBox/InfoBox';
 import { content } from '@/components/Shared/static/helper';
+import apiInterceptor from '@/lib/api';
 import "@fontsource/quicksand";
-import axios from 'axios';
 import toast from 'react-hot-toast';
 const ContactUs = () => {
 
     const handleFormSubmit = async (payload) => {
-        const sendEmailPromise = axios.post(`${process.env.NEXT_PUBLIC_BACKEND_URL}/send-email`, {
+        const sendEmailPromise = apiInterceptor.post(`/send-email`, {
             data: payload,
             mailType: "contact_us",
             mailTo: MAILS.secretary

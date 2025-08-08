@@ -14,6 +14,7 @@ import { theme } from '../ThemeProvider';
 import axios from 'axios';
 import toast from 'react-hot-toast';
 import { MAILS } from '../Shared/enums';
+import apiInterceptor from '@/lib/api';
 
 const ArabicSchoolForm = ({ text }) => {
   let arabicSchoolSchema = object(YupArabicSchoolSchema);
@@ -54,7 +55,7 @@ const ArabicSchoolForm = ({ text }) => {
   const handleArabicSchoolSubmit = async (payload) => {
     console.log("payload", payload);
 
-    const sendEmailPromise = axios.post(`${process.env.NEXT_PUBLIC_BACKEND_URL}/send-email`, {
+            const sendEmailPromise = apiInterceptor.post(`/send-email`, {
       data: payload,
       mailType: "arabic_school_registration",
       mailTo: MAILS.arabicSchool

@@ -10,14 +10,14 @@ import HomeTitle from '@/components/Home/HomeTitle';
 import Mission from '@/components/AboutUs/Mission';
 import { content } from '@/components/Shared/static/helper';
 import ContactUsForm from '@/components/Shared/ContactUs/ContactUsForm';
-import axios from 'axios';
+import apiInterceptor from '@/lib/api';
 import toast from 'react-hot-toast';
 import { MAILS } from '@/components/Shared/enums';
 
 const OurImam = () => {
 
     const handleFormSubmit = async (payload) => {
-        const sendEmailPromise = axios.post(`${process.env.NEXT_PUBLIC_BACKEND_URL}/send-email`, {
+        const sendEmailPromise = apiInterceptor.post(`/send-email`, {
             data: payload,
             mailType: "contact_imam",
             mailTo: MAILS.imam

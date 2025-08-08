@@ -9,14 +9,13 @@ import ContactUsForm from '@/components/Shared/ContactUs/ContactUsForm';
 import { MAILS } from '@/components/Shared/enums';
 import InfoBox from '@/components/Shared/InfoBox/InfoBox';
 import { content } from '@/components/Shared/static/helper';
-
 import "@fontsource/quicksand";
-import axios from 'axios';
+import apiInterceptor from '@/lib/api';
 import toast from 'react-hot-toast';
 const Marriage = () => {
-
+    
     const handleFormSubmit = async (payload) => {
-        const sendEmailPromise = axios.post(`${process.env.NEXT_PUBLIC_BACKEND_URL}/send-email`, {
+        const sendEmailPromise = apiInterceptor.post(`/send-email`, {
             data: payload,
             mailType: "funeral",
             mailTo: MAILS.imam

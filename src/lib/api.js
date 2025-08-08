@@ -2,12 +2,12 @@ import axios from 'axios';
 import toast from 'react-hot-toast';
 
 // Create axios instance with base configuration
-const api = axios.create({
+const apiInterceptor = axios.create({
     baseURL: process.env.NEXT_PUBLIC_BACKEND_URL,
 });
 
 // Request interceptor to add auth token to all requests
-api.interceptors.request.use(
+apiInterceptor.interceptors.request.use(
     (config) => {
         // Get token from cookies
         const token = document.cookie
@@ -26,7 +26,7 @@ api.interceptors.request.use(
 );
 
 // Response interceptor to handle unauthorized responses
-api.interceptors.response.use(
+apiInterceptor.interceptors.response.use(
     (response) => {
         return response;
     },
@@ -48,4 +48,4 @@ api.interceptors.response.use(
     }
 );
 
-export default api; 
+export default apiInterceptor; 
