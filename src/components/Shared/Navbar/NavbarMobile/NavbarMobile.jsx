@@ -3,7 +3,7 @@ import { AppBar, Toolbar, Icon, Drawer, List, ListItem, ListItemText, Divider, C
 import { Menu as MenuIcon, Close as CloseIcon, ExpandLess, ExpandMore } from '@mui/icons-material';
 import Link from 'next/link';
 import Image from 'next/image';
-import logo from '../../../../assets/images/logos/logo1.png';
+import logo from '@/assets/images/logos/logo1.png';
 import styles from './navbarMobile.module.scss';
 import { aboutUsItems, communityItems, contactUsItems, servicesItems } from '../helper';
 

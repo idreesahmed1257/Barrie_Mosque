@@ -13,7 +13,7 @@ import "@fontsource/quicksand";
 import apiInterceptor from '@/lib/api';
 import toast from 'react-hot-toast';
 const Marriage = () => {
-    
+
     const handleFormSubmit = async (payload) => {
         const sendEmailPromise = apiInterceptor.post(`/send-email`, {
             data: payload,

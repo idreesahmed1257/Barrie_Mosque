@@ -4,7 +4,7 @@ import { Grid, IconButton } from '@mui/material';
 import Image from 'next/image';
 import Link from 'next/link';
 import { IoLogoGooglePlaystore } from "react-icons/io5";
-import logo from '../../../assets/images/logos/logo1.png';
+import logo from '@/assets/images/logos/logo1.png';
 import Button1 from '../Buttons/Button1';
 import styles from './footer.module.scss';
 import { ourServicesItems, quickLinkItems } from './helper';

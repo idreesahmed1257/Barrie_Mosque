@@ -5,13 +5,12 @@ import Slide from "@/components/Home/HomeSlide";
 import HomeTitle from "@/components/Home/HomeTitle";
 import NamazTimings from "@/components/Home/NamazTimings";
 import Welcome from "@/components/Home/Welcome";
-import { slides, timings } from "@/components/Home/helper";
 import DonationsFrame from "@/components/Shared/DonationsFrame";
 import "@fontsource/quicksand";
+import { Grid } from "@mui/material";
+import axios from "axios";
 import hero3 from '@/assets/images/shared/hero8.jpg';
 import { useEffect, useState } from "react";
-import axios from "axios";
-import { Grid } from "@mui/material";
 
 export default function Home() {
 
