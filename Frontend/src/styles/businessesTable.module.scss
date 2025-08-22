@@ -1,0 +1,14 @@
+/* businessesTable.module.scss */
+
+.columnHeaderTitle {
+    white-space: normal !important;
+    line-height: 1.2rem;
+    text-align: center;
+    overflow: visible;
+    font-size: 0.9rem; // default size
+  
+    @media (max-width: 600px) {
+      font-size: 0.5rem; // smaller on mobile
+    }
+  }
+  

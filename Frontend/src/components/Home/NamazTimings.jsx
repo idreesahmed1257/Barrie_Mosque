@@ -1,6 +1,6 @@
 'use client'
 import React, { useEffect } from 'react';
-
+import styles from '../../styles/namazTimings.module.scss'
 const NamazTimings = () => {
     useEffect(() => {
         let timeout;
@@ -40,22 +40,15 @@ const NamazTimings = () => {
     }, []);
 
     return (
-        <div style={{ height: '600px' }}>
-            <iframe
-                id="prayers-frame"
-                src="https://themasjidapp.org/129192/prayers?&css=.bg-primary%7Bbackground:%23042A29;color:%23F2F2F2"
-                style={{
-                    width: '98%',
-                    border: '2px solid #ccc',
-                    borderRadius: '10px',
-                    height: '100%',
-                    margin: '10px',
-                    boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)'
-                }}
-                frameBorder="1"
-                scrolling="no"
-            />
-        </div>
+        <div className={styles.container}>
+        <iframe
+          id="prayers-frame"
+          src="https://themasjidapp.org/129192/prayers?&css=.bg-primary%7Bbackground:%23042A29;color:%23F2F2F2"
+          className={styles.prayersFrame}
+          frameBorder="1"
+          scrolling="no"
+        />
+      </div>
     );
 };
 

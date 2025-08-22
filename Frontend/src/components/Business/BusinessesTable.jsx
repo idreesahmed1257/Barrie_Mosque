@@ -48,7 +48,12 @@ export default function BusinessesTable({ businesses }) {
                         color: '#042A29',
                     },
                     '& .MuiDataGrid-columnHeaderTitle': {
-                        color: '#042A29',
+                        whiteSpace: "normal",   // allows wrapping
+                        lineHeight: "1.2em",
+                        textAlign: "center",
+                        fontSize: { xs: "1rem", sm: "0.85rem", md: "1rem" }, // responsive font size
+
+                        
                     },
                     '& .MuiDataGrid-cell': {
                         color: '#042A29',
@@ -59,6 +64,9 @@ export default function BusinessesTable({ businesses }) {
                     '& .MuiDataGrid-row:hover': {
                         backgroundColor: '#e0e0e0',
                     },
+                    
+              
+                      
                 }}
             />
         </Card>
