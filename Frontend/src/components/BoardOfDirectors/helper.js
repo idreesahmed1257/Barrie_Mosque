@@ -11,7 +11,7 @@ export const bodItems = [
     { name: "Shafiq Mohamed", post: "Organizing Secretary", img: ShafiqMohamed },
     { name: "Bashir Barez", post: "Treasurer ", img: bod1 },
     { name: "Mohamed Elwan", post: "Youth Coordinator ", img: bod2 },
-    { name: "Aabid Qureshi", post: "Sunday School Principle", img: Abid_Qureshi },
+    { name: "Aabid Sidiqi", post: "Sunday School Principle", img: Abid_Qureshi },
     { name: "Shahid Iqbal", post: "General Member", img: ShahidIqbal },
     { name: "Akram Soheil", post: "General Member", img: bod2 },
     { name: "Abdelkarim Kessara ", post: "General Member", img: bod2 },

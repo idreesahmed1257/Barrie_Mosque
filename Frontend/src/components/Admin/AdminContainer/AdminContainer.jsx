@@ -61,25 +61,27 @@ const AdminContainer = () => {
   };
 
   const dirColumns = [
-    { field: 'name', headerName: 'Business Name', flex: 1 },
-    { field: 'phone', headerName: 'Phone Number', flex: 1 },
-    { field: 'email', headerName: 'Business Email', flex: 1 },
+    { field: 'name', headerName: 'Business Name',minWidth: 200, flex: 1 },
+    { field: 'phone', headerName: 'Phone Number', minWidth: 200,flex: 1 },
+    { field: 'email', headerName: 'Business Email',minWidth: 200, flex: 1 },
     {
       field: 'website',
       headerName: 'Website',
       flex: 1,
+      minWidth: 200,
       renderCell: (params) => (
         <Link href={params.value || '#'} target="_blank" rel="noopener" style={{ color: '#042A29' }}>
           {params.value}
         </Link>
       ),
     },
-    { field: 'category', headerName: 'Category', flex: 1 },
-    { field: 'details', headerName: 'Details', flex: 2 },
+    { field: 'category', headerName: 'Category',minWidth: 200, flex: 1 },
+    { field: 'details', headerName: 'Details', minWidth: 200,flex: 2 },
     {
       field: 'state',
       headerName: 'State',
       flex: 0.5,
+      minWidth: 200,
       renderCell: (params) => (
         <CustomSwitch
           checked={params.row.state}
@@ -116,7 +118,7 @@ const AdminContainer = () => {
           <Box sx={{ height: 400 }}>
             <DataGrid
               rows={business}
-              columns={dirColumns}
+              columns={dirColumns }
               disableRowSelectionOnClick
               getRowId={(row) => row?._id}
               sx={{

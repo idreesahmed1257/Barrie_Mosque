@@ -5,12 +5,13 @@ import Link from 'next/link';
 
 export default function BusinessesTable({ businesses }) {
     const columns = [
-        { field: 'name', headerName: 'Business Name', flex: 1 },
-        { field: 'phone', headerName: 'Phone Number', flex: 1 },
-        { field: 'email', headerName: 'Business Email', flex: 1 },
+        { field: 'name', headerName: 'Business Name',minWidth: 200, flex: 1 },
+        { field: 'phone', headerName: 'Phone Number', minWidth: 200,flex: 1 },
+        { field: 'email', headerName: 'Business Email', minWidth: 200,flex: 1 },
         {
             field: 'website',
             headerName: 'Website',
+            minWidth: 200,
             flex: 1,
             renderCell: (params) => (
                 <Link style={{ color: '#042A29' }} href={params.value || "#"} target="_blank" rel="noopener" color="inherit">
@@ -19,12 +20,13 @@ export default function BusinessesTable({ businesses }) {
             ),
         },
 
-        { field: 'category', headerName: 'Category', flex: 1 },
-        { field: 'details', headerName: 'Details', flex: 3 },
+        { field: 'category', headerName: 'Category',minWidth: 200, flex: 1 },
+        { field: 'details', headerName: 'Details',minWidth: 200, flex: 3 },
     ];
 
     return (
-        <Card sx={{ height: 400, width: '100%', }}>
+        <Card sx={{ height: 400, width: '100%', padding : {xs:2 ,md: 0} 
+         }}>
             <DataGrid
                 rows={businesses}
                 columns={columns}
@@ -48,12 +50,7 @@ export default function BusinessesTable({ businesses }) {
                         color: '#042A29',
                     },
                     '& .MuiDataGrid-columnHeaderTitle': {
-                        whiteSpace: "normal",   // allows wrapping
-                        lineHeight: "1.2em",
-                        textAlign: "center",
-                        fontSize: { xs: "1rem", sm: "0.85rem", md: "1rem" }, // responsive font size
-
-                        
+                        color: '#042A29',
                     },
                     '& .MuiDataGrid-cell': {
                         color: '#042A29',
@@ -64,9 +61,6 @@ export default function BusinessesTable({ businesses }) {
                     '& .MuiDataGrid-row:hover': {
                         backgroundColor: '#e0e0e0',
                     },
-                    
-              
-                      
                 }}
             />
         </Card>
