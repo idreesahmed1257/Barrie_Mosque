@@ -1,3 +1,8 @@
+import path from 'path';
+import { fileURLToPath } from 'url';
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+
 const nextConfig = {
     output: 'export',
     images: {
@@ -9,6 +14,10 @@ const nextConfig = {
     // Disable static optimization for pages that use client-side hooks
     experimental: {
         esmExternals: false,
+    },
+    webpack: (config) => {
+        config.resolve.alias['@'] = path.resolve(__dirname, 'src');
+        return config;
     },
 };
 
