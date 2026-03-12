@@ -16,65 +16,65 @@ import toast from 'react-hot-toast';
 
 const RevertsToIslam = () => {
 
-    const handleFormSubmit = async (payload) => {
-        const sendEmailPromise = apiInterceptor.post(`/api/send-email`, {
-            data: payload,
-            mailType: "reverts_to_islam",
-            mailTo: MAILS.revert
-        });
+  const handleFormSubmit = async (payload) => {
+    const sendEmailPromise = apiInterceptor.post(`/send-email`, {
+      data: payload,
+      mailType: "reverts_to_islam",
+      mailTo: MAILS.revert
+    });
 
-        toast.promise(
-            sendEmailPromise,
-            {
-                loading: "Sending email...",
-                success: "Email Sent Successfully, Imam from Mosque will contact you shortly",
-                error: "Failed to send email, please try again"
-            }
-        );
+    toast.promise(
+      sendEmailPromise,
+      {
+        loading: "Sending email...",
+        success: "Email Sent Successfully, Imam from Mosque will contact you shortly",
+        error: "Failed to send email, please try again"
+      }
+    );
 
-        await sendEmailPromise;
-    };
+    await sendEmailPromise;
+  };
 
-    return (
-        <main>
-            <Slide src={islam2} heading={"Reverts to Islam"} subheading={"Support and Guidance for New Muslims on Their Journey to Islam"} />
-            <br />
-            <HomeTitle text={'Guidance & Support'} />
-            <Mission content={content.revertsToIslam.about} />
+  return (
+    <main>
+      <Slide src={islam2} heading={"Reverts to Islam"} subheading={"Support and Guidance for New Muslims on Their Journey to Islam"} />
+      <br />
+      <HomeTitle text={'Guidance & Support'} />
+      <Mission content={content.revertsToIslam.about} />
 
-            <br />
-            <InfoBox
-                src={islam1}
-                title={"Begin Your Journey"}
-                text={content.revertsToIslam.begin}
-                flexDirection={"row"}
-            />
-            <br />
-            <br />
-            <InfoBox
-                src={islam3}
-                title={"Learn and Connect"}
-                text={content.revertsToIslam.learn}
-                flexDirection={"row-reverse"}
-            />
-            <br />
-            <br />
-            <InfoBox
-                src={islam4}
-                title={"Gather and Grow"}
-                text={content.revertsToIslam.grow}
-                flexDirection={"row"}
-            />
-            <br />
-            <br />
+      <br />
+      <InfoBox
+        src={islam1}
+        title={"Begin Your Journey"}
+        text={content.revertsToIslam.begin}
+        flexDirection={"row"}
+      />
+      <br />
+      <br />
+      <InfoBox
+        src={islam3}
+        title={"Learn and Connect"}
+        text={content.revertsToIslam.learn}
+        flexDirection={"row-reverse"}
+      />
+      <br />
+      <br />
+      <InfoBox
+        src={islam4}
+        title={"Gather and Grow"}
+        text={content.revertsToIslam.grow}
+        flexDirection={"row"}
+      />
+      <br />
+      <br />
 
 
-            <HomeTitle text={'Reach out to us using the form below'} />
-            <br />
-            <ContactUsForm submitForm={handleFormSubmit} text={"Fill out the form below to submit your request at our mosque."} />
-            <br />
-        </main>
-    )
+      <HomeTitle text={'Reach out to us using the form below'} />
+      <br />
+      <ContactUsForm submitForm={handleFormSubmit} text={"Fill out the form below to submit your request at our mosque."} />
+      <br />
+    </main>
+  )
 }
 
 export default RevertsToIslam

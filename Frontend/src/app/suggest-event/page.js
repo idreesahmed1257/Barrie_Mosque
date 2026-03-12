@@ -12,45 +12,45 @@ import apiInterceptor from '@/lib/api';
 import toast from 'react-hot-toast';
 const ContactUs = () => {
 
-    const handleFormSubmit = async (payload) => {
-        const sendEmailPromise = apiInterceptor.post(`/api/send-email`, {
-            data: payload,
-            mailType: "suggest_event",
-            mailTo: MAILS.secretary
-        });
+  const handleFormSubmit = async (payload) => {
+    const sendEmailPromise = apiInterceptor.post(`/send-email`, {
+      data: payload,
+      mailType: "suggest_event",
+      mailTo: MAILS.secretary
+    });
 
-        toast.promise(
-            sendEmailPromise,
-            {
-                loading: "Sending email...",
-                success: "Email Sent Successfully, Someone from Mosque will contact you shortly",
-                error: "Failed to send email, please try again"
-            }
-        );
+    toast.promise(
+      sendEmailPromise,
+      {
+        loading: "Sending email...",
+        success: "Email Sent Successfully, Someone from Mosque will contact you shortly",
+        error: "Failed to send email, please try again"
+      }
+    );
 
-        await sendEmailPromise;
-    };
+    await sendEmailPromise;
+  };
 
 
-    return (
-        <main>
-            <Slide src={sports1} heading={"Suggest An Event"} subheading={"Propose events to be held at the Masjid"} />
-            <br />
-            <HomeTitle text={'Suggest An Event'} />
-            <InfoBox
-                src={sports2}
-                title={""}
-                text={content.suggest.info}
-                flexDirection={"row"}
-            />
-            <br />
-            <br />
-            <HomeTitle text={'Fill the Form'} />
-            <ContactUsForm submitForm={handleFormSubmit} text={"Complete the form below and embark on a journey to enriching experiences within our mosque."} />
+  return (
+    <main>
+      <Slide src={sports1} heading={"Suggest An Event"} subheading={"Propose events to be held at the Masjid"} />
+      <br />
+      <HomeTitle text={'Suggest An Event'} />
+      <InfoBox
+        src={sports2}
+        title={""}
+        text={content.suggest.info}
+        flexDirection={"row"}
+      />
+      <br />
+      <br />
+      <HomeTitle text={'Fill the Form'} />
+      <ContactUsForm submitForm={handleFormSubmit} text={"Complete the form below and embark on a journey to enriching experiences within our mosque."} />
 
-            <br />
-        </main>
-    )
+      <br />
+    </main>
+  )
 }
 
 export default ContactUs

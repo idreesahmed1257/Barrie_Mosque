@@ -16,53 +16,53 @@ import { MAILS } from '@/components/Shared/enums';
 
 const OurImam = () => {
 
-    const handleFormSubmit = async (payload) => {
-        const sendEmailPromise = apiInterceptor.post(`/api/send-email`, {
-            data: payload,
-            mailType: "contact_imam",
-            mailTo: MAILS.imam
-        });
+  const handleFormSubmit = async (payload) => {
+    const sendEmailPromise = apiInterceptor.post(`/send-email`, {
+      data: payload,
+      mailType: "contact_imam",
+      mailTo: MAILS.imam
+    });
 
-        toast.promise(
-            sendEmailPromise,
-            {
-                loading: "Sending email...",
-                success: "Email Sent Successfully, Someone from Mosque will contact you shortly",
-                error: "Failed to send email, please try again"
-            }
-        );
+    toast.promise(
+      sendEmailPromise,
+      {
+        loading: "Sending email...",
+        success: "Email Sent Successfully, Someone from Mosque will contact you shortly",
+        error: "Failed to send email, please try again"
+      }
+    );
 
-        await sendEmailPromise;
-    };
+    await sendEmailPromise;
+  };
 
 
-    return (
-        <main>
-            <Slide src={imam} heading={"Our Imam"} subheading={"Know more about our Imam"} />
-            <br />
-            <HomeTitle text={`Imam Mateen's Journey`} />
-            <InfoBox
-                src={imam2}
-                points={content.ourImam.journy}
-                flexDirection={"row-reverse"}
-            />
-            <HomeTitle text={`Imam Mateen's expertise`} />
-            <Mission content={content.ourImam.expertise} />
-            <br />
-            <br />
-            <HomeTitle text={`Imam Mateen's Community Role`} />
-            <InfoBox
-                src={imam3}
-                title={""}
-                points={content.ourImam.community}
-                flexDirection={"row"}
-            />
-            <br />
-            <HomeTitle text={'Ask Question'} />
-            <ContactUsForm submitForm={handleFormSubmit} text={"Feel free to ask any questions you have. Your message will remain confidential and be shared only with the Imam."} />
-            <br />
-        </main>
-    )
+  return (
+    <main>
+      <Slide src={imam} heading={"Our Imam"} subheading={"Know more about our Imam"} />
+      <br />
+      <HomeTitle text={`Imam Mateen's Journey`} />
+      <InfoBox
+        src={imam2}
+        points={content.ourImam.journy}
+        flexDirection={"row-reverse"}
+      />
+      <HomeTitle text={`Imam Mateen's expertise`} />
+      <Mission content={content.ourImam.expertise} />
+      <br />
+      <br />
+      <HomeTitle text={`Imam Mateen's Community Role`} />
+      <InfoBox
+        src={imam3}
+        title={""}
+        points={content.ourImam.community}
+        flexDirection={"row"}
+      />
+      <br />
+      <HomeTitle text={'Ask Question'} />
+      <ContactUsForm submitForm={handleFormSubmit} text={"Feel free to ask any questions you have. Your message will remain confidential and be shared only with the Imam."} />
+      <br />
+    </main>
+  )
 }
 
 export default OurImam

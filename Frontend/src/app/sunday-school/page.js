@@ -15,59 +15,59 @@ import { MAILS } from '@/components/Shared/enums';
 import apiInterceptor from '@/lib/api';
 const SundaySchool = () => {
 
-    const handleFormSubmit = async (payload) => {
-        const sendEmailPromise = apiInterceptor.post(`/api/send-email`, {
-            data: payload,
-            mailType: "sunday_school_registration",
-            mailTo: MAILS.school
-        });
+  const handleFormSubmit = async (payload) => {
+    const sendEmailPromise = apiInterceptor.post(`/send-email`, {
+      data: payload,
+      mailType: "sunday_school_registration",
+      mailTo: MAILS.school
+    });
 
-        toast.promise(
-            sendEmailPromise,
-            {
-                loading: "Sending email...",
-                success: "Email Sent Successfully, Someone from School will contact you shortly",
-                error: "Failed to send email, please try again"
-            }
-        );
+    toast.promise(
+      sendEmailPromise,
+      {
+        loading: "Sending email...",
+        success: "Email Sent Successfully, Someone from School will contact you shortly",
+        error: "Failed to send email, please try again"
+      }
+    );
 
-        await sendEmailPromise;
-    };
+    await sendEmailPromise;
+  };
 
 
-    return (
-        <main>
-            <Slide src={sun2} heading={"Sunday School"} subheading={"Learning your faith is a long journey that is best taken on a consistent basis."} />
-            <br />
-            <HomeTitle text={'About Sunday School'} />
-            <InfoBox
-                src={sun1}
-                title={""}
-                text={""}
-                points={content.sundaySchool.about}
-                flexDirection={"row-reverse"}
-                buttonText={"Become a Teacher"}
-                buttonRef={"become-a-teacher"}
-            />
+  return (
+    <main>
+      <Slide src={sun2} heading={"Sunday School"} subheading={"Learning your faith is a long journey that is best taken on a consistent basis."} />
+      <br />
+      <HomeTitle text={'About Sunday School'} />
+      <InfoBox
+        src={sun1}
+        title={""}
+        text={""}
+        points={content.sundaySchool.about}
+        flexDirection={"row-reverse"}
+        buttonText={"Become a Teacher"}
+        buttonRef={"become-a-teacher"}
+      />
 
-            <HomeTitle text={'Topics'} />
-            <Mission content={content.sundaySchool.topics} />
-            <br />
-            <br />
-            <HomeTitle text={`Our Goals`} />
-            <InfoBox
-                src={sun3}
-                title={""}
-                text={content.sundaySchool.goals}
-                flexDirection={"row"}
-            />
-            <br />
-            <br />
-            <SundaySchoolForm formSubmit={handleFormSubmit} text={"Register Now"} />
-            <br />
-            <br />
-        </main>
-    )
+      <HomeTitle text={'Topics'} />
+      <Mission content={content.sundaySchool.topics} />
+      <br />
+      <br />
+      <HomeTitle text={`Our Goals`} />
+      <InfoBox
+        src={sun3}
+        title={""}
+        text={content.sundaySchool.goals}
+        flexDirection={"row"}
+      />
+      <br />
+      <br />
+      <SundaySchoolForm formSubmit={handleFormSubmit} text={"Register Now"} />
+      <br />
+      <br />
+    </main>
+  )
 }
 
 export default SundaySchool

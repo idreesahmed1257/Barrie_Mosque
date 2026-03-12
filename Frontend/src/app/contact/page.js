@@ -12,42 +12,42 @@ import "@fontsource/quicksand";
 import toast from 'react-hot-toast';
 const ContactUs = () => {
 
-    const handleFormSubmit = async (payload) => {
-        const sendEmailPromise = apiInterceptor.post(`/api/send-email`, {
-            data: payload,
-            mailType: "contact_us",
-            mailTo: MAILS.secretary
-        });
+  const handleFormSubmit = async (payload) => {
+    const sendEmailPromise = apiInterceptor.post(`/send-email`, {
+      data: payload,
+      mailType: "contact_us",
+      mailTo: MAILS.secretary
+    });
 
-        toast.promise(
-            sendEmailPromise,
-            {
-                loading: "Sending email...",
-                success: "Email Sent Successfully, Someone from Mosque will contact you shortly",
-                error: "Failed to send email, please try again"
-            }
-        );
+    toast.promise(
+      sendEmailPromise,
+      {
+        loading: "Sending email...",
+        success: "Email Sent Successfully, Someone from Mosque will contact you shortly",
+        error: "Failed to send email, please try again"
+      }
+    );
 
-        await sendEmailPromise;
-    };
+    await sendEmailPromise;
+  };
 
 
-    return (
-        <main>
-            <Slide src={sports1} heading={"General Inquiries"} subheading={"Contact us for any general information"} />
-            <br />
-            <HomeTitle text={'Contact us'} />
-            <ContactUsForm submitForm={handleFormSubmit} text={"Feel free to ask any questions or share your concerns. Your message will be directed to the Masjid Committee."} />
-            <HomeTitle text={'Address'} />
-            <InfoBox
-                src={sports2}
-                title={""}
-                points={content.contact.address}
-                flexDirection={"row-reverse"}
-            />
-            <br />
-        </main>
-    )
+  return (
+    <main>
+      <Slide src={sports1} heading={"General Inquiries"} subheading={"Contact us for any general information"} />
+      <br />
+      <HomeTitle text={'Contact us'} />
+      <ContactUsForm submitForm={handleFormSubmit} text={"Feel free to ask any questions or share your concerns. Your message will be directed to the Masjid Committee."} />
+      <HomeTitle text={'Address'} />
+      <InfoBox
+        src={sports2}
+        title={""}
+        points={content.contact.address}
+        flexDirection={"row-reverse"}
+      />
+      <br />
+    </main>
+  )
 }
 
 export default ContactUs
