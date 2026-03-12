@@ -16,7 +16,7 @@ import apiInterceptor from '@/lib/api';
 const SundaySchool = () => {
 
     const handleFormSubmit = async (payload) => {
-        const sendEmailPromise = apiInterceptor.post(`/send-email`, {
+        const sendEmailPromise = apiInterceptor.post(`/api/send-email`, {
             data: payload,
             mailType: "sunday_school_registration",
             mailTo: MAILS.school

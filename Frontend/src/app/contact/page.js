@@ -13,7 +13,7 @@ import toast from 'react-hot-toast';
 const ContactUs = () => {
 
     const handleFormSubmit = async (payload) => {
-        const sendEmailPromise = apiInterceptor.post(`/send-email`, {
+        const sendEmailPromise = apiInterceptor.post(`/api/send-email`, {
             data: payload,
             mailType: "contact_us",
             mailTo: MAILS.secretary

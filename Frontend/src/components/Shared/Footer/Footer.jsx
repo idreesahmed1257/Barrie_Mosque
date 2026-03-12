@@ -36,11 +36,11 @@ const Footer = () => {
                 <Grid item xs={12} display="flex" flexDirection="column" rowGap={1.5}>
                     <div className={`row-gap-2 ${styles.refLink}`} >
                         <LocationCity fontSize="small" />
-                        <p>155 Ferris Lane, <br /> Barrie, Ontario, Canada</p>
+                        <p>Barrie Mosque<br />155 Ferris Lane, <br /> Barrie, Ontario, Canada</p>
                     </div>
                     <div className={`row-gap-2 ${styles.refLink}`} >
                         <Phone fontSize="small" />
-                        <p>705-999-7176</p>
+                        <p>(705) 726-4594</p>
                     </div>
                     <div className={`row-gap-2 ${styles.refLink}`} >
                         <Email fontSize="small" />

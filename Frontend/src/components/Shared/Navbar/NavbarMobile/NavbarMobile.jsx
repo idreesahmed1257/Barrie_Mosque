@@ -36,7 +36,18 @@ const NavbarMobile = ({ handleClick }) => {
                             unmountOnExit
                         >
                             <List component="div" disablePadding>
-                                {renderMenuItems(item.subMenu, itemKey)}
+                                {item.subMenu.map((subItem, subIdx) => {
+                                    const subItemKey = `${itemKey}-${subItem.title}`;
+                                    return subItem?.isExternal || subItem?.ref?.endsWith('.pdf') ? (
+                                        <ListItem key={subIdx} component="a" href={subItem.ref} target="_blank" rel="noopener noreferrer" onClick={toggleDrawer(false)} className={styles.listItem}>
+                                            <ListItemText primary={subItem.title} />
+                                        </ListItem>
+                                    ) : (
+                                        <ListItem key={subIdx} component={Link} href={subItem.ref} onClick={toggleDrawer(false)} className={styles.listItem}>
+                                            <ListItemText primary={subItem.title} />
+                                        </ListItem>
+                                    );
+                                })}
                             </List>
                         </Collapse>
 
@@ -70,6 +81,9 @@ const NavbarMobile = ({ handleClick }) => {
                 <List className={styles.drawerList}>
                     <ListItem component={Link} href="/">
                         <ListItemText primary="Home" />
+                    </ListItem>
+                    <ListItem component={Link} href="/ramadan-calendar-2026" onClick={toggleDrawer(false)}>
+                        <ListItemText primary="Ramadan Calendar 2026" />
                     </ListItem>
                     <ListItem onClick={handleToggleDropdown('aboutUs')}>
                         <ListItemText primary="About Us" />

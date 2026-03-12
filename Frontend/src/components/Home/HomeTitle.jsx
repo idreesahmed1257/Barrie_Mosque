@@ -1,9 +1,10 @@
 import styles from './home.module.scss';
-const HomeTitle = ({ text }) => {
+const HomeTitle = ({ text, as = 'h1' }) => {
+    const HeadingTag = as;
     return (
         <div className={styles.titleContainer}>
             <div className={styles.design}></div>
-            <h1 className={styles.title}>{text}</h1>
+            <HeadingTag className={styles.title}>{text}</HeadingTag>
             <div className={styles.design}></div>
         </div>
     )

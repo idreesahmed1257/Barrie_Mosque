@@ -2,7 +2,7 @@ import com1 from '@/assets/images/shared/commun1.png';
 import com2 from '@/assets/images/shared/commun2.png';
 import com3 from '@/assets/images/shared/commun3.png';
 import hero6 from '@/assets/images/shared/hero6.jpg';
-import hero3 from '@/assets/images/shared/hero8.jpg';
+import hero3 from '@/assets/images/shared/DSC_6516.jpg';
 import hero7 from '@/assets/images/shared/hero7.jpg';
 
 export const slides = [
