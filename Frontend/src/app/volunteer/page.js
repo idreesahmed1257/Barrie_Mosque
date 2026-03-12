@@ -1,6 +1,6 @@
 "use client"
-import vol1 from '../../assets/images/shared/volunteer2.jpg';
-import vol2 from '../../assets/images/shared/volunteer.jpg';
+import vol1 from '../../assets/images/shared/Volunteer2.jpg';
+import vol2 from '../../assets/images/shared/Volunteer.jpg';
 import vol3 from '../../assets/images/shared/volunteer3.jpg';
 import Mission from '@/components/AboutUs/Mission';
 import Slide from '@/components/Home/HomeSlide';
