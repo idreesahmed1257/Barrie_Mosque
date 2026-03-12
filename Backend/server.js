@@ -13,7 +13,7 @@ import authenticateJWT from './middleware/auth.js';
 const app = express();
 
 // MongoDB connection
-const MONGODB_URI = `mongodb+srv://${process.env.MONGO_USERNAME}:${process.env.MONGO_PASSWORD}@barriemosque.kowou.mongodb.net/barrieMosque`;
+const MONGODB_URI = `mongodb+srv://${process.env.MONGO_USERNAME}:${process.env.MONGO_PASSWORD}@barriemosque.unsbsgv.mongodb.net/barrieMosqueDB`;
 
 app.use(cors());
 app.use(express.json());
@@ -30,10 +30,10 @@ app.post('/api/login', login);
 app.post('/api/send-email', sendEmail);
 
 app.get('/', (req, res) => {
-    res.json({
-        message: 'Welcome to the Barrie Mosque API 🚀',
-        status: 'success'
-    });
+  res.json({
+    message: 'Welcome to the Barrie Mosque OK',
+    status: 'success'
+  });
 });
 
 
@@ -42,12 +42,23 @@ app.get('/', (req, res) => {
 // Connect to MongoDB before exporting app
 let isConnected = false;
 const connectDB = async () => {
-    if (isConnected) return;
-    await mongoose.connect(MONGODB_URI);
-    isConnected = true;
+  if (isConnected) return;
+  await mongoose.connect(MONGODB_URI);
+  console.log('Connected to MongoDB');
+  isConnected = true;
 };
 
+// Vercel serverless handler
 export default async function handler(req, res) {
+  await connectDB();
+  return app(req, res);
+}
+
+// Run Express server when not on Vercel (local development)
+if (!process.env.VERCEL) {
+  const PORT = process.env.SERVER_PORT || 5100;
+  app.listen(PORT, async () => {
     await connectDB();
-    return app(req, res);
+    console.log(`Server running at http://localhost:${PORT}`);
+  });
 }
