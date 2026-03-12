@@ -18,7 +18,7 @@ const Volunteer = () => {
 
 
     const handleFormSubmit = async (payload) => {
-        const sendEmailPromise = apiInterceptor.post(`/send-email`, {
+        const sendEmailPromise = apiInterceptor.post(`/api/send-email`, {
             data: payload,
             mailType: "volunteer",
             mailTo: MAILS.secretary

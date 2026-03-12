@@ -15,7 +15,7 @@ import toast from 'react-hot-toast';
 const Marriage = () => {
 
     const handleFormSubmit = async (payload) => {
-        const sendEmailPromise = apiInterceptor.post(`/send-email`, {
+        const sendEmailPromise = apiInterceptor.post(`/api/send-email`, {
             data: payload,
             mailType: "funeral",
             mailTo: MAILS.imam

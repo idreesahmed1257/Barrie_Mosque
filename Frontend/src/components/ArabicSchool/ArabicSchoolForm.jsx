@@ -55,7 +55,7 @@ const ArabicSchoolForm = ({ text }) => {
   const handleArabicSchoolSubmit = async (payload) => {
     console.log("payload", payload);
 
-            const sendEmailPromise = apiInterceptor.post(`/send-email`, {
+            const sendEmailPromise = apiInterceptor.post(`/api/send-email`, {
       data: payload,
       mailType: "arabic_school_registration",
       mailTo: MAILS.arabicSchool

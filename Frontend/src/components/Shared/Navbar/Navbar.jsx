@@ -78,6 +78,12 @@ const Navbar = () => {
               </div>
               <NavDropDown width="600px" image={contact1} items={contactUsItems} />
             </div>
+
+            <div className={styles.navItem}>
+              <Link href="/ramadan-calendar-2026" className={styles.navLink}>
+                Ramadan Calendar 2026
+              </Link>
+            </div>
             <Button1 onClick={handleClick}>Donate Now</Button1>
           </div>
         </Grid>

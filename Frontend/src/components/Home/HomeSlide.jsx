@@ -9,7 +9,8 @@ const Slide = ({ src, heading, subheading, surahName, btnText }) => (
                 src={src}
                 alt={heading}
                 fill
-                style={{ objectFit: 'cover' }}
+                sizes="100vw"
+                priority
                 className={styles.slideImage}
             />
         </div>

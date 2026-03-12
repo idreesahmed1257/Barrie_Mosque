@@ -9,7 +9,7 @@ import DonationsFrame from "@/components/Shared/DonationsFrame";
 import "@fontsource/quicksand";
 import { Grid } from "@mui/material";
 import axios from "axios";
-import hero3 from '@/assets/images/shared/hero8.jpg';
+import hero3 from '@/assets/images/shared/DSC_6516.jpg';
 import { useEffect, useState } from "react";
 
 export default function Home() {
@@ -68,15 +68,19 @@ export default function Home() {
       getRandomAyah();
     }
   }, []);
+
+  useEffect(() => {
+    document.title = "Best Mosque in Barrie | Barrie Mosque (Noor-Ul-Islam) | Zakat, Sadaqah, Donations, Janazah, Marriage, Islamic School Near Me| Serving Barrie, Newmarket, Orillia, Midland, Muskoka & Simcoe County";
+  }, []);
   return (
     <main>
       <Slide src={hero3} heading={verse?.aayah} subheading={verse?.translation} surahName={`${verse?.aayahNum} : ${verse?.surah}`} />
       <Welcome />
-      <HomeTitle text={'Prayer Timings'} />
+      <HomeTitle text={'Daily Prayer Timings & Jummah Schedule'} as="h2" />
       <NamazTimings />
-      <HomeTitle text={'Events'} />
+      <HomeTitle text={'Upcoming Events & Community Programs'} as="h2" />
       <CommunityNews />
-      <HomeTitle text={'Community News'} />
+      <HomeTitle text={'Latest News from Barrie Mosque'} as="h2" />
       <HomePosts />
       {/* <ArrowSlider spacing={0} perView={1.3}>
         {communities.map((com, idx) => (
@@ -102,7 +106,7 @@ export default function Home() {
         ))}
       </ArrowSlider> */}
       <br />
-      <HomeTitle text={'Donations'} />
+      <HomeTitle text={'Support Our Mosque - Donate Zakat & Sadaqah'} as="h2" />
       <Grid container display={'flex'} justifyContent={'center'}>
         <DonationsFrame />
       </Grid>

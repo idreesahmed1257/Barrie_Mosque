@@ -5,10 +5,10 @@ import styles from './home.module.scss';
 const Welcome = () => {
     return (
         <div className={styles.welcomeSection}>
-            <h1 className={styles.heading}>ASSALAM ALAYKUM</h1>
-            <h2 className={`${styles.subheading}`}>Peace Be Upon You</h2>
+            <h1 className={styles.heading}>Mosque in Barrie, Ontario</h1>
+            <h2 className={`${styles.subheading}`}>Religious Organization & Community Center</h2>
             <p className={styles.text}>
-                We are proud to be serving the community. We believe that vibrant Muslim communities are catalysts for necessary and positive change. We promise to continue serving you by working collaboratively with excellence.
+                Serving thousands of Muslims across Central Ontario, Barrie Mosque is your community hub for faith, education, and support. From daily prayers and Jummah to Islamic school programs, marriage services, and Janazah support, we're honored to serve families from Newmarket to Sudbury. As a registered charity, your donations directly sustain these vital services for our growing Ummah.
             </p>
             <Link href={"/about"}>
                 <Button2>Learn About Us</Button2>

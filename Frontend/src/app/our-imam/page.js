@@ -17,7 +17,7 @@ import { MAILS } from '@/components/Shared/enums';
 const OurImam = () => {
 
     const handleFormSubmit = async (payload) => {
-        const sendEmailPromise = apiInterceptor.post(`/send-email`, {
+        const sendEmailPromise = apiInterceptor.post(`/api/send-email`, {
             data: payload,
             mailType: "contact_imam",
             mailTo: MAILS.imam

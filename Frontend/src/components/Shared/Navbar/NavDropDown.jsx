@@ -21,10 +21,17 @@ const NavDropDown = ({ width, image, items }) => {
                             {item?.subMenu && item.subMenu.length > 0 && (
                                 <div className={styles.subMenu}>
                                     {item.subMenu.map((subItem, subIdx) => (
-                                        <Link key={subIdx} href={subItem?.ref} className={styles.subMenuLink}>
-                                            <p>{subItem?.title}</p>
-                                            <p>{subItem?.subTitle}</p>
-                                        </Link>
+                                        subItem?.isExternal || subItem?.ref?.endsWith('.pdf') ? (
+                                            <a key={subIdx} href={subItem?.ref} target="_blank" rel="noopener noreferrer" className={styles.subMenuLink}>
+                                                <p>{subItem?.title}</p>
+                                                <p>{subItem?.subTitle}</p>
+                                            </a>
+                                        ) : (
+                                            <Link key={subIdx} href={subItem?.ref} className={styles.subMenuLink}>
+                                                <p>{subItem?.title}</p>
+                                                <p>{subItem?.subTitle}</p>
+                                            </Link>
+                                        )
                                     ))}
                                 </div>
                             )}
