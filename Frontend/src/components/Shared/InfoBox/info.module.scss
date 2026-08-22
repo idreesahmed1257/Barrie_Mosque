@@ -71,14 +71,17 @@
         }
     }
 
-    .formContainer {
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        align-items: flex-start;
-        height: 420px;
-        padding-top: 10px;
-    }
+.formContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    height: auto;
+    min-height: 420px;
+    padding-top: 10px;
+    padding-bottom: 30px;
+    overflow: visible;
+}
 
     .formContainerAutoHeight {
         height: auto !important;
@@ -102,6 +105,9 @@
 .contactCard {
     background-color: $color-background !important;
     padding: 1.5rem;
+    width: 100%;
+    height: auto;
+    overflow: visible;
 
     .contactTitle {
         font-size: 18px;
@@ -113,5 +119,5 @@
         font-size: 14px;
         text-align: center;
     }
-
+}
 }
