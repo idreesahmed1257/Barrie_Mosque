@@ -17,7 +17,7 @@ const ContactUs = () => {
       data: payload,
       captchaToken,
       mailType: "contact_us",
-      mailTo: MAILS.secretary
+      mailTo: MAILS.general
     });
 
     toast.promise(
