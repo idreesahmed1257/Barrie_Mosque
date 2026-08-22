@@ -24,7 +24,7 @@ export const sendEmail = async (req, res) => {
         const html = getHtmlTemplate(mailType, data);
 
         const mailOptions = {
-            from: "organizingsecretary@barriemosque.ca",
+            from: "reachus@barriemosque.ca",
             to: mailTo,
             subject: `New ${mailType} Submission`,
             text: `You have received a new ${mailType} request.`,
