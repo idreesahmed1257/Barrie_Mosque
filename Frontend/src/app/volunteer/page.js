@@ -22,7 +22,7 @@ const Volunteer = () => {
       data: payload,
       captchaToken,
       mailType: "volunteer",
-      mailTo: MAILS.secretary
+      mailTo: MAILS.general
     });
 
     toast.promise(
