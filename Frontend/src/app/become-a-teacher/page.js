@@ -22,7 +22,7 @@ const PrincipleAndTeachers = () => {
       data: payload,
       captchaToken,
       mailType: "teacher_registration",
-      mailTo: MAILS.school
+      mailTo: MAILS.general
     });
 
     toast.promise(
