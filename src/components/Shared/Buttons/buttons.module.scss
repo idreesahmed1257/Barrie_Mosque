@@ -1,0 +1,46 @@
+/* src/components/Button.module.scss */
+@import '../../../styles/colors.scss';
+
+.button1 {
+    background: linear-gradient(120deg, #ffc247 -8.75%, #ffbb50 -2.32%, #f4941b 17.56%, #ffbb50 24.57%, #ffc247 31%, #f4941b 44.45%, #ffbb50 60.82%, #ffc247 69.59%, #f4941b 79.53%, #ffbb50 91.8%, #ffc247 103.5%);
+    color: $color-primary;
+    background-size: 140%;
+    border: none;
+    padding: 0.75rem 1.25rem;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: box-shadow .3s ease-out, background-position .15s ease-out;
+
+    &:hover {
+        box-shadow: 0 0 20px 10px color-mix(in srgb, #ffbb50 15%, transparent),
+            0 0 0 5px color-mix(in srgb, #ffbb50 20%, transparent);
+        background-position: 40%;
+    }
+}
+
+.button2 {
+    border-color: $color-primary;
+    color: $color-primary;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+    text-transform: none;
+
+    &:hover {
+        border-color: $color-secondary !important;
+        background-color: $color-secondary !important;
+        color: $color-background !important;
+    }
+}
+
+.button3 {
+    border-color: $color-white !important;
+    color: $color-white !important;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+    text-transform: none;
+
+    &:hover {
+        border-color: $color-primary !important;
+        background-color: $color-primary !important;
+        color: $color-background !important;
+    }
+}

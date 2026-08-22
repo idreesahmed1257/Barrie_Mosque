@@ -1,0 +1,49 @@
+.sliderContainer {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.keen-slider {
+    display: flex;
+    align-items: center;
+}
+
+.keen-slider__slide {
+    min-width: calc(100% / 1.6 - 10px);
+    /* Adjust the width to match perView setting in KeenSlider */
+    margin: 0 5px;
+    /* Add margin to create space between slides */
+    transition: transform 0.3s ease;
+}
+
+.arrowLeft,
+.arrowRight {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    color: white;
+    font-size: 2rem;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 1;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+        background-color: rgba(0, 0, 0, 0.8);
+    }
+}
+
+.arrowLeft {
+    left: 10px;
+}
+
+.arrowRight {
+    right: 10px;
+}

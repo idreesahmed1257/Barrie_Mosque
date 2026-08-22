@@ -1,0 +1,25 @@
+@import '../../shared/css/colors.scss';
+
+.searchBox {
+    border-radius: 10px !important;
+    background-color: $white-main !important;
+    min-width: 200px !important;
+    width: 100%;
+    padding: 10px !important;
+    margin: 0 !important;
+}
+
+.customTextField {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    .textField {
+        border-radius: 50px;
+    }
+}
+
+.estaric {
+    color: $error-main;
+    font-weight: bolder;
+}
