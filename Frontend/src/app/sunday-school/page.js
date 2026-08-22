@@ -20,7 +20,7 @@ const SundaySchool = () => {
       data: payload,
       captchaToken,
       mailType: "sunday_school_registration",
-      mailTo: MAILS.school
+      mailTo: MAILS.general
     });
 
     toast.promise(
