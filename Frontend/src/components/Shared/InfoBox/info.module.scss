@@ -71,14 +71,14 @@
         }
     }
 
-.formContainer {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-    height: auto;
-    padding-top: 10px;
-}
+    .formContainer {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        height: auto;
+        padding-top: 10px;
+    }
 
     @media (max-width: 600px) {
         flex-direction: column;
@@ -99,7 +99,6 @@
     background-color: $color-background !important;
     padding: 1.5rem;
     width: 100%;
-}
 
     .contactTitle {
         font-size: 18px;
