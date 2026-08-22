@@ -1,0 +1,19 @@
+.container {
+    height: 600px;
+    display: grid;
+    place-items: center; // centers iframe if needed
+  }
+  
+  .prayersFrame {
+    width: 98%;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    height: 100%;
+    margin: 0; // default for small screens
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  
+    @media (min-width: 768px) {
+      margin: 10px; // only on bigger screens
+    }
+  }
+  

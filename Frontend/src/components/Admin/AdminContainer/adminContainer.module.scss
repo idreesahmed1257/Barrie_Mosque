@@ -1,0 +1,51 @@
+@import '../../../styles/colors.scss';
+
+.adminContainer {
+  background-color: $color-background;
+}
+
+.appBar {
+  background-color: $color-primary;
+}
+
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logoutButton {
+  color: $color-white !important;
+  border: none !important;
+  padding: 8px 16px!important;
+  border-radius: 6px!important;
+  cursor: pointer!important;
+  font-weight: 500!important;
+  transition: all 0.2s ease-in-out!important;
+
+  &:hover {
+    border : 1px solid $color-white !important;
+  }
+}
+
+.welcomeText {
+  color: $color-white;
+  font-weight: 500;
+  font-size: 1.25rem;
+}
+
+.contentWrapper {
+  padding: 2rem 1rem;
+}
+
+.sectionTitle {
+  color: $color-primary;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.tableWrapper {
+  padding: 2rem;
+  background-color: $color-white;
+  border-radius: 12px;
+}

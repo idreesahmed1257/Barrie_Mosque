@@ -1,0 +1,16 @@
+@import '../../../styles/colors.scss';
+
+.estaric {
+    color: red;
+    font-weight: bolder;
+}
+
+.customTextField {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    .textField {
+        border-radius: 50px;
+    }
+}
