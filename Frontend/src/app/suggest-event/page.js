@@ -17,7 +17,7 @@ const ContactUs = () => {
       data: payload,
       captchaToken,
       mailType: "suggest_event",
-      mailTo: MAILS.secretary
+      mailTo: MAILS.general
     });
 
     toast.promise(
