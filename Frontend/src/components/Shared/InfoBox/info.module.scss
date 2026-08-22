@@ -72,9 +72,12 @@
     }
 
 .formContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
     height: auto;
-    min-height: 420px;
-    padding-bottom: 30px;
+    padding-top: 10px;
 }
 
     @media (max-width: 600px) {
