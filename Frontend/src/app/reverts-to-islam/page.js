@@ -21,7 +21,7 @@ const RevertsToIslam = () => {
       data: payload,
       captchaToken,
       mailType: "reverts_to_islam",
-      mailTo: MAILS.revert
+      mailTo: MAILS.imam
     });
 
     toast.promise(
